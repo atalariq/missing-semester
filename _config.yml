@@ -1,6 +1,7 @@
 # Setup
 title: 'Missing Semester'
-url: https://missing.csail.mit.edu
+url: https://www.atalariq.dev
+baseurl: /missing-semester
 thumbnail: "/static/assets/thumbnails/default.png"
 
 # Settings
@@ -13,8 +14,6 @@ permalink: /:title/
 future: true
 # safe: true # breaks local rendering if enabled
 timezone: America/New_York
-analytics:
-  tracking_id: G-P7WVHD84D1
 
 collections:
   '2019':
@@ -35,3 +34,9 @@ exclude:
   - browser.sh
   - docker-compose.yml
   - vendor
+
+  - TRANSLATION_PROGRESS.json
+  - TRANSLATION_QA.json
+  - TRANSLATION_STATUS.md
+  - scripts
+  - index.md

@@ -1,0 +1,29 @@
+---
+layout: default
+---
+
+<h1 class="title">{{ page.title }}</h1>
+{% if page.subtitle %}<h2 class="subtitle">{{ page.subtitle }}</h2>{% endif %}
+
+{% if page.video.id %}
+  <div class="youtube-wrapper" style="padding-bottom: {{ page.video.aspect }}%;">
+    <iframe src="https://www.youtube.com/embed/{{ page.video.id }}" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+{% elsif page.panopto %}
+  <p class="center padded bordered"><strong><a href="{{ page.panopto }}">Lihat video kuliah asli di Panopto (memerlukan login MIT Kerberos).</a></strong><br>
+  Versi video yang telah diedit akan dipublikasikan setelah kursus berakhir. Video kuliah yang telah diedit akan diunggah ke YouTube segera setelah kursus selesai.</p>
+{% elsif page.last_year %}
+  <p class="center padded bordered"><strong><a href="{{ page.last_year }}">Lihat video kuliah tahun sebelumnya.</a></strong><br>
+  Video kuliah tahun ini akan segera tersedia.</p>
+{% elsif page.video %}
+  <p class="center padded bordered"><strong>Video kuliah akan segera tersedia!</strong></p>
+{% endif %}
+
+{{ content }}
+
+<hr>
+
+<div class="small center">
+<p><a href="https://github.com/missing-semester/missing-semester/blob/master/{{ page.path }}">Sunting halaman ini</a>.</p>
+<p>Berlisensi <a href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA</a>.</p>
+</div>
