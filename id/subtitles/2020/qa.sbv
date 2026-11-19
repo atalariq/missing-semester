@@ -1,0 +1,2280 @@
+0:00:00.000,0:00:06.540
+Kurasa kita sebaiknya memberikan pengantar untuk ini juga,
+
+0:00:06.540,0:00:09.580
+jadi ini semacam
+
+0:00:09.581,0:00:14.740
+kuliah tanya jawab bebas, di mana Anda — maksudnya dua orang yang duduk di sini — tetapi juga
+
+0:00:14.740,0:00:19.841
+semua orang di rumah yang tidak datang langsung ke sini bisa mengajukan pertanyaan, dan kami
+
+0:00:19.841,0:00:22.961
+punya banyak pertanyaan yang diajukan orang sebelumnya, tetapi Anda juga bisa mengajukan
+
+0:00:22.961,0:00:27.371
+pertanyaan tambahan selama sesi; bagi kalian berdua yang hadir di sini, caranya bisa
+
+0:00:27.371,0:00:33.611
+dengan mengangkat tangan atau mengirimkannya di forum secara anonim, terserah Anda
+
+0:00:33.611,0:00:35.671
+bagaimanapun juga, yang akan kami lakukan adalah membahas sebagian
+
+0:00:35.681,0:00:40.241
+pertanyaan yang telah diajukan dan mencoba memberikan jawaban sebaik yang kami bisa
+
+0:00:40.241,0:00:43.691
+walaupun dari pihak kami belum ada persiapan dan
+
+0:00:43.791,0:00:45.611
+ya, itulah rencananya; kurasa kita akan
+
+0:00:45.611,0:00:48.911
+dari yang paling populer ke yang paling sedikit diminati
+
+0:00:48.911,0:00:49.991
+silakan mulai
+
+0:00:49.991,0:00:52.091
+baiklah, untuk pertanyaan pertama kita, ada
+
+0:00:52.091,0:00:55.961
+rekomendasi untuk mempelajari topik terkait operating system seperti process,
+
+0:00:55.961,0:00:59.861
+virtual memory, interrupt, memory management, dan sebagainya
+
+0:00:59.861,0:01:01.811
+jadi menurut saya ini adalah
+
+0:01:01.811,0:01:07.181
+pertanyaan yang menarik karena ini konsep tingkat rendah yang sering kali
+
+0:01:07.181,0:01:11.391
+tidak terlalu penting, kecuali Anda harus berurusan dengan hal ini dalam kapasitas tertentu,
+
+0:01:11.391,0:01:12.771
+benar, jadi
+
+0:01:12.891,0:01:17.671
+salah satu contoh ketika ini penting adalah saat Anda menulis kode tingkat rendah seperti
+
+0:01:17.681,0:01:20.500
+Anda mengimplementasikan kernel atau semacamnya, atau Anda ingin
+
+0:01:20.500,0:01:22.811
+sekadar mengutak-atik kernel Linux.
+
+0:01:22.811,0:01:24.751
+Selain itu jarang Anda perlu bekerja dengan
+
+0:01:24.751,0:01:27.711
+terutama hal seperti virtual memory dan interrupt dan sebagainya sendiri
+
+0:01:27.851,0:01:32.071
+process, menurut saya, adalah konsep yang lebih umum yang sudah sedikit kita bahas di
+
+0:01:32.071,0:01:36.611
+kelas ini juga, serta tool seperti htop, pgrep, kill, dan signal, dan
+
+0:01:36.761,0:01:37.711
+hal-hal semacam itu
+
+0:01:37.711,0:01:39.311
+dalam hal mempelajarinya
+
+0:01:39.311,0:01:45.371
+mungkin salah satu cara terbaik adalah mencoba mengikuti kelas pengantar tentang
+
+0:01:45.371,0:01:51.401
+topik tersebut; misalnya MIT punya kelas bernama 6.828, yaitu kelas tempat
+
+0:01:51.401,0:01:55.091
+pada dasarnya Anda membangun dan mengembangkan operating system sendiri berdasarkan kode
+
+0:01:55.091,0:01:58.631
+yang diberikan kepada Anda, dan semua lab itu tersedia untuk publik, begitu juga semua
+
+0:01:58.631,0:02:01.601
+sumber daya untuk kelas tersebut tersedia untuk publik, jadi itu cara yang baik untuk
+
+0:02:01.601,0:02:04.001
+benar-benar mempelajarinya, yaitu dengan mengerjakannya sendiri.
+
+0:02:04.001,0:02:05.201
+Ada juga berbagai
+
+0:02:05.201,0:02:11.201
+tutorial online yang pada dasarnya memandu Anda tentang cara menulis kernel
+
+0:02:11.201,0:02:15.431
+dari nol. Tidak harus yang sangat rumit, bukan yang Anda ingin
+
+0:02:15.431,0:02:20.561
+jalankan perangkat lunak sungguhan di atasnya, tetapi hanya untuk mengajarkan dasar-dasarnya, jadi itu
+
+0:02:20.561,0:02:21.930
+hal lain yang bisa Anda cari.
+
+0:02:21.930,0:02:24.131
+Seperti, bagaimana cara menulis kernel dengan lalu bahasa
+
+0:02:24.131,0:02:27.611
+pilihan Anda. Anda mungkin tidak akan menemukan yang memungkinkan Anda melakukannya dengan Python
+
+0:02:27.611,0:02:33.612
+tetapi dengan C, C++, Rust, ada banyak topik seperti ini
+
+0:02:33.612,0:02:36.951
+satu catatan lain tentang operating system
+
+0:02:36.951,0:02:39.931
+jadi seperti yang Jon sebutkan, MIT punya kelas 6.828, tetapi
+
+0:02:39.941,0:02:43.391
+jika Anda mencari gambaran tingkat tinggi, bukan harus pemrograman atau
+
+0:02:43.391,0:02:46.001
+operating system, tetapi sekadar mempelajari konsepnya, sumber lain yang bagus
+
+0:02:46.001,0:02:51.331
+adalah buku berjudul "Modern Operating Systems" karya Andy Tannenbaum
+
+0:02:51.331,0:02:58.371
+sebenarnya ada juga buku berjudul "The FreeBSD Operating System" yang sangat bagus,
+
+0:02:58.371,0:03:03.031
+Buku itu tidak membahas Linux, tetapi membahas FreeBSD, dan kernel BSD
+
+0:03:03.031,0:03:07.181
+bisa dibilang lebih terorganisasi daripada kernel Linux dan dokumentasinya lebih baik, jadi
+
+0:03:07.181,0:03:11.591
+mungkin lebih mudah dicerna sebagai pengantar sebagian topik itu daripada mencoba memahami Linux
+
+0:03:11.591,0:03:14.951
+Anda ingin menandainya sebagai terjawab?
+
+0:03:14.951,0:03:16.511
+- Ya + Bagus
+
+0:03:16.511,0:03:17.451
+Terjawab
+
+0:03:17.451,0:03:19.371
+Untuk pertanyaan berikutnya
+
+0:03:19.371,0:03:23.951
+Tool apa saja yang akan Anda prioritaskan untuk dipelajari lebih dulu?
+
+0:03:23.951,0:03:29.551
+- Mungkin kita semua bisa membahas dan memberi pendapat masing-masing? + Ya
+
+0:03:29.551,0:03:31.713
+Tool yang perlu diprioritaskan untuk dipelajari lebih dulu?
+
+0:03:31.713,0:03:36.451
+Menurut saya, mempelajari editor Anda dengan baik akan berguna dalam segala kapasitas
+
+0:03:36.511,0:03:40.511
+misalnya efisien dalam menyunting file, itu saja sudah mencakup sebagian besar
+
+0:03:40.511,0:03:45.041
+dari apa yang akan Anda habiskan waktu untuk melakukannya. Dan secara umum, cukup gunakan
+
+0:03:45.041,0:03:49.211
+keyboard lebih banyak dan mouse lebih sedikit. Artinya Anda bisa menghabiskan lebih banyak
+
+0:03:49.311,0:03:53.751
+waktu untuk melakukan hal berguna dan lebih sedikit waktu untuk menggerakkan
+
+0:03:53.751,0:03:56.251
+Menurut saya itu prioritas utama saya,
+
+0:04:04.511,0:04:06.751
+jadi saya akan mengatakan bahwa mengenai tool apa
+
+0:04:06.760,0:04:09.671
+yang perlu diprioritaskan, itu tergantung pada apa tepatnya yang Anda kerjakan
+
+0:04:09.671,0:04:16.150
+Saya pikir ide intinya adalah Anda sebaiknya mencoba menemukan jenis tugas yang
+
+0:04:16.151,0:04:18.371
+Anda lakukan secara berulang, jadi
+
+0:04:18.371,0:04:23.791
+jika Anda mengerjakan semacam beban kerja machine learning dan
+
+0:04:24.011,0:04:27.130
+Anda mendapati diri Anda sering menggunakan jupyter notebook, seperti yang kami tampilkan
+
+0:04:27.130,0:04:32.560
+kemarin. Maka sekali lagi, menggunakan mouse untuk itu mungkin bukan
+
+0:04:32.560,0:04:35.830
+ide terbaik, dan Anda ingin membiasakan diri dengan keyboard shortcut
+
+0:04:35.830,0:04:40.750
+dan hampir dengan apa pun, pada akhirnya Anda akan menyadari bahwa ada beberapa
+
+0:04:40.751,0:04:45.611
+tugas berulang, dan Anda menjalankan komputer, dan sekadar mencoba mencari tahu
+
+0:04:45.611,0:04:48.311
+oh, mungkin ada cara yang lebih baik untuk melakukan ini
+
+0:04:48.431,0:04:50.871
+baik itu terminal maupun editor
+
+0:04:51.111,0:04:55.891
+Dan mungkin sangat menarik untuk mempelajari penggunaan sebagian topik yang
+
+0:04:55.900,0:05:01.121
+telah kami bahas, tetapi jika hal itu tidak sangat berguna dalam
+
+0:05:01.121,0:05:05.431
+keseharian, maka mungkin tidak layak diprioritaskan
+
+0:05:06.591,0:05:07.451
+dari topik-topik
+
+0:05:07.531,0:05:11.611
+yang dibahas di kelas ini, menurut saya dua hal paling berguna adalah version
+
+0:05:11.621,0:05:15.220
+control dan text editor, dan menurut saya keduanya sedikit berbeda satu
+
+0:05:15.220,0:05:18.880
+sama lain, dalam arti text editor menurut saya sangat berguna untuk dipelajari dengan baik
+
+0:05:18.880,0:05:21.970
+tetapi kemungkinan besar sebelum kami mulai menggunakan vim dan semua keyboard shortcut
+
+0:05:21.970,0:05:25.390
+canggihnya, Anda sudah punya text editor lain yang Anda gunakan sebelumnya dan
+
+0:05:25.390,0:05:29.890
+Anda bisa menyunting teks dengan baik, mungkin sedikit kurang efisien, sedangkan menurut saya
+
+0:05:29.890,0:05:33.100
+version control adalah keterampilan lain yang sangat berguna, dan itu salah satu yang jika Anda tidak
+
+0:05:33.100,0:05:36.580
+benar-benar menguasai tool tersebut, bisa menimbulkan masalah seperti kehilangan
+
+0:05:36.580,0:05:39.490
+data atau ketidakmampuan berkolaborasi dengan baik dengan orang lain, jadi saya
+
+0:05:39.490,0:05:42.730
+pikir version control adalah salah satu hal pertama yang layak dipelajari dengan baik
+
+0:05:42.730,0:05:46.871
+ya, saya setuju, menurut saya mempelajari tool seperti Git akan
+
+0:05:46.871,0:05:49.691
+menyelamatkan Anda dari banyak kekecewaan di kemudian hari
+
+0:05:49.691,0:05:51.431
+selain itu, untuk menambahkan pada hal itu
+
+0:05:51.571,0:05:57.310
+Itu sangat membantu Anda berkolaborasi dengan orang lain, dan Anish sedikit menyinggung GitHub
+
+0:05:57.310,0:06:01.300
+di kuliah terakhir, dan hanya dengan mempelajari penggunaan tool itu dengan baik untuk
+
+0:06:01.300,0:06:05.321
+bekerja pada proyek perangkat lunak yang lebih besar yang dikerjakan orang lain adalah
+
+0:06:05.321,0:06:06.431
+keterampilan yang sangat berharga
+
+0:06:10.071,0:06:11.391
+Untuk pertanyaan berikutnya
+
+0:06:11.391,0:06:12.871
+kapan saya menggunakan Python versus
+
+0:06:12.881,0:06:16.051
+bash script, versus bahasa lain
+
+0:06:16.051,0:06:19.661
+Ini sulit, karena menurut saya ini kembali
+
+0:06:19.661,0:06:21.631
+pada apa yang Jose katakan tadi juga
+
+0:06:21.771,0:06:23.731
+bahwa itu benar-benar tergantung pada apa yang ingin Anda lakukan
+
+0:06:23.731,0:06:27.155
+Bagi saya, khususnya untuk bash script
+
+0:06:27.155,0:06:28.791
+bash script itu untuk
+
+0:06:28.891,0:06:33.430
+mengotomatiskan menjalankan sekumpulan perintah, Anda tidak ingin menulis
+
+0:06:33.430,0:06:35.411
+logika bisnis semacam itu di bash
+
+0:06:35.411,0:06:39.011
+itu hanya untuk, saya ingin menjalankan perintah-perintah ini
+
+0:06:39.011,0:06:44.110
+dalam urutan ini. Mungkin dengan argumen, tetapi bahkan untuk itu pun
+
+0:06:44.110,0:06:47.581
+tidak jelas apakah Anda ingin bash script begitu Anda mulai menerima argumen
+
+0:06:47.581,0:06:52.691
+Demikian pula, begitu Anda mulai melakukan semacam text processing atau
+
+0:06:52.691,0:06:55.131
+konfigurasi, dan sebagainya
+
+0:06:55.131,0:06:59.111
+gunakan bahasa yang lebih serius
+
+0:06:59.111,0:07:01.031
+sebagai bahasa pemrograman daripada bash
+
+0:07:01.091,0:07:03.451
+bash sebenarnya untuk semacam script pendek sekali pakai
+
+0:07:03.461,0:07:10.211
+atau yang kasus penggunaannya sangat jelas di terminal
+
+0:07:10.211,0:07:12.851
+di shell, mungkin
+
+0:07:12.851,0:07:15.941
+Untuk panduan yang sedikit lebih konkret, Anda mungkin bisa mengatakan tulislah
+
+0:07:15.941,0:07:19.211
+bash script jika panjangnya kurang dari sekitar seratus baris kode, tetapi begitu mencapai
+
+0:07:19.211,0:07:21.611
+di luar titik itu bash agak tidak praktis dan sebaiknya mungkin
+
+0:07:21.611,0:07:25.091
+beralih ke bahasa pemrograman yang lebih serius seperti Python
+
+0:07:25.091,0:07:26.511
+dan untuk menambahkan,
+
+0:07:26.511,0:07:32.211
+saya akan mengatakan bahwa saya kadang mendapati diri menulis script dalam Python karena
+
+0:07:32.211,0:07:36.911
+jika saya sudah memecahkan sebagian subproblem yang mencakup bagian dari masalah itu di Python
+
+0:07:36.911,0:07:40.631
+saya merasa jauh lebih mudah menyusun solusi sebelumnya yang saya temukan di
+
+0:07:40.631,0:07:45.731
+Python daripada sekadar mencoba menggunakan ulang kode bash, yang menurut saya tidak sefleksibel Python
+
+0:07:45.731,0:07:49.600
+Dan dengan cara yang sama, cukup menyenangkan bahwa banyak orang telah menulis sesuatu
+
+0:07:49.600,0:07:52.631
+seperti library Python atau library Ruby untuk melakukan banyak hal ini
+
+0:07:52.631,0:07:58.451
+sedangkan di bash agak sulit untuk memiliki code reuse
+
+0:07:58.451,0:08:01.720
+Dan sebenarnya,
+
+0:08:01.720,0:08:07.631
+saya pikir, untuk menambahkan hal itu. Biasanya, jika Anda menemukan library dalam suatu bahasa yang
+
+0:08:07.631,0:08:12.091
+membantu tugas yang ingin Anda lakukan, gunakan bahasa itu untuk pekerjaan tersebut
+
+0:08:12.091,0:08:15.671
+Dan di bash tidak ada library, yang ada hanya program di komputer Anda
+
+0:08:15.771,0:08:18.931
+Jadi Anda mungkin tidak ingin menggunakannya kecuali ada program
+
+0:08:18.941,0:08:23.741
+yang bisa langsung Anda panggil. Menurut saya ada satu hal lagi yang perlu diingat tentang bash
+
+0:08:23.741,0:08:26.451
+bash itu sangat sulit untuk dilakukan dengan benar.
+
+0:08:26.451,0:08:30.531
+Sangat mudah membuatnya benar untuk kasus penggunaan tertentu yang sedang Anda selesaikan
+
+0:08:30.531,0:08:32.471
+tetapi hal-hal seperti
+
+0:08:32.471,0:08:35.891
+Bagaimana jika salah satu nama berkas mengandung spasi?
+
+0:08:35.891,0:08:38.891
+Itu telah menyebabkan begitu banyak bug dan begitu
+
+0:08:38.891,0:08:43.151
+banyak masalah dalam bash script, dan jika Anda menggunakan bahasa pemrograman sungguhan maka
+
+0:08:43.151,0:08:46.642
+masalah-masalah itu langsung hilang
+
+0:08:46.651,0:08:50.491
+Sudah ditandai
+
+0:08:50.571,0:08:51.571
+Untuk pertanyaan berikutnya
+
+0:08:51.571,0:08:56.211
+Apa perbedaan antara sourcing sebuah script dan mengeksekusi script tersebut?
+
+0:08:57.071,0:09:02.711
+Jadi ini sebenarnya, kami juga mendapatkannya di office hours beberapa waktu lalu, yaitu
+
+0:09:02.871,0:09:06.991
+Bukankah keduanya sama? Bukankah keduanya sama-sama menjalankan bash script?
+
+0:09:06.991,0:09:08.051
+dan memang benar
+
+0:09:08.051,0:09:12.191
+keduanya pada akhirnya akan mengeksekusi baris-baris kode yang ada di dalam script
+
+0:09:12.191,0:09:16.571
+cara keduanya berbeda adalah bahwa sourcing sebuah script berarti memberi tahu
+
+0:09:16.571,0:09:22.991
+bash script Anda saat ini, sesi bash Anda saat ini, untuk mengeksekusi program tersebut
+
+0:09:23.131,0:09:28.911
+sedangkan yang lain adalah memulai instance bash baru dan menjalankan program di sana
+
+0:09:29.291,0:09:34.931
+Dan ini penting untuk hal seperti, bayangkan "script.sh" mencoba berpindah direktori
+
+0:09:34.931,0:09:37.841
+Jika Anda menjalankan script seperti pada pemanggilan kedua
+
+0:09:37.841,0:09:42.761
+"./script.sh", maka process baru itu akan berpindah
+
+0:09:42.761,0:09:46.891
+direktori, tetapi ketika script itu keluar dan kembali ke shell Anda
+
+0:09:46.891,0:09:51.831
+shell Anda tetap berada di tempat yang sama. Namun, jika Anda melakukan CD di dalam script lalu Anda source script itu
+
+0:09:51.831,0:09:55.241
+instance bash Anda saat ini yang akhirnya menjalankannya, dan
+
+0:09:55.241,0:09:57.951
+jadi akhirnya ia melakukan CD di tempat Anda berada
+
+0:09:57.951,0:10:01.171
+Ini juga alasan mengapa jika Anda mendefinisikan function
+
+0:10:01.171,0:10:04.751
+misalnya, yang mungkin ingin Anda eksekusi di sesi shell Anda
+
+0:10:04.751,0:10:07.011
+Anda perlu source script itu, bukan menjalankannya
+
+0:10:07.011,0:10:10.261
+Karena jika Anda menjalankannya, function itu akan didefinisikan dalam
+
+0:10:10.261,0:10:11.931
+instance bash
+
+0:10:11.931,0:10:16.831
+di process bash yang diluncurkan, tetapi tidak akan didefinisikan di shell Anda saat ini
+
+0:10:16.831,0:10:22.871
+Menurut saya itu dua perbedaan terbesar antara keduanya
+
+0:10:29.211,0:10:29.711
+Pertanyaan berikutnya,
+
+0:10:29.873,0:10:35.131
+Di mana saja berbagai package dan tool disimpan, dan bagaimana cara merujuknya bekerja?
+
+0:10:35.131,0:10:39.171
+Apa sebenarnya /bin atau /lib itu?
+
+0:10:39.171,0:10:45.091
+Jadi seperti yang kami bahas di kuliah pertama, ada environment variable PATH
+
+0:10:45.091,0:10:49.551
+yang merupakan string berisi semua tempat yang dipisahkan titik koma
+
+0:10:49.551,0:10:55.111
+tempat shell Anda akan mencari binary, dan jika Anda cukup melakukan sesuatu
+
+0:10:55.111,0:10:58.171
+seperti "echo $PATH", Anda akan mendapatkan daftar ini
+
+0:10:58.171,0:11:02.251
+dan semua tempat ini akan diperiksa secara berurutan.
+
+0:11:02.251,0:11:03.601
+Ia akan melewati semuanya, dan sebenarnya
+
+0:11:03.601,0:11:07.011
+- Sudah ada... Apakah kita sudah membahas which? + Ya
+
+0:11:07.211,0:11:10.011
+Jadi jika Anda menjalankan "which" dan sebuah perintah tertentu
+
+0:11:10.021,0:11:14.071
+shell sebenarnya akan memberi tahu Anda di mana ia menemukan ini
+
+0:11:14.071,0:11:15.391
+Selain itu,
+
+0:11:15.391,0:11:20.431
+ada beberapa konvensi di mana banyak program memasang binary mereka
+
+0:11:20.431,0:11:24.071
+yaitu seperti /usr/bin (atau setidaknya mereka menyertakan symlink)
+
+0:11:24.071,0:11:26.051
+di /usr/bin sehingga Anda bisa menemukannya
+
+0:11:26.191,0:11:28.211
+Ada juga /usr/local/bin
+
+0:11:28.211,0:11:33.951
+Ada direktori khusus. Misalnya, /usr/sbin hanya untuk user sudo dan
+
+0:11:33.951,0:11:38.491
+sebagian konvensi ini sedikit berbeda antar distro, jadi
+
+0:11:38.491,0:11:47.571
+saya tahu beberapa distro misalnya memasang library user di bawah /opt, contohnya
+
+0:11:51.191,0:11:55.491
+Ya, saya pikir satu hal, untuk membahas sedikit lebih banyak
+
+0:11:55.651,0:12:00.631
+tentang /bin, lalu Anish mungkin bisa membahas folder lainnya, jadi mengenai
+
+0:12:00.631,0:12:02.791
+/bin, konvensinya
+
+0:12:02.791,0:12:10.051
+Ada konvensi, dan konvensinya biasanya /bin untuk utilitas sistem yang esensial
+
+0:12:10.051,0:12:12.531
+/usr/bin untuk program user dan
+
+0:12:12.531,0:12:17.431
+/usr/local/bin untuk program yang dikompilasi user, semacam itu
+
+0:12:17.431,0:12:21.691
+jadi hal-hal yang Anda pasang dan yang Anda maksudkan untuk dijalankan user ada di /usr/bin
+
+0:12:21.691,0:12:26.711
+hal-hal yang dikompilasi sendiri oleh user dan ditempatkan di sistem Anda, kemungkinan masuk ke /usr/local/bin
+
+0:12:26.711,0:12:29.991
+tetapi sekali lagi, ini sangat bervariasi dari mesin ke mesin dan dari distro ke distro
+
+0:12:29.991,0:12:33.971
+Di Arch Linux, misalnya, /bin adalah symlink ke /usr/bin
+
+0:12:33.971,0:12:40.261
+Keduanya sama, dan seperti yang Jose sebutkan, ada juga /sbin yang untuk program yang
+
+0:12:40.261,0:12:43.801
+dimaksudkan hanya untuk dijalankan sebagai root; itu juga bervariasi antar distro
+
+0:12:43.801,0:12:47.251
+apakah direktori itu ada atau tidak, dan di banyak sistem, misalnya /usr/local/bin
+
+0:12:47.251,0:12:51.151
+mungkin bahkan tidak ada di PATH Anda, atau bahkan tidak ada di sistem Anda
+
+0:12:51.151,0:12:55.831
+Sebaliknya di BSD, /usr/local/bin sering jauh lebih banyak digunakan
+
+0:12:56.731,0:12:57.231
+ya, jadi
+
+0:12:57.231,0:13:01.111
+Yang kami bahas sejauh ini, semua ini adalah cara file dan folder
+
+0:13:01.111,0:13:05.071
+ditata di Linux; hal-hal Linux atau BSD sedikit berbeda antara
+
+0:13:05.071,0:13:07.151
+itu dengan macOS atau platform lain
+
+0:13:07.151,0:13:09.301
+Mengenai lokasi spesifiknya,
+
+0:13:09.301,0:13:11.471
+jika Anda ingin tahu persis kegunaannya, Anda bisa mencarinya
+
+0:13:11.471,0:13:17.291
+Tetapi beberapa pola umum yang perlu diingat: apa pun yang mengandung /bin berisi program executable binary,
+
+0:13:17.291,0:13:19.891
+apa pun yang mengandung \lib berisi library, yaitu hal-hal yang
+
+0:13:19.891,0:13:25.081
+dapat di-link oleh program, lalu beberapa hal lain yang berguna untuk diketahui adalah
+
+0:13:25.081,0:13:29.431
+ada /etc di banyak sistem, yang berisi file konfigurasi, dan
+
+0:13:29.431,0:13:34.311
+lalu ada /home, yang di bawah direktori itu berisi home directory setiap user
+
+0:13:34.311,0:13:38.521
+jadi misalnya di mesin Linux, nama user saya atau nama Anish akan
+
+0:13:38.651,0:13:41.351
+berkorespondensi dengan home directory /home/anish
+
+0:13:42.071,0:13:43.351
+Ya, kurasa ada
+
+0:13:43.351,0:13:47.671
+beberapa lainnya, misalnya /tmp biasanya direktori sementara yang
+
+0:13:47.671,0:13:51.351
+dihapus saat Anda reboot, tidak selalu tetapi kadang-kadang; Anda sebaiknya memeriksanya di sistem Anda
+
+0:13:51.731,0:13:59.211
+Ada /var yang sering menyimpan file yang berubah seiring waktu, jadi
+
+0:13:59.211,0:14:06.151
+ini biasanya hal-hal seperti lock file untuk package manager
+
+0:14:06.151,0:14:12.431
+biasanya berupa log file, file untuk melacak process ID
+
+0:14:12.431,0:14:16.471
+lalu ada /dev yang menampilkan device, jadi
+
+0:14:16.471,0:14:20.551
+biasanya ini file khusus yang berkorespondensi dengan device di sistem Anda; kami
+
+0:14:20.551,0:14:27.391
+telah membahas /sys, Anish menyebut /etc
+
+0:14:29.051,0:14:36.031
+/opt adalah yang umum untuk perangkat lunak pihak ketiga; pada dasarnya biasanya untuk
+
+0:14:36.031,0:14:40.951
+perusahaan yang mem-port perangkat lunak mereka ke Linux tetapi tidak benar-benar memahami apa
+
+0:14:40.951,0:14:45.391
+arti menjalankan perangkat lunak di Linux, jadi mereka hanya punya direktori berisi semua
+
+0:14:45.391,0:14:51.411
+barang mereka, dan ketika dipasang biasanya dipasang ke /opt
+
+0:14:51.411,0:14:55.651
+Kurasa itu saja yang langsung terpikir oleh saya
+
+0:14:55.651,0:14:57.771
+ya
+
+0:14:57.771,0:15:02.271
+Dan kami akan mencantumkannya di catatan kuliah kami yang akan kami buat setelah kuliah ini
+
+0:15:02.271,0:15:04.431
+Pertanyaan berikutnya
+
+0:15:04.431,0:15:07.080
+Apakah saya sebaiknya apt-get install sebuah package Python atau apa pun
+
+0:15:07.080,0:15:10.691
+itu, atau pip install package tersebut
+
+0:15:10.691,0:15:13.890
+jadi ini pertanyaan bagus yang menurut saya pada
+
+0:15:13.890,0:15:17.310
+tingkat yang lebih tinggi menanyakan: apakah saya sebaiknya menggunakan package manager sistem saya
+
+0:15:17.310,0:15:20.850
+untuk memasang sesuatu, atau sebaiknya saya menggunakan package manager lain. Seperti dalam kasus ini
+
+0:15:20.850,0:15:25.021
+yang lebih spesifik untuk bahasa tertentu. Dan jawabannya di sini juga
+
+0:15:25.021,0:15:28.590
+semacam tergantung; kadang menyenangkan mengelola sesuatu menggunakan system package
+
+0:15:28.590,0:15:31.950
+manager sehingga semuanya bisa dipasang dan di-upgrade di satu tempat, tetapi
+
+0:15:31.950,0:15:35.160
+Menurut saya sering kali apa pun yang tersedia di repository sistem, hal-hal
+
+0:15:35.160,0:15:37.800
+yang bisa Anda dapatkan lewat tool seperti apt-get atau semacamnya
+
+0:15:37.800,0:15:41.040
+mungkin sedikit tertinggal dibandingkan repository yang lebih spesifik bahasa
+
+0:15:41.040,0:15:45.060
+jadi misalnya banyak package Python yang saya gunakan, saya benar-benar menginginkan versi
+
+0:15:45.060,0:15:47.771
+paling mutakhir, jadi saya menggunakan pip untuk memasangnya
+
+0:15:48.551,0:15:51.091
+Lalu, untuk melanjutkan hal itu,
+
+0:15:51.091,0:15:57.751
+kadang terjadi bahwa package sistem mungkin membutuhkan beberapa
+
+0:15:57.751,0:16:02.461
+dependensi lain yang mungkin tidak Anda sadari, dan bisa juga
+
+0:16:02.461,0:16:07.201
+terjadi, atau seperti pada beberapa sistem, setidaknya pada Alpine Linux, mereka
+
+0:16:07.201,0:16:11.221
+tidak punya wheel untuk banyak package Python, jadi akan memakan
+
+0:16:11.221,0:16:15.331
+waktu lebih lama untuk mengompilasinya, memakan lebih banyak ruang karena harus mengompilasinya
+
+0:16:15.331,0:16:20.761
+dari nol. Sedangkan jika Anda langsung ke pip, pip punya binary untuk banyak
+
+0:16:20.761,0:16:23.471
+platform berbeda dan itu kemungkinan akan berhasil
+
+0:16:23.471,0:16:29.191
+Anda juga sebaiknya sadar bahwa pip mungkin tidak melakukan hal yang persis sama di komputer berbeda
+
+0:16:29.191,0:16:33.601
+Jadi, misalnya, jika Anda menggunakan laptop atau desktop yang menjalankan
+
+0:16:33.601,0:16:38.971
+x86 atau x86_64, Anda kemungkinan punya binary, tetapi jika Anda menjalankan sesuatu
+
+0:16:38.971,0:16:43.471
+seperti Raspberry Pi atau jenis embedded device lain. Perangkat itu berjalan pada
+
+0:16:43.471,0:16:47.611
+arsitektur hardware yang berbeda dan Anda mungkin tidak punya binary
+
+0:16:47.611,0:16:51.841
+Menurut saya itu juga baik untuk dipertimbangkan; dalam kasus itu mungkin layak untuk
+
+0:16:51.841,0:16:58.551
+menggunakan package sistem karena akan jauh lebih cepat diperoleh
+
+0:16:58.551,0:17:01.691
+daripada mengompilasi seluruh instalasi Python dari nol
+
+0:17:01.691,0:17:06.741
+Selain itu, saya rasa saya tidak bisa memikirkan pengecualian di mana saya benar-benar akan menggunakan package sistem
+
+0:17:06.741,0:17:09.251
+alih-alih yang disediakan Python
+
+0:17:19.011,0:17:20.851
+Jadi, satu hal lain yang perlu diingat adalah bahwa
+
+0:17:20.861,0:17:26.180
+kadang Anda punya lebih dari satu program di komputer Anda dan Anda mungkin
+
+0:17:26.180,0:17:29.961
+sedang mengembangkan lebih dari satu program di komputer Anda dan untuk alasan tertentu tidak
+
+0:17:29.961,0:17:33.861
+semua program selalu dibangun dengan versi terbaru, kadang
+
+0:17:33.861,0:17:39.351
+mereka sedikit tertinggal, dan ketika Anda memasang sesuatu secara system-wide Anda
+
+0:17:39.351,0:17:44.691
+hanya bisa... tergantung sistem Anda, tetapi sering kali Anda hanya punya satu versi
+
+0:17:44.691,0:17:49.711
+apa yang pip memungkinkan Anda lakukan, terutama jika dikombinasikan dengan sesuatu seperti virtualenv Python,
+
+0:17:49.711,0:17:54.531
+dan konsep serupa ada untuk bahasa lain, di mana Anda bisa semacam mengatakan
+
+0:17:54.531,0:17:59.660
+saya ingin (NPM juga melakukan hal yang sama dengan node module-nya, misalnya), di mana
+
+0:17:59.660,0:18:05.991
+saya akan mengompilasi dependensi package ini di semacam subdirektori
+
+0:18:05.991,0:18:10.431
+tersendiri, dan semua versi yang dibutuhkannya akan dibangun di sana
+
+0:18:10.431,0:18:13.910
+dan Anda bisa melakukannya secara terpisah untuk proyek yang berbeda, jadi di sana mereka punya
+
+0:18:13.910,0:18:16.910
+dependensi berbeda atau dependensi yang sama dengan versi berbeda
+
+0:18:16.910,0:18:20.930
+tetap terpisah. Dan itu adalah satu hal yang sulit dicapai
+
+0:18:20.931,0:18:22.651
+dengan package sistem
+
+0:18:27.131,0:18:27.851
+Pertanyaan berikutnya
+
+0:18:27.911,0:18:32.771
+Apa tool profiling termudah dan terbaik untuk meningkatkan performa kode saya?
+
+0:18:34.351,0:18:39.231
+Ini topik yang bisa kami bahas sangat lama
+
+0:18:39.231,0:18:42.881
+Yang termudah dan terbaik adalah mencetak sesuatu dengan informasi waktu
+
+0:18:42.881,0:18:48.431
+Saya tidak bercanda, sangat sering hal termudah adalah di dalam kode Anda
+
+0:18:48.971,0:18:53.751
+Di bagian atas Anda cari tahu waktu saat ini, lalu Anda melakukan semacam
+
+0:18:53.751,0:18:57.920
+binary search pada program Anda dengan menambahkan print statement yang mencetak berapa
+
+0:18:57.920,0:19:02.511
+banyak waktu yang telah berlalu sejak program Anda mulai, lalu Anda lakukan itu sampai Anda
+
+0:19:02.511,0:19:06.320
+menemukan segmen kode yang memakan waktu paling lama. Lalu Anda masuk ke
+
+0:19:06.320,0:19:09.531
+function itu dan Anda melakukan hal yang sama lagi, dan Anda terus melakukannya sampai Anda
+
+0:19:09.531,0:19:14.031
+menemukan kira-kira di mana waktu dihabiskan. Itu tidak sepenuhnya dapat diandalkan, tetapi sangat mudah
+
+0:19:14.031,0:19:16.721
+dan memberikan informasi yang baik dengan cepat
+
+0:19:16.721,0:19:25.361
+jika Anda memang butuh informasi yang lebih canggih, Valgrind punya tool bernama cache-grind?
+
+0:19:25.361,0:19:29.431
+call grind? Cache grind? Salah satu dari keduanya.
+
+0:19:29.431,0:19:33.310
+dan tool ini memungkinkan Anda menjalankan program Anda dan
+
+0:19:33.310,0:19:38.741
+mengukur berapa lama semuanya berjalan dan semua call stack, seperti
+
+0:19:38.741,0:19:42.521
+function mana memanggil function mana, dan hasil akhirnya adalah anotasi yang sangat rapi
+
+0:19:42.521,0:19:47.081
+pada seluruh source program Anda dengan tingkat panas setiap baris, pada dasarnya
+
+0:19:47.081,0:19:51.761
+berapa banyak waktu yang dihabiskan di sana. Tool ini memperlambat program Anda sekitar satu orde
+
+0:19:51.761,0:19:56.021
+magnitudo atau lebih, dan tidak benar-benar mendukung thread, tetapi sangat
+
+0:19:56.021,0:20:01.121
+berguna jika Anda bisa menggunakannya. Jika tidak bisa, maka tool seperti perf atau tool serupa
+
+0:20:01.121,0:20:05.201
+untuk bahasa lain yang biasanya melakukan semacam sampling profiling, seperti yang kami
+
+0:20:05.201,0:20:09.811
+yang kami bahas di kuliah profiler, bisa memberi Anda data yang cukup berguna dengan cepat,
+
+0:20:09.811,0:20:15.160
+tetapi datanya banyak, dan tool tersebut sedikit
+
+0:20:15.160,0:20:18.971
+bias dalam hal apa yang biasanya mereka tandai sebagai masalah, dan itu
+
+0:20:18.971,0:20:22.961
+kadang bisa sulit untuk mengambil informasi bermakna tentang apa yang sebaiknya
+
+0:20:22.961,0:20:27.701
+saya ubah sebagai respons terhadapnya. Sedangkan pendekatan print sangat cepat
+
+0:20:27.701,0:20:32.171
+memberi tahu Anda bahwa bagian kode ini buruk atau lambat
+
+0:20:32.171,0:20:34.871
+Menurut saya itulah jawaban saya
+
+0:20:34.871,0:20:40.431
+Flamegraph bagus, itu cara yang baik untuk memvisualisasikan sebagian informasi ini
+
+0:20:41.491,0:20:45.550
+Ya, saya hanya ingin menambahkan satu hal: sering kali bahasa pemrograman
+
+0:20:45.550,0:20:48.910
+punya tool khusus bahasa untuk profiling, jadi untuk mengetahui apa
+
+0:20:48.910,0:20:52.191
+tool yang tepat untuk bahasa Anda, misalnya jika Anda mengerjakan JavaScript di web browser
+
+0:20:52.191,0:20:55.411
+web browser punya tool yang sangat bagus untuk profiling, Anda sebaiknya langsung menggunakannya
+
+0:20:55.411,0:21:00.471
+atau jika Anda menggunakan Go, misalnya, Go punya profiler bawaan yang sangat bagus, Anda sebaiknya langsung menggunakannya
+
+0:21:01.711,0:21:04.251
+Satu hal terakhir untuk ditambahkan
+
+0:21:04.251,0:21:09.951
+Kadang Anda mungkin menemukan bahwa saat melakukan binary search atas waktu ini, Anda semacam
+
+0:21:09.961,0:21:14.351
+menemukan ke mana waktu pergi, tetapi waktu itu kadang terpakai karena
+
+0:21:14.351,0:21:18.461
+Anda menunggu jaringan, atau menunggu suatu file, dan dalam kasus itu
+
+0:21:18.461,0:21:23.440
+Anda ingin memastikan bahwa waktu itu, jika saya ingin menulis
+
+0:21:23.440,0:21:27.310
+file 1 gigabyte atau membaca file 1 gigabyte dan memasukkannya ke memori
+
+0:21:27.310,0:21:32.260
+Anda ingin memeriksa bahwa waktu sebenarnya di situ adalah jumlah waktu minimum
+
+0:21:32.260,0:21:36.221
+yang benar-benar harus Anda tunggu. Jika sepuluh kali lebih lama, Anda sebaiknya mencoba menggunakan beberapa
+
+0:21:36.221,0:21:39.371
+tool lain yang kami bahas di bagian debugging dan profiling untuk melihat
+
+0:21:39.371,0:21:45.671
+mengapa Anda tidak memanfaatkan semua resource Anda karena itu mungkin...
+
+0:21:50.511,0:21:56.071
+Karena itu mungkin sebagian besar dari apa yang terjadi, misalnya dalam riset saya
+
+0:21:56.081,0:21:59.410
+pada beban kerja machine learning, banyak waktu digunakan untuk memuat data, dan Anda harus
+
+0:21:59.410,0:22:02.981
+memastikan bahwa waktu yang dibutuhkan untuk memuat data benar-benar jumlah minimum
+
+0:22:02.981,0:22:07.500
+waktu yang Anda inginkan untuk hal itu terjadi
+
+0:22:08.040,0:22:13.481
+Dan untuk melanjutkan hal itu, sebenarnya ada tool khusus untuk melakukan hal seperti
+
+0:22:13.481,0:22:17.351
+menganalisis waktu tunggu. Sangat sering ketika Anda menunggu sesuatu, yang
+
+0:22:17.351,0:22:20.591
+sebenarnya terjadi adalah Anda mengeluarkan system call, dan system call itu membutuhkan
+
+0:22:20.591,0:22:24.191
+sejumlah waktu untuk merespons. Misalnya Anda melakukan write yang sangat besar, atau read yang sangat besar
+
+0:22:24.191,0:22:28.361
+atau Anda melakukannya berkali-kali, dan satu hal yang bisa sangat berguna di sini adalah
+
+0:22:28.361,0:22:31.841
+mencoba mendapatkan informasi dari kernel tentang di mana program Anda
+
+0:22:31.841,0:22:37.000
+menghabiskan waktunya. Jadi ada (ini bukan hal baru), tetapi ada
+
+0:22:37.000,0:22:42.820
+hal yang relatif baru tersedia bernama BPF atau eBPF. Itu pada dasarnya kernel tracing
+
+0:22:42.820,0:22:48.531
+dan Anda bisa melakukan hal-hal yang sangat keren dengannya, termasuk tracing program user.
+
+0:22:48.531,0:22:51.760
+Memulainya bisa sedikit canggung; ada tool
+
+0:22:51.760,0:22:56.201
+bernama BPF trace yang saya sarankan Anda lihat, jika Anda perlu melakukan
+
+0:22:56.201,0:23:00.040
+debugging performa tingkat rendah semacam ini. Tetapi sangat bagus untuk
+
+0:23:00.040,0:23:04.601
+hal semacam ini. Anda bisa mendapatkan histogram tentang berapa banyak waktu yang dihabiskan
+
+0:23:04.601,0:23:06.671
+di system call tertentu
+
+0:23:06.671,0:23:09.721
+Itu tool yang bagus
+
+0:23:12.251,0:23:15.351
+Plugin browser apa yang Anda gunakan?
+
+0:23:16.731,0:23:19.731
+Saya berusaha menggunakan sesedikit mungkin
+
+0:23:19.731,0:23:25.991
+karena saya tidak suka ada banyak hal di browser saya, tetapi ada beberapa
+
+0:23:25.991,0:23:30.311
+yang semacam wajib. Yang pertama adalah uBlock Origin.
+
+0:23:30.311,0:23:36.611
+Jadi uBlock Origin adalah salah satu dari banyak ad blocker, tetapi sedikit lebih dari sekadar ad blocker.
+
+0:23:36.611,0:23:42.530
+Itu adalah (apa sebutannya?) network filtering tool, jadi memungkinkan
+
+0:23:42.530,0:23:47.331
+Anda melakukan lebih banyak hal daripada sekadar memblokir iklan. Itu juga memungkinkan Anda memblokir koneksi
+
+0:23:47.331,0:23:51.351
+ke domain tertentu, memblokir koneksi untuk jenis resource tertentu
+
+0:23:51.351,0:23:56.031
+Jadi milik saya diatur dalam apa yang mereka sebut Advanced Mode, di mana pada dasarnya
+
+0:23:56.031,0:24:02.451
+Anda bisa mematikan pada dasarnya semua network request. Tetapi bukan hanya network request,
+
+0:24:02.451,0:24:07.430
+juga seperti saya telah menonaktifkan semua inline script di setiap halaman dan semua
+
+0:24:07.430,0:24:11.540
+gambar dan resource pihak ketiga, lalu Anda bisa semacam membuat whitelist
+
+0:24:11.540,0:24:16.351
+untuk setiap halaman, jadi ini memberi Anda tool tingkat rendah tentang cara
+
+0:24:16.351,0:24:20.331
+cara meningkatkan keamanan browsing Anda. Tetapi Anda juga bisa mengaturnya bukan dalam
+
+0:24:20.331,0:24:23.991
+advanced mode, dan kemudian ia melakukan sebagian besar hal yang sama seperti ad blocker biasa
+
+0:24:23.991,0:24:28.101
+walaupun dengan cara yang cukup efisien; jika Anda mencari ad blocker, itu
+
+0:24:28.101,0:24:31.510
+mungkin yang perlu digunakan, dan itu bekerja di hampir semua browser
+
+0:24:31.511,0:24:34.451
+Menurut saya itu pilihan utama saya,
+
+0:24:39.111,0:24:44.391
+Menurut saya mungkin yang paling aktif saya gunakan
+
+0:24:44.391,0:24:50.391
+adalah yang bernama Stylus. Itu memungkinkan Anda mengubah CSS atau stylesheet
+
+0:24:50.391,0:24:54.560
+yang dimiliki halaman web. Dan itu cukup rapi, karena kadang Anda
+
+0:24:54.560,0:24:58.550
+melihat sebuah website dan ingin menyembunyikan sebagian bagian dari website itu
+
+0:24:58.550,0:25:04.211
+yang tidak Anda pedulikan. Mungkin iklan, mungkin sidebar yang tidak berguna bagi Anda
+
+0:25:04.211,0:25:06.290
+Masalahnya, pada akhirnya hal-hal ini
+
+0:25:06.290,0:25:09.591
+ditampilkan di browser Anda, dan Anda memiliki kendali atas kode apa yang
+
+0:25:09.591,0:25:13.131
+dieksekusi, dan seperti yang Jon katakan, Anda bisa menyesuaikan ini
+
+0:25:13.131,0:25:18.491
+tanpa batas, dan yang saya punya untuk banyak halaman web, misalnya sembunyikan bagian ini, atau
+
+0:25:18.491,0:25:23.390
+juga mencoba membuat dark mode untuk halaman itu; Anda bisa mengubah hampir semua
+
+0:25:23.390,0:25:26.810
+warna untuk setiap website. Dan yang sebenarnya cukup rapi adalah ada
+
+0:25:26.810,0:25:31.461
+semacam repository online berisi orang-orang yang telah menyumbangkan stylesheet
+
+0:25:31.461,0:25:35.031
+untuk website-website itu. Jadi seseorang kemungkinan sudah membuat satu untuk GitHub
+
+0:25:35.031,0:25:38.780
+Misalnya saya ingin GitHub gelap, dan seseorang sudah menyumbangkan satu yang membuatnya
+
+0:25:38.780,0:25:44.631
+jauh lebih nyaman untuk dijelajahi. Selain itu, satu yang sebenarnya tidak
+
+0:25:44.631,0:25:49.491
+canggih, tetapi menurut saya sangat membantu, adalah yang mengambil screenshot sebuah
+
+0:25:49.491,0:25:53.121
+website secara keseluruhan. Itu akan menggulir untuk Anda dan membuat
+
+0:25:53.121,0:25:57.711
+gambar gabungan dari seluruh website, dan itu sangat bagus ketika Anda ingin
+
+0:25:57.711,0:26:00.111
+mencetak website yang hasilnya sangat buruk.
+
+0:26:00.111,0:26:00.611
+(Itu sudah ada di Firefox)
+
+0:26:00.611,0:26:02.671
+oh, menarik
+
+0:26:02.671,0:26:05.751
+oh, sekarang setelah Anda menyebut bawaan Firefox, satu lagi yang sangat saya sukai dari
+
+0:26:05.751,0:26:09.071
+Firefox adalah multi account containers
+
+0:26:09.071,0:26:10.831
+(Oh ya, itu fantastis)
+
+0:26:10.831,0:26:12.291
+Yang semacam memungkinkan Anda
+
+0:26:12.291,0:26:16.670
+Secara default banyak web browser, misalnya Chrome, memiliki
+
+0:26:16.670,0:26:20.601
+konsep bahwa ada session yang Anda miliki, tempat semua cookie Anda berada
+
+0:26:20.601,0:26:24.560
+dan semuanya semacam dibagikan dari berbagai website berbeda dalam arti
+
+0:26:24.560,0:26:30.811
+Anda terus membuka tab baru dan kecuali Anda masuk ke incognito, Anda semacam memiliki profil yang sama
+
+0:26:30.811,0:26:34.190
+Dan profil itu sama untuk semua website, ada
+
+0:26:34.191,0:26:35.851
+Apakah itu extension atau bawaan?
+
+0:26:35.851,0:26:40.571
+(campuran, rumit)
+
+0:26:41.091,0:26:46.211
+Jadi saya pikir Anda sebenarnya harus menyatakan ingin memasang atau mengaktifkannya, dan sekali lagi
+
+0:26:46.221,0:26:49.881
+namanya Multi Account Containers, dan ini memungkinkan Anda memberi tahu Firefox agar memiliki
+
+0:26:49.881,0:26:53.961
+session terpisah yang terisolasi. Jadi misalnya, Anda ingin menyatakan
+
+0:26:53.961,0:26:58.851
+saya punya session terpisah setiap kali saya mengunjungi Google atau setiap kali saya mengunjungi Amazon
+
+0:26:58.851,0:27:01.791
+dan itu bisa cukup rapi, karena kemudian Anda bisa
+
+0:27:01.791,0:27:08.171
+Pada level browser, itu memastikan tidak ada pertukaran informasi antara keduanya
+
+0:27:08.171,0:27:11.961
+Dan itu jauh lebih praktis daripada harus membuka jendela incognito
+
+0:27:11.961,0:27:14.471
+yang akan terus membersihkan semua hal itu
+
+0:27:14.471,0:27:17.311
+(Satu hal yang perlu disebut adalah Stylus vs Stylish)
+
+0:27:17.531,0:27:19.651
+Oh ya, saya lupa soal itu
+
+0:27:19.651,0:27:24.931
+Satu hal penting adalah extension browser untuk side-loading CSS Stylesheet
+
+0:27:24.931,0:27:31.851
+namanya Stylus, dan itu berbeda dari yang lama yang
+
+0:27:31.851,0:27:37.400
+bernama Stylish, karena yang itu pernah dibeli oleh perusahaan
+
+0:27:37.400,0:27:40.711
+yang tidak jelas, yang mulai menyalahgunakannya bukan hanya untuk memiliki
+
+0:27:40.711,0:27:45.780
+fungsi itu, tetapi juga untuk membaca seluruh riwayat browser Anda dan mengirimkannya
+
+0:27:45.780,0:27:48.491
+kembali ke server mereka agar bisa menambang data darinya.
+
+0:27:48.491,0:27:53.731
+Jadi kemudian orang membuat alternatif open-source ini yang bernama Stylus, dan itulah yang
+
+0:27:53.731,0:27:58.951
+kami rekomendasikan. Meskipun begitu, saya pikir repository untuk style-nya sama untuk
+
+0:27:58.951,0:28:03.611
+keduanya, tetapi saya harus memeriksanya kembali.
+
+0:28:03.611,0:28:05.951
+Apakah Anda punya plugin browser, Anish?
+
+0:28:06.071,0:28:09.311
+Ya, jadi saya juga punya beberapa rekomendasi plugin browser
+
+0:28:09.311,0:28:13.991
+Saya juga menggunakan uBlock Origin dan juga menggunakan Stylus,
+
+0:28:13.991,0:28:18.511
+tetapi satu lagi yang saya rekomendasikan adalah integrasi dengan password manager
+
+0:28:18.511,0:28:21.631
+Jadi ini topik yang ada di catatan kuliah untuk
+
+0:28:21.631,0:28:24.841
+kuliah security, tetapi kami belum benar-benar membahasnya secara detail. Tetapi pada dasarnya password
+
+0:28:24.841,0:28:27.810
+manager melakukan tugas yang sangat baik dalam meningkatkan keamanan Anda saat bekerja
+
+0:28:27.810,0:28:31.831
+dengan akun online, dan memiliki integrasi browser dengan password manager Anda
+
+0:28:31.831,0:28:34.410
+bisa menghemat banyak waktu Anda; Anda bisa membuka sebuah website lalu ia bisa
+
+0:28:34.410,0:28:37.381
+mengisi otomatis informasi login Anda untuk Anda, dan Anda lalu menyalin dan menempelkannya
+
+0:28:37.381,0:28:40.320
+bolak-balik antara program terpisah jika tidak terintegrasi dengan
+
+0:28:40.320,0:28:43.410
+web browser Anda, dan integrasi ini juga bisa menyelamatkan Anda dari serangan
+
+0:28:43.410,0:28:47.651
+tertentu yang sebenarnya mungkin terjadi jika Anda melakukan salin-tempel manual ini.
+
+0:28:47.651,0:28:50.790
+Misalnya, serangan phishing. Jadi Anda menemukan website yang terlihat sangat
+
+0:28:50.790,0:28:54.211
+mirip Facebook dan Anda masuk dengan kredensial login Facebook Anda, lalu
+
+0:28:54.211,0:28:56.851
+Anda membuka password manager Anda dan menempelkan kredensial yang benar ke
+
+0:28:56.851,0:29:00.060
+website aneh itu, dan tiba-tiba website itu punya password Anda; tetapi jika Anda memiliki
+
+0:29:00.060,0:29:03.091
+integrasi browser, maka extension dapat secara otomatis memeriksa
+
+0:29:03.091,0:29:06.951
+apakah saya berada di F A C E B O O K.com, atau di domain lain
+
+0:29:06.951,0:29:10.671
+yang mungkin terlihat mirip, dan ia tidak akan memasukkan informasi login jika domainnya salah
+
+0:29:10.671,0:29:15.791
+jadi extension browser untuk pengelolaan password itu bagus
+
+0:29:15.791,0:29:17.930
+Ya, saya setuju
+
+0:29:19.491,0:29:20.711
+Pertanyaan berikutnya
+
+0:29:20.711,0:29:23.991
+Apa tool data wrangling lain yang berguna?
+
+0:29:23.991,0:29:32.421
+Jadi di kuliah kemarin, saya menyebut curl, jadi curl adalah tool fantastis untuk sekadar membuat web
+
+0:29:32.421,0:29:35.811
+request dan menampilkan hasilnya di terminal Anda. Anda juga bisa menggunakannya untuk hal
+
+0:29:35.811,0:29:41.191
+seperti mengunggah file, yang sangat berguna.
+
+0:29:41.191,0:29:48.431
+Di latihan kuliah itu kami juga membahas JQ dan pup, yaitu tool command line yang memungkinkan Anda
+
+0:29:48.431,0:29:52.991
+pada dasarnya menulis query atas dokumen JSON dan HTML, masing-masing dengan tool tersebut
+
+0:29:52.991,0:30:00.391
+yang bisa sangat berguna. Tool data wrangling lain?
+
+0:30:00.391,0:30:03.821
+Ah, Perl, bahasa pemrograman Perl itu
+
+0:30:03.821,0:30:08.061
+sering disebut bahasa pemrograman yang hanya bisa ditulis karena
+
+0:30:08.061,0:30:13.431
+mustahil dibaca bahkan oleh yang menulisnya. Tetapi Perl fantastis untuk melakukan
+
+0:30:13.431,0:30:21.561
+pemrosesan teks langsung; tidak ada yang mengalahkannya di situ, jadi mungkin layak mempelajari
+
+0:30:21.561,0:30:24.331
+Perl yang sangat dasar untuk menulis sebagian script itu
+
+0:30:24.331,0:30:29.371
+Sering kali lebih mudah daripada menulis kombinasi asal-asalan grep, awk, dan sed,
+
+0:30:29.371,0:30:36.311
+dan akan jauh lebih cepat menyusun sesuatu daripada menuliskannya di Python, misalnya
+
+0:30:36.311,0:30:44.031
+tetapi selain itu, data wrangling lain
+
+0:30:44.031,0:30:47.071
+Tidak, tidak ada yang langsung terpikir oleh saya
+
+0:30:47.071,0:30:53.661
+column -t, jika Anda menyalurkan input apa pun yang dipisahkan spasi
+
+0:30:53.661,0:30:58.821
+ke column -t, ia akan menyelaraskan semua spasi kolom sehingga
+
+0:30:58.821,0:31:05.771
+Anda mendapatkan kolom yang tersusun rapi; itu, dan head serta tail, tetapi keduanya sudah kami bahas
+
+0:31:09.011,0:31:13.791
+Saya pikir ada beberapa tambahan untuk itu yang sering saya gunakan
+
+0:31:13.791,0:31:19.881
+salah satunya vim. Vim bisa cukup berguna untuk data wrangling itu sendiri
+
+0:31:19.881,0:31:22.461
+Kadang Anda mungkin menemukan bahwa operasi yang ingin Anda lakukan
+
+0:31:22.461,0:31:27.711
+sulit diungkapkan dalam bentuk piping berbagai operator, tetapi jika Anda
+
+0:31:27.711,0:31:32.531
+bisa cukup membuka file dan merekam
+
+0:31:32.531,0:31:37.301
+beberapa vim macro cepat untuk melakukan yang Anda inginkan, itu mungkin jauh
+
+0:31:37.301,0:31:42.311
+jauh lebih mudah. Itu satu, lalu yang lainnya, jika Anda berurusan dengan data
+
+0:31:42.311,0:31:46.091
+tabular dan ingin melakukan operasi yang lebih kompleks seperti mengurutkan berdasarkan satu kolom,
+
+0:31:46.091,0:31:51.161
+lalu grouping dan kemudian menghitung semacam statistik, saya pikir sebagian besar
+
+0:31:51.161,0:31:55.951
+beban kerja itu akhirnya saya tangani hanya dengan Python dan pandas karena memang dibuat untuk itu
+
+0:31:55.951,0:32:00.190
+Dan salah satu fitur yang cukup rapi yang juga sering saya gunakan adalah bahwa ia
+
+0:32:00.190,0:32:03.931
+dapat mengekspor ke banyak format berbeda. Jadi keadaan perantara ini
+
+0:32:03.931,0:32:09.221
+punya objek pandas dataframe tersendiri, tetapi ia bisa
+
+0:32:09.221,0:32:14.171
+mengekspor ke HTM, LaTeX, banyak format tabel berbeda, jadi jika produk akhir
+
+0:32:14.171,0:32:19.531
+Anda berupa semacam tabel ringkasan, maka pandas menurut saya pilihan yang fantastis untuk itu
+
+0:32:21.111,0:32:24.791
+Saya mendukung vim dan juga Python, menurut saya keduanya adalah
+
+0:32:24.791,0:32:29.051
+dua tool data wrangling yang paling sering saya gunakan. Untuk vim, tahun lalu kami punya demo
+
+0:32:29.051,0:32:31.841
+di seri catatan kuliah, tetapi kami tidak membahasnya di kelas; kami punya
+
+0:32:31.841,0:32:38.051
+demo mengubah file XML menjadi versi JSON dari data yang sama hanya dengan vim macro
+
+0:32:38.051,0:32:40.331
+Dan menurut saya itu justru cara yang akan saya pakai dalam praktik
+
+0:32:40.331,0:32:43.241
+Saya tidak ingin mencari tool yang melakukan konversi ini; sebenarnya sederhana
+
+0:32:43.241,0:32:45.431
+untuk dikodekan sebagai vim macro, jadi saya melakukannya dengan cara itu
+
+0:32:45.431,0:32:48.991
+Lalu juga Python, terutama di tool interaktif seperti Jupyter notebook
+
+0:32:48.991,0:32:51.171
+adalah cara yang sangat bagus untuk melakukan data wrangling
+
+0:32:51.171,0:32:52.951
+Tool ketiga yang saya sebutkan, saya tidak ingat apakah kami
+
+0:32:52.961,0:32:55.361
+membahasnya di kuliah data wrangling atau di tempat lain
+
+0:32:55.361,0:32:58.751
+adalah tool bernama pandoc yang bisa melakukan transformasi antar berbagai format teks
+
+0:32:58.751,0:33:02.981
+format dokumen, jadi Anda bisa mengonversi dari plaintext ke HTML atau HTML ke markdown
+
+0:33:02.981,0:33:07.361
+atau LaTeX ke HTML atau banyak format lain; sebenarnya ia mendukung daftar
+
+0:33:07.361,0:33:10.471
+format input yang panjang dan daftar format output yang panjang
+
+0:33:10.471,0:33:16.361
+Saya pikir ada satu terakhir yang saya sebutkan singkat di kuliah data wrangling, yaitu
+
+0:33:16.361,0:33:20.441
+bahasa pemrograman R; itu bahasa yang mengerikan (menurut saya mengerikan)
+
+0:33:20.441,0:33:25.120
+untuk dipakai memprogram. Dan saya tidak akan pernah menggunakannya di tengah pipeline
+
+0:33:25.120,0:33:30.951
+data wrangling, tetapi pada akhirnya, untuk menghasilkan plot dan statistik yang cantik, R hebat
+
+0:33:30.951,0:33:35.581
+Karena R dibangun untuk melakukan statistik dan plotting
+
+0:33:35.581,0:33:40.591
+ada library untuk R bernama ggplot yang benar-benar menakjubkan
+
+0:33:40.591,0:33:46.551
+ggplot2 kalau secara teknis. Itu hebat, menghasilkan
+
+0:33:46.551,0:33:51.431
+visualisasi yang sangat bagus dan memungkinkan Anda, sangat mudah melakukan hal seperti
+
+0:33:51.431,0:33:57.561
+Jika Anda punya dataset yang memiliki banyak facet, bukan hanya X dan Y
+
+0:33:57.561,0:34:03.111
+tetapi X Y Z dan beberapa variabel lain, lalu Anda ingin memplot
+
+0:34:03.111,0:34:07.581
+throughput yang dikelompokkan berdasarkan semua parameter itu sekaligus dan menghasilkan
+
+0:34:07.581,0:34:11.991
+visualisasi. R sangat mudah memungkinkan Anda melakukan ini, dan saya belum melihat tempat lain
+
+0:34:11.991,0:34:14.891
+yang memungkinkan Anda melakukannya semudah itu
+
+0:34:16.971,0:34:17.951
+Pertanyaan berikutnya,
+
+0:34:17.951,0:34:20.511
+Apa perbedaan antara Docker dan virtual machine
+
+0:34:23.271,0:34:27.731
+Apa cara termudah menjelaskan ini? Jadi Docker
+
+0:34:27.741,0:34:31.221
+menjalankan sesuatu yang disebut container, dan Docker bukan satu-satunya program yang
+
+0:34:31.221,0:34:36.561
+menjalankan container. Ada banyak lainnya, dan biasanya mereka mengandalkan fitur tertentu dari
+
+0:34:36.561,0:34:40.401
+kernel yang mendasarinya; dalam kasus Docker mereka menggunakan sesuatu bernama LXC
+
+0:34:40.401,0:34:47.571
+yaitu Linux container, dan premis dasarnya adalah jika Anda ingin menjalankan
+
+0:34:47.571,0:34:53.181
+sesuatu yang terlihat seperti virtual machine yang menjalankan operating system
+
+0:34:53.181,0:34:57.411
+yang kurang lebih sama dengan yang sudah berjalan di komputer Anda, maka Anda tidak benar-benar perlu
+
+0:34:57.411,0:35:04.701
+menjalankan instance kernel lain; sebenarnya virtual machine lain itu bisa
+
+0:35:04.701,0:35:09.951
+berbagi kernel. Dan Anda bisa langsung menggunakan mekanisme isolasi bawaan kernel untuk
+
+0:35:09.951,0:35:13.791
+menjalankan program yang mengira berjalan di hardware sendiri, tetapi pada
+
+0:35:13.791,0:35:18.501
+kenyataannya berbagi kernel, sehingga ini berarti container sering dapat berjalan
+
+0:35:18.501,0:35:22.611
+dengan overhead jauh lebih rendah daripada virtual machine penuh, tetapi Anda sebaiknya
+
+0:35:22.611,0:35:26.391
+ingat bahwa isolasinya juga agak lebih lemah karena Anda berbagi
+
+0:35:26.391,0:35:30.831
+kernel di antara keduanya; jika Anda menjalankan virtual machine, satu-satunya hal yang
+
+0:35:30.831,0:35:35.931
+dibagikan adalah semacam hardware dan sampai batas tertentu hypervisor, sedangkan
+
+0:35:35.931,0:35:40.791
+dengan container Docker Anda berbagi kernel penuh, dan itu adalah
+
+0:35:40.791,0:35:44.921
+threat model berbeda yang mungkin perlu Anda ingat
+
+0:35:47.341,0:35:52.361
+Satu catatan kecil lainnya, seperti yang Jon tunjukkan: untuk menggunakan container, sesuatu
+
+0:35:52.361,0:35:55.631
+seperti Docker, Anda perlu operating system yang mendasarinya kurang lebih sama
+
+0:35:55.631,0:36:00.071
+dengan apa yang diharapkan program yang berjalan di atas container, jadi
+
+0:36:00.071,0:36:03.791
+jika Anda menggunakan macOS, misalnya, cara Anda menggunakan Docker adalah menjalankan Linux
+
+0:36:03.791,0:36:08.261
+di dalam virtual machine lalu Anda bisa menjalankan Docker di atas Linux, jadi mungkin
+
+0:36:08.261,0:36:11.741
+jika Anda memilih container untuk mendapatkan performa lebih baik, Anda menukar
+
+0:36:11.741,0:36:15.131
+isolasi dengan performa; jika Anda berjalan di macOS, itu mungkin tidak berjalan
+
+0:36:15.131,0:36:17.451
+persis seperti yang diharapkan
+
+0:36:17.451,0:36:21.221
+Dan satu catatan terakhir adalah ada sedikit perbedaan, jadi
+
+0:36:21.221,0:36:25.721
+dengan Docker dan container, salah satu jebakan yang harus
+
+0:36:25.721,0:36:29.411
+Anda kenali adalah bahwa container lebih mirip dengan virtual
+
+0:36:29.411,0:36:33.071
+machine dalam arti bahwa mereka akan mempertahankan semua penyimpanan yang
+
+0:36:33.071,0:36:35.971
+Anda miliki, sedangkan Docker secara default tidak demikian.
+
+0:36:35.971,0:36:37.791
+Docker dimaksudkan untuk berjalan
+
+0:36:37.791,0:36:41.771
+Jadi ide utamanya adalah saya ingin menjalankan perangkat lunak tertentu dan
+
+0:36:41.771,0:36:45.671
+saya mengambil image dan ia berjalan, dan jika Anda ingin memiliki penyimpanan
+
+0:36:45.671,0:36:50.081
+persisten apa pun yang terhubung ke host system, Anda harus semacam menentukannya secara manual
+
+0:36:50.081,0:36:56.051
+sedangkan virtual machine menggunakan semacam virtual disk yang disediakan
+
+0:36:56.051,0:37:02.671
+Pertanyaan berikutnya
+
+0:37:02.671,0:37:05.111
+Apa kelebihan masing-masing operating system
+
+0:37:05.111,0:37:08.531
+dan bagaimana kami bisa memilih di antara mereka? Misalnya, memilih distribusi Linux
+
+0:37:08.531,0:37:10.551
+terbaik untuk keperluan kami
+
+0:37:14.251,0:37:16.811
+Saya akan mengatakan bahwa untuk sangat banyak tugas,
+
+0:37:16.811,0:37:20.171
+distribusi Linux spesifik yang Anda jalankan tidak begitu penting
+
+0:37:20.171,0:37:23.731
+masalahnya, itu hanya soal jenis
+
+0:37:23.731,0:37:27.651
+mengetahui bahwa ada berbagai jenis atau kelompok distribusi,
+
+0:37:27.651,0:37:32.251
+Jadi misalnya, ada beberapa distribusi yang pembaruannya sangat sering
+
+0:37:32.251,0:37:38.971
+tetapi semacam lebih mudah rusak. Jadi misalnya Arch Linux memiliki model pembaruan rolling
+
+0:37:38.971,0:37:43.511
+dalam mendorong pembaruan, di mana berbagai hal mungkin rusak, tetapi mereka tidak masalah dengan hal
+
+0:37:43.511,0:37:47.891
+itu. Sedangkan mungkin ketika Anda punya web server yang sangat penting
+
+0:37:47.891,0:37:51.401
+yang menghosting semua business analytics Anda, Anda ingin hal itu
+
+0:37:51.401,0:37:55.961
+memiliki cara pembaruan yang jauh lebih stabil. Jadi itulah misalnya mengapa Anda
+
+0:37:55.961,0:37:58.121
+akan melihat distribusi seperti Debian bersikap
+
+0:37:58.121,0:38:02.951
+jauh lebih konservatif tentang apa yang mereka dorong, bahkan misalnya Ubuntu membedakan
+
+0:38:02.951,0:38:07.001
+antara Long Term Release yang hanya diperbarui setiap
+
+0:38:07.001,0:38:12.281
+dua tahun dan rilis yang lebih berkala; ada
+
+0:38:12.281,0:38:16.661
+sekitar dua per tahun yang mereka buat. Jadi, semacam mengetahui bahwa ada
+
+0:38:16.661,0:38:21.341
+perbedaan; selain itu beberapa distribusi memiliki cara berbeda
+
+0:38:21.341,0:38:27.191
+dalam menyediakan binary kepada Anda dan cara mereka
+
+0:38:27.191,0:38:33.791
+memiliki repository, jadi saya pikir banyak Red Hat Linux tidak menginginkan driver non-free di
+
+0:38:33.791,0:38:37.361
+repository resmi mereka, sedangkan menurut saya Ubuntu tidak masalah dengan sebagian
+
+0:38:37.361,0:38:42.491
+dari itu; selain itu menurut saya banyak dari yang menjadi inti sebagian besar
+
+0:38:42.491,0:38:47.411
+distro Linux semacam dibagikan di antara mereka, dan ada banyak pembelajaran di
+
+0:38:47.411,0:38:51.431
+titik temu itu. Jadi Anda tidak perlu khawatir tentang hal-hal spesifik
+
+0:38:52.391,0:38:56.351
+Sesuai tema kelas ini yang agak cenderung berpendirian, saya akan langsung mengatakan
+
+0:38:56.351,0:39:00.041
+bahwa jika Anda menggunakan Linux, terutama untuk pertama kalinya, pilihlah sesuatu seperti
+
+0:39:00.041,0:39:03.851
+Ubuntu atau Debian. Jadi Ubuntu adalah distribusi berbasis Debian, tetapi mungkin
+
+0:39:03.851,0:39:07.421
+sedikit lebih ramah; Debian sedikit lebih minimalis. Saya menggunakan Debian
+
+0:39:07.421,0:39:10.451
+di semua server saya, misalnya. Dan saya menggunakan Debian desktop di komputer desktop saya
+
+0:39:10.451,0:39:15.431
+yang menjalankan Linux. Jika Anda ingin mencoba mempelajari lebih banyak hal dan menginginkan
+
+0:39:15.431,0:39:19.391
+distribusi yang menukar stabilitas dengan perangkat lunak yang lebih mutakhir, mungkin
+
+0:39:19.391,0:39:21.911
+dengan konsekuensi Anda harus memperbaiki distribusi yang rusak sesekali
+
+0:39:21.911,0:39:26.911
+maka mungkin Anda bisa mempertimbangkan sesuatu seperti Arch Linux atau Gentoo
+
+0:39:26.911,0:39:32.681
+atau Slackware. Ya ampun, saya akan mengatakan bahwa jika Anda memasang Linux dan hanya
+
+0:39:32.681,0:39:34.891
+ingin menyelesaikan pekerjaan, Debian adalah pilihan yang hebat
+
+0:39:35.911,0:39:38.271
+Ya, saya pikir saya setuju dengan itu.
+
+0:39:38.271,0:39:40.971
+Pengamatan lainnya adalah Anda bisa memasang BSD
+
+0:39:40.971,0:39:46.691
+BSD telah berkembang jauh dari sebelumnya. Masih ada sejumlah
+
+0:39:46.691,0:39:50.921
+perangkat lunak yang tidak bisa Anda dapatkan untuk BSD, tetapi BSD memberi Anda pengalaman
+
+0:39:50.921,0:39:55.841
+yang terdokumentasi sangat baik, dan satu hal yang berbeda pada BSD dibandingkan Linux adalah
+
+0:39:55.841,0:40:02.531
+bahwa di BSD, ketika Anda memasang BSD, Anda mendapatkan operating system penuh, sebagian besar
+
+0:40:02.651,0:40:07.531
+Jadi banyak program dipelihara oleh tim yang sama yang memelihara kernel
+
+0:40:07.541,0:40:11.351
+dan semuanya semacam di-upgrade bersama-sama, yang sedikit berbeda
+
+0:40:11.351,0:40:13.271
+dari cara hal-hal bekerja di dunia Linux; itu
+
+0:40:13.271,0:40:16.751
+berarti hal-hal sering bergerak sedikit lebih lambat. Saya juga tidak akan menggunakannya untuk hal
+
+0:40:16.751,0:40:21.791
+seperti gaming, karena dukungan driver-nya biasa saja. Tetapi itu lingkungan
+
+0:40:21.791,0:40:30.661
+yang menarik untuk diamati. Lalu untuk hal seperti macOS dan Windows, saya pikir
+
+0:40:30.661,0:40:36.041
+Jika Anda seorang programmer, saya tidak tahu mengapa Anda menggunakan Windows kecuali Anda
+
+0:40:36.041,0:40:42.401
+membangun sesuatu untuk Windows; atau Anda ingin bisa bermain game dan sebagainya
+
+0:40:42.401,0:40:46.891
+tetapi dalam kasus itu, mungkin coba dual booting, walaupun itu juga merepotkan
+
+0:40:46.891,0:40:52.031
+macOS adalah semacam titik tengah yang baik di antara keduanya, di mana Anda mendapatkan sistem
+
+0:40:52.031,0:40:57.851
+yang relatif rapi untuk Anda. Tetapi Anda masih memiliki akses ke
+
+0:40:57.851,0:41:01.191
+sebagian bagian tingkat rendah, setidaknya sampai batas tertentu.
+
+0:41:01.191,0:41:07.451
+juga sangat mudah melakukan dual boot macOS dan Windows; itu tidak berlaku sama untuk macOS dan
+
+0:41:07.451,0:41:09.651
+Linux atau Linux dan Windows
+
+0:41:13.911,0:41:15.751
+Baiklah, untuk pertanyaan-pertanyaan selanjutnya, jadi ini semua
+
+0:41:15.761,0:41:18.761
+adalah pertanyaan tanpa upvote, jadi mungkin kita bisa membahasnya cepat dalam lima
+
+0:41:18.761,0:41:23.471
+menit terakhir kelas. Jadi yang berikutnya adalah Vim versus Emacs? Vim!
+
+0:41:23.471,0:41:30.911
+Jawaban mudah, tetapi jawaban yang lebih serius adalah menurut saya kami bertiga menggunakan vim sebagai editor utama kami
+
+0:41:30.911,0:41:34.931
+Saya menggunakan Emacs untuk beberapa hal khusus riset yang membutuhkan Emacs, tetapi
+
+0:41:34.931,0:41:38.681
+pada tingkat yang lebih tinggi kedua editor punya ide menarik di baliknya, dan jika Anda
+
+0:41:38.681,0:41:43.061
+punya waktu, layak mencoba keduanya untuk melihat mana yang lebih cocok bagi Anda, dan juga
+
+0:41:43.061,0:41:46.811
+Anda bisa menggunakan Emacs dan menjalankannya dalam mode emulasi vim. Saya sebenarnya tahu
+
+0:41:46.811,0:41:49.091
+cukup banyak orang yang melakukan itu sehingga mereka mendapat akses ke sebagian fungsi
+
+0:41:49.091,0:41:52.631
+Emacs yang keren dan sebagian filosofi keren di baliknya, misalnya Emacs
+
+0:41:52.631,0:41:55.391
+dapat diprogram melalui Lisp, yang cukup keren.
+
+0:41:55.391,0:41:59.411
+Jauh lebih baik daripada vimscript, tetapi orang menyukai modal editing vim, jadi ada
+
+0:41:59.411,0:42:04.481
+plugin Emacs bernama evil mode yang memberi Anda modal editing vim di dalam Emacs, jadi
+
+0:42:04.481,0:42:08.081
+ini tidak harus menjadi pilihan biner; Anda bisa menggabungkan kedua tool jika Anda
+
+0:42:08.081,0:42:11.151
+ingin. Dan layak mencoba keduanya jika Anda punya waktu.
+
+0:42:11.151,0:42:12.731
+Pertanyaan berikutnya
+
+0:42:12.731,0:42:15.671
+Ada tips atau trik untuk aplikasi machine learning?
+
+0:42:19.271,0:42:22.351
+Menurut saya, seperti mengetahui cara
+
+0:42:22.361,0:42:24.791
+banyak tool ini, terutama data wrangling
+
+0:42:24.791,0:42:30.041
+banyak shell tool; itu sangat penting karena tampaknya banyak
+
+0:42:30.041,0:42:33.851
+dari yang Anda lakukan sebagai peneliti machine learning adalah mencoba berbagai hal
+
+0:42:33.851,0:42:39.491
+tetapi menurut saya satu aspek inti dalam melakukannya, dan banyak pekerjaan ilmiah, adalah
+
+0:42:39.491,0:42:44.501
+mampu memiliki hasil yang reproducible dan mencatatnya dengan cara yang masuk akal
+
+0:42:44.501,0:42:47.711
+Jadi misalnya, alih-alih mencoba membuat solusi asal-asalan tentang bagaimana
+
+0:42:47.711,0:42:51.151
+Anda memberi nama folder untuk memahami eksperimen
+
+0:42:51.151,0:42:53.251
+Mungkin layak memiliki, misalnya,
+
+0:42:53.251,0:42:55.931
+yang saya lakukan adalah memiliki semacam file JSON yang menjelaskan
+
+0:42:55.931,0:43:00.371
+seluruh eksperimen; saya tahu semua parameter yang ada di dalamnya, lalu saya bisa
+
+0:43:00.371,0:43:05.111
+dengan sangat cepat, menggunakan tool yang telah kami bahas, melakukan query untuk semua
+
+0:43:05.111,0:43:09.701
+eksperimen yang memiliki tujuan tertentu atau menggunakan dataset tertentu
+
+0:43:09.701,0:43:15.071
+Hal-hal seperti itu. Selain itu, sisi lain dari ini adalah, jika Anda menjalankan
+
+0:43:15.071,0:43:19.871
+hal-hal untuk melatih aplikasi machine learning dan Anda
+
+0:43:19.871,0:43:23.981
+belum menggunakan semacam cluster, misalnya dari universitas atau
+
+0:43:23.981,0:43:28.301
+yang disediakan perusahaan Anda, dan Anda semacam melakukan ssh secara manual, seperti banyak
+
+0:43:28.301,0:43:31.231
+lab lakukan, karena itu semacam cara yang mudah
+
+0:43:31.231,0:43:36.671
+Layak mengotomatiskan banyak pekerjaan itu karena mungkin tidak terlihat, tetapi
+
+0:43:36.671,0:43:40.601
+melakukan banyak operasi ini secara manual menghabiskan banyak waktu Anda dan juga
+
+0:43:40.601,0:43:45.031
+semacam energi mental Anda untuk menjalankan hal-hal itu
+
+0:43:48.551,0:43:51.691
+Ada tips vim lagi?
+
+0:43:51.691,0:43:56.771
+Saya punya satu. Jadi di kuliah vim kami berusaha tidak menautkan Anda ke terlalu banyak
+
+0:43:56.771,0:44:00.131
+plugin vim karena kami tidak ingin kuliah itu terasa berlebihan, tetapi menurut saya
+
+0:44:00.131,0:44:02.921
+sebenarnya layak menjelajahi plugin vim karena ada banyak sekali
+
+0:44:02.921,0:44:07.091
+plugin yang sangat keren di luar sana. Salah satu sumber yang bisa Anda gunakan adalah
+
+0:44:07.091,0:44:10.571
+dotfiles para pengajar; seperti banyak dari kami, saya pikir saya menggunakan sekitar dua lusin
+
+0:44:10.571,0:44:14.321
+plugin vim dan banyak di antaranya cukup membantu dan saya gunakan setiap hari
+
+0:44:14.321,0:44:18.311
+kami semua menggunakan subset yang sedikit berbeda. Jadi lihat apa yang kami gunakan atau lihat
+
+0:44:18.311,0:44:22.131
+sebagian sumber lain yang kami tautkan dan Anda mungkin menemukan hal yang berguna
+
+0:44:22.791,0:44:26.951
+Satu hal untuk ditambahkan: saya rasa kami tidak membahasnya secara detail di
+
+0:44:27.041,0:44:31.571
+kuliah; koreksi saya jika salah. Yaitu membiasakan diri dengan leader key
+
+0:44:31.571,0:44:35.021
+Yaitu semacam tombol khusus yang akan banyak program,
+
+0:44:35.021,0:44:39.081
+terutama plugin, tautkan, dan untuk banyak operasi umum
+
+0:44:39.081,0:44:44.661
+vim punya cara singkat untuk melakukannya, tetapi Anda bisa mencari cara yang lebih cepat
+
+0:44:44.661,0:44:50.031
+untuk melakukannya. Jadi misalnya, saya tahu Anda bisa melakukan seperti titik koma WQ
+
+0:44:50.031,0:44:55.521
+untuk menyimpan dan keluar, atau Anda bisa melakukan seperti ZZ kapital, tetapi saya
+
+0:44:55.521,0:44:59.241
+sebenarnya hanya melakukan leader (yang bagi saya adalah spasi) lalu W. Dan saya telah
+
+0:44:59.241,0:45:04.131
+melakukannya untuk banyak operasi umum yang terus saya lakukan sepanjang
+
+0:45:04.131,0:45:08.091
+waktu. Karena menghemat satu ketukan tombol untuk operasi yang sangat umum
+
+0:45:08.091,0:45:11.371
+berarti menghemat ribuan kali sebulan
+
+0:45:11.371,0:45:12.951
+Ya, untuk sedikit memperluas
+
+0:45:12.951,0:45:17.031
+tentang apa itu leader key: di vim Anda bisa mengikat beberapa tombol; saya bisa melakukan seperti ctrl J
+
+0:45:17.031,0:45:20.481
+melakukan sesuatu, seperti menahan satu tombol lalu menekan tombol lain; saya bisa mengikatnya ke
+
+0:45:20.481,0:45:23.781
+sesuatu, atau saya bisa mengikat satu ketukan tombol ke sesuatu. Yang dilakukan leader
+
+0:45:23.781,0:45:26.031
+key adalah memungkinkan Anda mengikat
+
+0:45:26.031,0:45:28.311
+Jadi Anda bisa menetapkan tombol apa pun sebagai leader key, dan
+
+0:45:28.311,0:45:32.841
+lalu Anda bisa menetapkan leader diikuti tombol lain ke suatu aksi, jadi
+
+0:45:32.841,0:45:36.831
+misalnya leader key Jose adalah spasi, dan ia bisa menggabungkan spasi lalu
+
+0:45:36.831,0:45:41.601
+melepas spasi diikuti tombol lain ke perintah vim sembarang, jadi
+
+0:45:41.601,0:45:45.631
+ini memberi Anda cara lain untuk mengikat seluruh rangkaian kombinasi tombol.
+
+0:45:45.631,0:45:49.751
+Leader key plus hampir tombol apa pun di keyboard ke suatu fungsi
+
+0:45:49.751,0:45:53.751
+Saya pikir saya... saya lupa apakah kami membahas macro di
+
+0:45:53.751,0:45:58.581
+uh, tentu, tetapi vim macro layak dipelajari; tidak terlalu rumit
+
+0:45:58.581,0:46:03.141
+tetapi mengetahui bahwa ia ada dan mengetahui cara menggunakannya akan menghemat
+
+0:46:03.141,0:46:09.501
+banyak waktu Anda. Yang lain adalah sesuatu bernama marks. Jadi di vim Anda bisa
+
+0:46:09.501,0:46:13.491
+menekan m lalu huruf apa pun di keyboard untuk membuat mark di file itu, dan
+
+0:46:13.491,0:46:18.021
+lalu Anda bisa menekan apostrof, kemudian huruf yang sama untuk melompat kembali ke
+
+0:46:18.021,0:46:21.801
+tempat yang sama. Ini sangat berguna jika Anda bolak-balik
+
+0:46:21.801,0:46:25.491
+antara dua bagian kode yang berbeda, misalnya. Anda bisa menandai satu sebagai A dan
+
+0:46:25.491,0:46:29.611
+satu sebagai B, lalu melompat di antara keduanya dengan tick A dan tick B.
+
+0:46:29.611,0:46:34.851
+Ada juga Ctrl+O yang melompat ke tempat sebelumnya Anda berada di file, apa pun
+
+0:46:34.851,0:46:40.611
+yang menyebabkan Anda berpindah. Jadi misalnya jika saya di suatu baris lalu saya melompat
+
+0:46:40.611,0:46:45.201
+ke B lalu melompat ke A, Ctrl+O akan membawa saya kembali ke B lalu kembali ke
+
+0:46:45.201,0:46:48.831
+tempat saya semula. Ini juga berguna untuk hal seperti jika Anda melakukan
+
+0:46:48.831,0:46:52.671
+pencarian, maka tempat Anda memulai pencarian adalah bagian dari
+
+0:46:52.671,0:46:56.211
+stack itu. Jadi saya bisa melakukan pencarian, lalu menelusuri hasilnya
+
+0:46:56.211,0:47:00.801
+dan mengubahnya, lalu Ctrl+O kembali sampai ke pencarian
+
+0:47:00.801,0:47:06.201
+Ctrl+O juga memungkinkan Anda berpindah antar file, jadi jika saya pergi dari satu file ke tempat lain di
+
+0:47:06.201,0:47:09.681
+file berbeda dan ke tempat lain di file pertama, Ctrl+O akan memindahkan saya kembali
+
+0:47:09.681,0:47:15.261
+melalui stack itu, dan ada Ctrl+I untuk bergerak maju dalam
+
+0:47:15.261,0:47:20.841
+stack itu, jadi bukan berarti Anda mem-pop-nya lalu hilang selamanya
+
+0:47:20.841,0:47:26.541
+Perintah colon earlier sangat berguna. Jadi, colon earlier memberi Anda versi
+
+0:47:26.541,0:47:32.870
+lebih awal dari file yang sama, dan ia melakukannya berdasarkan waktu, bukan berdasarkan aksi
+
+0:47:32.870,0:47:36.651
+jadi misalnya jika Anda menekan banyak undo dan redo lalu membuat beberapa perubahan
+
+0:47:36.651,0:47:42.561
+dan sebagainya, earlier akan mengambil versi file Anda yang secara harfiah lebih awal dalam waktu
+
+0:47:42.561,0:47:46.971
+dan memulihkannya ke buffer Anda. Ini kadang berguna jika Anda melakukan undo lalu
+
+0:47:46.971,0:47:50.841
+menulis ulang sesuatu lalu menyadari bahwa Anda sebenarnya menginginkan versi yang
+
+0:47:50.841,0:47:55.100
+ada sebelum Anda mulai melakukan undo; earlier memungkinkan Anda melakukan ini. Dan ada plugin
+
+0:47:55.100,0:48:01.971
+bernama undo tree atau semacamnya. Ada beberapa plugin seperti itu,
+
+0:48:01.971,0:48:05.781
+yang memungkinkan Anda benar-benar menjelajahi seluruh pohon riwayat undo yang disimpan vim
+
+0:48:05.781,0:48:09.201
+karena vim tidak hanya menyimpan riwayat linear, ia benar-benar menyimpan pohon penuh
+
+0:48:09.201,0:48:12.771
+dan membiarkan Anda menjelajahinya mungkin dalam beberapa kasus menyelamatkan Anda dari harus
+
+0:48:12.771,0:48:16.461
+mengetik ulang hal yang pernah Anda ketik, atau hal yang Anda lupa persis apa yang
+
+0:48:16.461,0:48:21.081
+ada di sana yang dulu berfungsi dan sekarang tidak lagi. Dan ini satu hal terakhir yang
+
+0:48:21.081,0:48:26.751
+ingin saya sebutkan, yaitu kami menyebutkan bahwa di vim ada verb dan noun
+
+0:48:26.751,0:48:33.201
+untuk verb seperti delete atau yank, lalu ada noun seperti next of
+
+0:48:33.201,0:48:37.401
+karakter ini atau percent untuk menukar bracket dan semacamnya;
+
+0:48:37.401,0:48:44.571
+perintah search adalah noun, jadi Anda bisa melakukan hal seperti D slash lalu sebuah string
+
+0:48:44.571,0:48:50.261
+dan ia akan menghapus hingga kecocokan berikutnya dari pola itu; ini sangat berguna
+
+0:48:50.261,0:48:54.251
+dan saya menggunakannya sepanjang waktu
+
+0:48:58.500,0:49:03.520
+Satu tambahan rapi lagi tentang undo yang menurut saya sangat berharga dalam
+
+0:49:03.520,0:49:08.201
+keseharian adalah bahwa salah satu fungsi bawaan vim
+
+0:49:08.201,0:49:13.510
+adalah Anda bisa menentukan undo directory, dan jika Anda telah menentukan
+
+0:49:13.510,0:49:17.620
+undo directory; secara default vim, jika Anda tidak mengaktifkannya, setiap kali Anda
+
+0:49:17.620,0:49:23.091
+masuk ke sebuah file, riwayat undo Anda bersih, tidak ada apa-apa di sana
+
+0:49:23.091,0:49:26.371
+dan saat Anda membuat perubahan lalu meng-undo-nya, Anda semacam menciptakan
+
+0:49:26.380,0:49:32.800
+riwayat ini, tetapi begitu Anda keluar dari file, itu hilang. Maaf, begitu
+
+0:49:32.800,0:49:37.181
+Anda keluar dari vim, itu hilang. Namun jika Anda memiliki undodir, vim akan
+
+0:49:37.181,0:49:41.651
+menyimpan semua perubahan itu ke direktori ini, jadi berapa kali pun
+
+0:49:41.651,0:49:45.580
+Anda masuk dan keluar, riwayat itu tetap tersimpan, dan itu sangat
+
+0:49:45.580,0:49:48.191
+membantu karena bahkan
+
+0:49:48.191,0:49:50.290
+itu bisa sangat membantu untuk beberapa file yang sering Anda ubah
+
+0:49:50.290,0:49:54.760
+karena kemudian Anda bisa semacam menjaga alurnya. Tetapi kadang juga sangat
+
+0:49:54.760,0:50:00.010
+membantu jika Anda mengubah bashrc Anda dan sesuatu rusak sekitar lima hari kemudian lalu
+
+0:50:00.010,0:50:03.070
+Anda membuka vim lagi. Seperti, apa sebenarnya yang saya ubah, jika Anda tidak
+
+0:50:03.070,0:50:06.760
+memiliki misalnya version control, maka Anda bisa langsung memeriksa undo dan
+
+0:50:06.760,0:50:10.661
+itu sebenarnya yang terjadi. Dan yang terakhir, juga sangat
+
+0:50:10.661,0:50:14.891
+layak membiasakan diri dengan register dan apa saja special register
+
+0:50:14.891,0:50:20.380
+yang digunakan vim. Jadi misalnya jika Anda ingin copy/paste, itu sebenarnya
+
+0:50:20.380,0:50:26.201
+masuk ke register tertentu, dan jika Anda ingin misalnya menggunakan clipboard OS
+
+0:50:26.201,0:50:30.040
+seperti clipboard OS, Anda sebaiknya menyalin atau yanking
+
+0:50:30.040,0:50:36.250
+menyalin dan menempel dari register berbeda, dan jumlahnya banyak, dan ya
+
+0:50:36.251,0:50:41.310
+Menurut saya Anda sebaiknya menjelajahinya; ada banyak hal yang perlu diketahui tentang register
+
+0:50:42.271,0:50:45.070
+Pertanyaan berikutnya menanyakan tentang two-factor authentication dan saya akan langsung memberikan
+
+0:50:45.070,0:50:48.490
+jawaban yang sangat singkat untuk ini demi waktu. Jadi layak menggunakan two
+
+0:50:48.490,0:50:52.480
+factor auth untuk apa pun yang sensitif terhadap keamanan; jadi saya menggunakannya untuk akun GitHub
+
+0:50:52.480,0:50:56.710
+saya dan untuk email saya dan sebagainya. Dan ada banyak jenis
+
+0:50:56.710,0:51:01.360
+two-factor auth. Dari yang berbasis SMS, di mana Anda mendapatkan
+
+0:51:01.360,0:51:04.630
+semacam nomor yang dikirim lewat SMS saat Anda mencoba login, dan Anda harus mengetik nomor itu,
+
+0:51:04.630,0:51:08.710
+hingga tool lain seperti universal two-factor, yaitu seperti Yubikey
+
+0:51:08.710,0:51:11.350
+yang Anda colokkan; Anda harus mengetuknya setiap kali login
+
+0:51:11.350,0:51:18.130
+jadi tidak semua, (ya, Jon sedang memegang Yubikey), tidak semua two-factor auth
+
+0:51:18.130,0:51:22.240
+sama kualitasnya, dan Anda benar-benar ingin menggunakan sesuatu seperti U2F daripada two-factor auth
+
+0:51:22.240,0:51:25.300
+berbasis SMS. Ada sesuatu yang berbasis one-time pass code yang
+
+0:51:25.300,0:51:28.810
+harus Anda ketik. Kami tidak punya waktu untuk masuk ke detail mengapa beberapa metode
+
+0:51:28.810,0:51:32.020
+lebih baik daripada yang lain, tetapi pada tingkat tinggi gunakan U2F, dan internet punya
+
+0:51:32.020,0:51:37.560
+banyak penjelasan mengapa metode lain bukan ide yang bagus
+
+0:51:37.711,0:51:41.851
+Pertanyaan terakhir, ada komentar tentang perbedaan antar web browser?
+
+0:51:48.171,0:51:50.171
+Ya
+
+0:51:54.711,0:52:00.451
+Perbedaan antar web browser; perbedaannya semakin sedikit
+
+0:52:00.461,0:52:06.000
+antar web browser saat ini. Pada titik ini hampir semua web browser adalah Chrome
+
+0:52:06.000,0:52:09.580
+Entah karena Anda menggunakan Chrome atau karena Anda menggunakan browser yang
+
+0:52:09.580,0:52:15.550
+menggunakan browser engine yang sama dengan Chrome. Agak menyedihkan, mungkin orang berkata, tetapi
+
+0:52:15.550,0:52:20.511
+saya pikir saat ini apakah Anda memilih
+
+0:52:20.511,0:52:24.451
+Chrome adalah browser hebat dari segi keamanan
+
+0:52:24.451,0:52:28.471
+jika Anda ingin sesuatu yang lebih dapat dikustomisasi atau
+
+0:52:28.471,0:52:39.490
+Anda tidak ingin terikat pada Google, gunakan Firefox; jangan gunakan Safari, itu
+
+0:52:39.490,0:52:45.701
+versi Chrome yang lebih buruk. Internet Explorer baru, Edge, cukup layak dan juga
+
+0:52:45.701,0:52:50.820
+menggunakan browser engine yang sama dengan Chrome, dan itu kemungkinan tidak masalah
+
+0:52:50.820,0:52:54.641
+walaupun hindari jika bisa karena ia punya semacam mode legacy yang tidak
+
+0:52:54.641,0:52:58.064
+ingin Anda hadapi. Saya pikir itu
+
+0:52:58.064,0:53:03.091
+Oh, ada browser baru yang keren bernama flow
+
+0:53:03.091,0:53:05.500
+yang belum bisa digunakan untuk hal berguna apa pun, tetapi mereka sebenarnya menulis
+
+0:53:05.500,0:53:08.693
+browser engine mereka sendiri, dan itu benar-benar rapi
+
+0:53:08.693,0:53:14.951
+Firefox juga punya proyek bernama servo, yaitu mereka benar-benar mengimplementasikan browser engine mereka
+
+0:53:14.951,0:53:19.570
+dalam Rust agar bisa sangat concurrent, dan yang telah mereka lakukan
+
+0:53:19.570,0:53:24.961
+adalah mulai mengambil module dari versi itu dan mem-port-nya
+
+0:53:24.961,0:53:29.041
+ke gecko atau mengintegrasikannya dengan gecko, yaitu browser engine utama
+
+0:53:29.041,0:53:32.221
+untuk Firefox, hanya untuk mendapatkan percepatan itu juga di sana
+
+0:53:32.221,0:53:37.031
+dan itu hal yang sangat rapi yang bisa Anda perhatikan
+
+0:53:39.231,0:53:41.851
+Itu semua pertanyaannya, hei kita berhasil. Bagus
+
+0:53:41.851,0:53:50.751
+Kurasa terima kasih telah mengikuti kelas missing semester, dan mari kita lakukan lagi tahun depan
+

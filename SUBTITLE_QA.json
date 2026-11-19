@@ -1,0 +1,75 @@
+{
+  "files": [
+    {
+      "source": "static/files/subtitles/2020/command-line.sbv",
+      "translation": "id/subtitles/2020/command-line.sbv",
+      "cues": 813,
+      "source_sha256": "f8f3922aebf100eec2d4de7963ab6dacaca1e9c2853bd94458f3bd4a53a9f0bd",
+      "translation_sha256": "a84c48b21a59f924a9ad6734517a0701873ecf5b5c5345c7f6fc98f4148fe6ce",
+      "timestamps_and_order_exact": true
+    },
+    {
+      "source": "static/files/subtitles/2020/debugging-profiling.sbv",
+      "translation": "id/subtitles/2020/debugging-profiling.sbv",
+      "cues": 715,
+      "source_sha256": "d33106ce41c0ed49dec6b0c80bdd92cd3efc6d8b0a3850d0484ee7eac7973b64",
+      "translation_sha256": "7fdf3c2375890ced846945c4f1f5f788c2c2c0c759aa8c4fb2c63e1584a8da02",
+      "timestamps_and_order_exact": true
+    },
+    {
+      "source": "static/files/subtitles/2020/qa.sbv",
+      "translation": "id/subtitles/2020/qa.sbv",
+      "cues": 760,
+      "source_sha256": "17fb5f15ab96bbf01989c6347df0d39727b0ee54740c37212b9d72e418682e8c",
+      "translation_sha256": "c535b4ed8e648617189bcdf354d0adf690f6c9f24a789bf4b591f0777c23bd6c",
+      "timestamps_and_order_exact": true
+    },
+    {
+      "source": "static/files/subtitles/2020/shell-tools.sbv",
+      "translation": "id/subtitles/2020/shell-tools.sbv",
+      "cues": 792,
+      "source_sha256": "5e5116926c20f5278913e33616fbd998fd8a57f53c5ab2f383bee3871b0f5395",
+      "translation_sha256": "06f976e9e92d600b13b776d7e942884ad6a79f8508bb86b467ee8ba58cb3d5f0",
+      "timestamps_and_order_exact": true
+    }
+  ],
+  "total_cues": 3080,
+  "cross_ai_review": true,
+  "human_review": false,
+  "corrections_applied": {
+    "command-line:0699": "saya meminta \"tee\" untuk menuliskan isi standard input",
+    "debugging-profiling:0637": "Kita bisa menjalankannya pada videos dan mendapat output tentang ukuran semua file di folder ini.",
+    "qa:0052": "Anda ingin menandainya sebagai terjawab?",
+    "qa:0436": "request dan menampilkan hasilnya di terminal Anda. Anda juga bisa menggunakannya untuk hal",
+    "qa:0439": "pada dasarnya menulis query atas dokumen JSON dan HTML, masing-masing dengan tool tersebut",
+    "qa:0514": "threat model berbeda yang mungkin perlu Anda ingat",
+    "qa:0603": "ini tidak harus menjadi pilihan biner; Anda bisa menggabungkan kedua tool jika Anda",
+    "qa:0664": "lalu Anda bisa menekan apostrof, kemudian huruf yang sama untuk melompat kembali ke"
+  },
+  "source_transcript_caveats": [
+    {
+      "cue": "qa:0171",
+      "reason": "Source says PATH semicolon-separated; translated literally as titik koma. Source technical error/ASR should be labeled separately, not silently corrected."
+    },
+    {
+      "cue": "qa:0571",
+      "reason": "Source text says could not install BSD; ID says bisa memasangBSD. Context advocates BSD and likelyASRerror could install; must label transcriptcorrection/inference rather than silentlyreverseprintednegation."
+    },
+    {
+      "cue": "qa:0642",
+      "reason": "Source says semicolon WQ; correct Vim command is :wq. ID faithfully says titik komaWQ; retain with separateASR/source note."
+    },
+    {
+      "cue": "shell-tools:0253",
+      "reason": "Source says -F check for file existence, likely transcriptcaseerror for -f; ID preserves literal as requested, annotate separately if errata published."
+    },
+    {
+      "cue": "shell-tools:0728",
+      "reason": "ASR text both F fail...both face unintelligible; surroundingcontextdescribes fish autosuggestions. Keep originalsourceavailable and flag unclearsource, not invention."
+    },
+    {
+      "cue": "shell-tools:0754",
+      "reason": "ASR facily match likely fuzzily match for broot. IDdenganmudah is literal inference; sourceerratumcontext can state fuzzy matching separately."
+    }
+  ]
+}

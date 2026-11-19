@@ -1,0 +1,710 @@
+{
+  "project": "the-missing-semester-of-your-cs-education",
+  "source_commit": "1d695c94ccafdce3f06d6b9dfe3e6f106097693a",
+  "style_contract": [
+    "TRANSLATION_STATUS.md"
+  ],
+  "policy": "AI draft plus independent Codex review; no human review performed or claimed.",
+  "entries": [
+    {
+      "source": "_2019/automation.md",
+      "destination": "id/2019/automation.md",
+      "source_sha256": "ee56d652ad3a58a93be7092d9b23d890e403d9468599644834bf7b8a630f80ad",
+      "destination_sha256": "c1157713cbc1afe6dac3144c1a9d9dbb6a6015fdf12742f3513006e22bc71e96",
+      "status": "translated-independent-ai-reviewed",
+      "translation_engine": "hermes (deepseek-v4.1-flash)",
+      "ai_self_review": {
+        "done": true,
+        "method": "line-by-line comparison against source; headcount of headings, lists, code fences, links and image refs",
+        "checked_at": "2026-11-18T03:49:17+00:00"
+      },
+      "cross_engine_review": "complete: independent full source/translation paired review; corrections integrated",
+      "human_review": false,
+      "notes": [],
+      "draft_destination_sha256": "9d9afc7d3c88b3321c945238a48bb82ccb90c440718308e329ec45f781e6862c"
+    },
+    {
+      "source": "_2019/backups.md",
+      "destination": "id/2019/backups.md",
+      "source_sha256": "753b629ce979d1a71f0c79051e1b6a3d53ad3847b287859052727ce532b01cac",
+      "destination_sha256": "9e3704e64d2e9ada9a71ea734ef8a32cd3f8f00ef53c580142b9983fb62ab041",
+      "status": "translated-independent-ai-reviewed",
+      "translation_engine": "hermes (deepseek-v4.1-flash)",
+      "ai_self_review": {
+        "done": true,
+        "method": "line-by-line comparison against source; headcount of headings, lists, code fences, links and image refs",
+        "checked_at": "2026-11-18T03:49:17+00:00"
+      },
+      "cross_engine_review": "complete: independent full source/translation paired review; corrections integrated",
+      "human_review": false,
+      "notes": [],
+      "draft_destination_sha256": "40618ece2f7773efe4fa0d26a206f6b591cb182d96be88db32d1d987c4a0ee3e"
+    },
+    {
+      "source": "_2019/command-line.md",
+      "destination": "id/2019/command-line.md",
+      "source_sha256": "ac2f0e71ff988e4e0cd8d5438c37b3055805ba6ad120669dbd06f4aa5a4a3c2e",
+      "destination_sha256": "33139a25e2e49c896c75ebd0d5270440ec97de221ff03aa1052981d3b49cf66c",
+      "status": "translated-independent-ai-reviewed",
+      "translation_engine": "hermes (deepseek-v4.1-flash)",
+      "ai_self_review": {
+        "done": true,
+        "method": "line-by-line comparison against source; headcount of headings, lists, code fences, links and image refs",
+        "checked_at": "2026-11-18T03:49:17+00:00"
+      },
+      "cross_engine_review": "complete: independent full source/translation paired review; corrections integrated",
+      "human_review": false,
+      "notes": [],
+      "draft_destination_sha256": "f8e0495ea49d7c1113371350cc951890eec88fb5b081897597295a328d48553a"
+    },
+    {
+      "source": "_2019/course-overview.md",
+      "destination": "id/2019/course-overview.md",
+      "source_sha256": "9546815bbf9bb28970116370b7a28914429840fc8fcbde12e300439c30ec013e",
+      "destination_sha256": "f181ea5d74ec4d6ab3e308e2c8bc9d92d6cfa58cb20a102e7d17c5c7185f24b3",
+      "status": "translated-independent-ai-reviewed",
+      "translation_engine": "hermes (deepseek-v4.1-flash)",
+      "ai_self_review": {
+        "done": true,
+        "method": "line-by-line comparison against source; headcount of headings, lists, code fences, links and image refs",
+        "checked_at": "2026-11-18T03:49:17+00:00"
+      },
+      "cross_engine_review": "complete: independent full source/translation paired review; corrections integrated",
+      "human_review": false,
+      "notes": [],
+      "draft_destination_sha256": "1d7cd2d5944d2c37cd10f24dc0dafdb7d10493b4bd3b128fe08157a9c685d369"
+    },
+    {
+      "source": "_2019/data-wrangling.md",
+      "destination": "id/2019/data-wrangling.md",
+      "source_sha256": "e8727facf3b266911024e9a22b79e716333718a278c81c93ddd5b44607363d55",
+      "destination_sha256": "e3d68765edf8fefbf5b25293531bfd01a00d51bb727afd2d20f07a19d9918dfa",
+      "status": "translated-independent-ai-reviewed",
+      "translation_engine": "hermes (deepseek-v4.1-flash)",
+      "ai_self_review": {
+        "done": true,
+        "method": "line-by-line comparison against source; headcount of headings, lists, code fences, links and image refs",
+        "checked_at": "2026-11-18T03:52:58+00:00"
+      },
+      "cross_engine_review": "complete: independent full source/translation paired review; corrections integrated",
+      "human_review": false,
+      "notes": [],
+      "draft_destination_sha256": "9724c3c33cce94607d8b9aa433628dac63090f9c6243e5ced54b31b15f463d3f"
+    },
+    {
+      "source": "_2019/dotfiles.md",
+      "destination": "id/2019/dotfiles.md",
+      "source_sha256": "c809888f49dad9ceb373cafa19eae41eb840bdb35c8addbe8a360e9299dbc47f",
+      "destination_sha256": "f3a3555a802b2469d2dcb474577634da6799404452d2b573000c00ddbdc21c86",
+      "status": "translated-independent-ai-reviewed",
+      "translation_engine": "hermes (deepseek-v4.1-flash)",
+      "ai_self_review": {
+        "done": true,
+        "method": "line-by-line comparison against source; headcount of headings, lists, code fences, links and image refs",
+        "checked_at": "2026-11-18T03:52:12+00:00"
+      },
+      "cross_engine_review": "complete: independent full source/translation paired review; corrections integrated",
+      "human_review": false,
+      "notes": [],
+      "draft_destination_sha256": "033ab1a7cc8528bad74c7f3a6fefe8c7aabe7aaa81be02f04ad5644498311348"
+    },
+    {
+      "source": "_2019/editors.md",
+      "destination": "id/2019/editors.md",
+      "source_sha256": "00f8b65acfb4c5c54ff3c559073ffd0cc9d40ac5ab611b894db55ef7db851ed5",
+      "destination_sha256": "b9b1a78263629b96144271bb2b50d3ab664f964b8d2d00ab799945981d2ae45f",
+      "status": "translated-independent-ai-reviewed",
+      "translation_engine": "hermes (deepseek-v4.1-flash)",
+      "ai_self_review": {
+        "done": true,
+        "method": "line-by-line comparison against source; headcount of headings, lists, code fences, links and image refs",
+        "checked_at": "2026-11-18T03:54:15+00:00"
+      },
+      "cross_engine_review": "complete: independent full source/translation paired review; corrections integrated",
+      "human_review": false,
+      "notes": [],
+      "draft_destination_sha256": "35fab30507efa9491ec54aa608f47c0e2fd90dc56c5f1c904bdb9c1c1b684cc6"
+    },
+    {
+      "source": "_2019/index.md",
+      "destination": "id/2019/index.md",
+      "source_sha256": "134707f944e4952a1538ab142b98e54a2b5e2ede27717d2bd3ff39e92ddf5699",
+      "destination_sha256": "47df97620d7dcafe0d3e0da567a2e263eb9efcaa8cbb0288ba9ba2380bc620a9",
+      "status": "translated-independent-ai-reviewed",
+      "translation_engine": "hermes (deepseek-v4.1-flash)",
+      "ai_self_review": {
+        "done": true,
+        "method": "line-by-line comparison against source; headcount of headings, lists, code fences, links and image refs",
+        "checked_at": "2026-11-18T03:55:25+00:00"
+      },
+      "cross_engine_review": "complete: independent full source/translation paired review; corrections integrated",
+      "human_review": false,
+      "notes": [],
+      "draft_destination_sha256": "3bf47f46389043de3eff0517df9b06daf24fcb216a16719c11332e4fd45d4859"
+    },
+    {
+      "source": "_2019/machine-introspection.md",
+      "destination": "id/2019/machine-introspection.md",
+      "source_sha256": "79dd4895dac5fc1037c1fe0db2ae8b931241b32e8fc8990bb11371bbbbb1bb2f",
+      "destination_sha256": "7f2c823e0f95fca22b88d81ceb18197502266c0cfdf5fe5c820ccfe9b9154ed3",
+      "status": "translated-independent-ai-reviewed",
+      "translation_engine": "hermes (deepseek-v4.1-flash)",
+      "ai_self_review": {
+        "done": true,
+        "method": "line-by-line comparison against source; headcount of headings, lists, code fences, links and image refs",
+        "checked_at": "2026-11-18T03:52:12+00:00"
+      },
+      "cross_engine_review": "complete: independent full source/translation paired review; corrections integrated",
+      "human_review": false,
+      "notes": [],
+      "draft_destination_sha256": "98c76ef548c91ecc11b12f2949f7a86a45259b7e59593e2d23d28ae9ceb54445"
+    },
+    {
+      "source": "_2019/os-customization.md",
+      "destination": "id/2019/os-customization.md",
+      "source_sha256": "792c0a6a69d6f7614f1a05b8fab96a9264a7dbee39e4ff1e14282126f72841ad",
+      "destination_sha256": "af492f4808b094f6e717f8058155ae1c331841f7086ffe2a9db17778e0afcb4e",
+      "status": "translated-independent-ai-reviewed",
+      "translation_engine": "hermes (deepseek-v4.1-flash)",
+      "ai_self_review": {
+        "done": true,
+        "method": "line-by-line comparison against source; headcount of headings, lists, code fences, links and image refs",
+        "checked_at": "2026-11-18T03:52:12+00:00"
+      },
+      "cross_engine_review": "complete: independent full source/translation paired review; corrections integrated",
+      "human_review": false,
+      "notes": [],
+      "draft_destination_sha256": "ff7f18ec0205bb17daab0ddaafff8ee8dc5b1a145831fe88f1ce824536cf6dcb"
+    },
+    {
+      "source": "_2019/package-management.md",
+      "destination": "id/2019/package-management.md",
+      "source_sha256": "19e259c7f7f6b2545a511ef9d0afebc66c0ace34d384a06a8c2d0858072fb300",
+      "destination_sha256": "506b9f3938a4a597cd73367729e8840ffb1bcb4b26acd17d358859907042b8a8",
+      "status": "translated-independent-ai-reviewed",
+      "translation_engine": "hermes (deepseek-v4.1-flash)",
+      "ai_self_review": {
+        "done": true,
+        "method": "line-by-line comparison against source; headcount of headings, lists, code fences, links and image refs",
+        "checked_at": "2026-11-18T03:52:12+00:00"
+      },
+      "cross_engine_review": "complete: independent full source/translation paired review; corrections integrated",
+      "human_review": false,
+      "notes": [],
+      "draft_destination_sha256": "92d5b46bb6c096538445df1d2d4942d07088f7a51207324248a6a4eadd149dad"
+    },
+    {
+      "source": "_2019/program-introspection.md",
+      "destination": "id/2019/program-introspection.md",
+      "source_sha256": "508cb8c0cb27399db95a71ea068e9eea6f53869cc49e2e1227a7b924cf2f6fd7",
+      "destination_sha256": "b579c44724ad93df9faba24ce9b98525942ff54d8d2651d662dbb5231a771826",
+      "status": "translated-independent-ai-reviewed",
+      "translation_engine": "hermes (deepseek-v4.1-flash)",
+      "ai_self_review": {
+        "done": true,
+        "method": "line-by-line comparison against source; headcount of headings, lists, code fences, links and image refs",
+        "checked_at": "2026-11-18T03:52:12+00:00"
+      },
+      "cross_engine_review": "complete: independent full source/translation paired review; corrections integrated",
+      "human_review": false,
+      "notes": [],
+      "draft_destination_sha256": "b388adac96a3b93e1a98e44136ee935171d760c9c3bd516bc9ee34a43d26edd5"
+    },
+    {
+      "source": "_2019/remote-machines.md",
+      "destination": "id/2019/remote-machines.md",
+      "source_sha256": "26c9259d18ac86275e0100ec431b6143291636831ad6a3309ccd6943e88a12c2",
+      "destination_sha256": "40a871426ca1b0df3b2b9313845057d527e912a47767b90c74f6c2a6fa35066a",
+      "status": "translated-independent-ai-reviewed",
+      "translation_engine": "hermes (deepseek-v4.1-flash)",
+      "ai_self_review": {
+        "done": true,
+        "method": "line-by-line comparison against source; headcount of headings, lists, code fences, links and image refs",
+        "checked_at": "2026-11-18T03:52:12+00:00"
+      },
+      "cross_engine_review": "complete: independent full source/translation paired review; corrections integrated",
+      "human_review": false,
+      "notes": [],
+      "draft_destination_sha256": "a0cc87b86c0f6f70d8c4711f01fda0d061aec9bc40af9f0953c7d8b59bec4c12"
+    },
+    {
+      "source": "_2019/security.md",
+      "destination": "id/2019/security.md",
+      "source_sha256": "c49dcbc4dca393a08dc574720fd94b0bb4ce5a5214212a96317ba78fbf3917f5",
+      "destination_sha256": "b3a02a1b138687231bbb295a9a9aa5bc3ce4af6b591c044c34484cbc986f1b3f",
+      "status": "translated-independent-ai-reviewed",
+      "translation_engine": "hermes (deepseek-v4.1-flash)",
+      "ai_self_review": {
+        "done": true,
+        "method": "line-by-line comparison against source; headcount of headings, lists, code fences, links and image refs",
+        "checked_at": "2026-11-18T03:52:12+00:00"
+      },
+      "cross_engine_review": "complete: independent full source/translation paired review; corrections integrated",
+      "human_review": false,
+      "notes": [],
+      "draft_destination_sha256": "85ae856e6555870081b2ccd3f0552883b4321b1c2834622a69c36b3669273f0f"
+    },
+    {
+      "source": "_2019/shell.md",
+      "destination": "id/2019/shell.md",
+      "source_sha256": "669192969fb0cf73f8cc1547a7a9c430085fb8e949aab8831205683845f342dd",
+      "destination_sha256": "5a93ce2d1a4a2624e69a32e8cdb7ec4eb9dcab352fe8f7b6f1eacd054217d0a3",
+      "status": "translated-independent-ai-reviewed",
+      "translation_engine": "hermes (deepseek-v4.1-flash)",
+      "ai_self_review": {
+        "done": true,
+        "method": "line-by-line comparison against source; headcount of headings, lists, code fences, links and image refs",
+        "checked_at": "2026-11-18T03:53:43+00:00"
+      },
+      "cross_engine_review": "complete: independent full source/translation paired review; corrections integrated",
+      "human_review": false,
+      "notes": [],
+      "draft_destination_sha256": "a77de2562e6361bfdd01c1c20ebb692e262bb6abea5f58ed5ded10c8f6424d66"
+    },
+    {
+      "source": "_2019/version-control.md",
+      "destination": "id/2019/version-control.md",
+      "source_sha256": "74ee263b58227833647512dffab1f21727b36eeb26c0a119a8783a79a62f735a",
+      "destination_sha256": "8247606bcb056da3f5827d162bcbf2b7d9f5d7305b18c7996e443fb9a64921e7",
+      "status": "translated-independent-ai-reviewed",
+      "translation_engine": "hermes (deepseek-v4.1-flash)",
+      "ai_self_review": {
+        "done": true,
+        "method": "line-by-line comparison against source; headcount of headings, lists, code fences, links and image refs",
+        "checked_at": "2026-11-18T03:55:25+00:00"
+      },
+      "cross_engine_review": "complete: independent full source/translation paired review; corrections integrated",
+      "human_review": false,
+      "notes": [],
+      "draft_destination_sha256": "e9213b8137e7b7ef367f741838a5e1015fc57b4318aaef24dd2798c03355d73d"
+    },
+    {
+      "source": "_2019/virtual-machines.md",
+      "destination": "id/2019/virtual-machines.md",
+      "source_sha256": "e2c9aac6dd2358af1c626b875447eb2a70d13d85fc013f18717b41c0d44b6bdc",
+      "destination_sha256": "e0eed1021a90d98653a40be3e171738c75564c3bb1c74cb57ae5fd1cb3cd5f7f",
+      "status": "translated-independent-ai-reviewed",
+      "translation_engine": "hermes (deepseek-v4.1-flash)",
+      "ai_self_review": {
+        "done": true,
+        "method": "line-by-line comparison against source; headcount of headings, lists, code fences, links and image refs",
+        "checked_at": "2026-11-18T03:52:12+00:00"
+      },
+      "cross_engine_review": "complete: independent full source/translation paired review; corrections integrated",
+      "human_review": false,
+      "notes": [],
+      "draft_destination_sha256": "74d5ea320bb293bafcb35fdf1f476247105e64f0deb969fe606c911ef8e0b58a"
+    },
+    {
+      "source": "_2019/web.md",
+      "destination": "id/2019/web.md",
+      "source_sha256": "22ef66189b89ec0c1e7700c27c6c52334f4b8f5b42065c58fdc1b08b53128475",
+      "destination_sha256": "17264e78cba85a01ca07f842b2b5894dfc5554b21d6ae0ed86863acfab2a3dfc",
+      "status": "translated-independent-ai-reviewed",
+      "translation_engine": "hermes (deepseek-v4.1-flash)",
+      "ai_self_review": {
+        "done": true,
+        "method": "line-by-line comparison against source; headcount of headings, lists, code fences, links and image refs",
+        "checked_at": "2026-11-18T03:52:12+00:00"
+      },
+      "cross_engine_review": "complete: independent full source/translation paired review; corrections integrated",
+      "human_review": false,
+      "notes": [],
+      "draft_destination_sha256": "44be286a2b05bc07a57019f5a86492c417ddcffee76f9b8df9b25f6c1ca7d65c"
+    },
+    {
+      "source": "_2020/command-line.md",
+      "destination": "id/2020/command-line.md",
+      "source_sha256": "d39111e935afaa02d06d12ae7c4d38fbd8408d4b98f52a777742dda5625e05a0",
+      "destination_sha256": "ea09f22682651686ee06a5fbd44e3aca9c0f95df7de2d295b6807bd8317b28ae",
+      "status": "translated-independent-ai-reviewed",
+      "translation_engine": "hermes (deepseek-v4.1-flash)",
+      "ai_self_review": {
+        "done": true,
+        "method": "line-by-line comparison against source; headcount of headings, lists, code fences, links and image refs",
+        "checked_at": "2026-11-18T03:41:15+00:00"
+      },
+      "cross_engine_review": "complete: independent full source/translation paired review; corrections integrated",
+      "human_review": false,
+      "notes": [],
+      "draft_destination_sha256": "82200a8e6e2219ba9032bcb124bce0923e775a1f57bd86b7b0aa8f9adef0eb5a"
+    },
+    {
+      "source": "_2020/course-shell.md",
+      "destination": "id/2020/course-shell.md",
+      "source_sha256": "eade64968fdf9bd1070bea351af4ac31e4b2f17fbe3b5287e9f2ed89e8d56bcf",
+      "destination_sha256": "ee0213ec54a7bf3066af7dce902d961b277d1301fcdf7252810785387634e6e7",
+      "status": "translated-independent-ai-reviewed",
+      "translation_engine": "hermes (deepseek-v4.1-flash)",
+      "ai_self_review": {
+        "done": true,
+        "method": "line-by-line comparison against source; headcount of headings, lists, code fences, links and image refs",
+        "checked_at": "2026-11-18T03:37:04+00:00"
+      },
+      "cross_engine_review": "complete: independent full source/translation paired review; corrections integrated",
+      "human_review": false,
+      "notes": [],
+      "draft_destination_sha256": "9d538fbc06d084899a2a2e650952908a21fcac5f48ebb8e1b01cab0a0b62ce15"
+    },
+    {
+      "source": "_2020/data-wrangling.md",
+      "destination": "id/2020/data-wrangling.md",
+      "source_sha256": "5f2fcbfa734a2a8e5a21fa80b7eba2d9ea396a116ac71d2ba67921cef63197b1",
+      "destination_sha256": "e1caa77a311b9cc814781657d242ac1b67f1320b6725aed5efc852a51fcb1a46",
+      "status": "translated-independent-ai-reviewed",
+      "translation_engine": "hermes (deepseek-v4.1-flash)",
+      "ai_self_review": {
+        "done": true,
+        "method": "line-by-line comparison against source; headcount of headings, lists, code fences, links and image refs",
+        "checked_at": "2026-11-18T03:40:00+00:00"
+      },
+      "cross_engine_review": "complete: independent full source/translation paired review; corrections integrated",
+      "human_review": false,
+      "notes": [],
+      "draft_destination_sha256": "838d423263323a340b8dc1fd1c8c2e5c65e579234c7bec725ec2ed42849394ea"
+    },
+    {
+      "source": "_2020/debugging-profiling.md",
+      "destination": "id/2020/debugging-profiling.md",
+      "source_sha256": "0ce405bd6abe57b18a035d50ff589525c1c09685045f2e5758cacc6f64efc2da",
+      "destination_sha256": "55382d5426f5b4294616ae61dc14729cb852d8c5fa3a57fe89e50cccb8adb3d0",
+      "status": "translated-independent-ai-reviewed",
+      "translation_engine": "hermes (deepseek-v4.1-flash)",
+      "ai_self_review": {
+        "done": true,
+        "method": "line-by-line comparison against source; headcount of headings, lists, code fences, links and image refs",
+        "checked_at": "2026-11-18T03:43:39+00:00"
+      },
+      "cross_engine_review": "complete: independent full source/translation paired review; corrections integrated",
+      "human_review": false,
+      "notes": [],
+      "draft_destination_sha256": "99ad2cff13913d184aae0c1d9d2e766fa31c66e6dc806c1ecc05408a363f7873"
+    },
+    {
+      "source": "_2020/editors-notes.txt",
+      "destination": "id/2020/editors-notes.txt",
+      "source_sha256": "fc7ed151a0492fbf7eb3ab1f0126a17b539c2b0e11104d405364c82ea0e66a5c",
+      "destination_sha256": "7e71b8d21817d38a3217aef4df61bb03e85a51f0026a441f247a4097b93dc216",
+      "status": "translated-independent-ai-reviewed",
+      "translation_engine": "hermes (deepseek-v4.1-flash)",
+      "ai_self_review": {
+        "done": true,
+        "method": "line-by-line comparison against source; headcount of headings, lists, code fences, links and image refs",
+        "checked_at": "2026-11-18T03:47:58+00:00"
+      },
+      "cross_engine_review": "complete: independent full source/translation paired review; corrections integrated",
+      "human_review": false,
+      "notes": [],
+      "draft_destination_sha256": "fa61871b59e0f87cade9c570396bb948a2d2efb6ed8c27aa01aaad98b66326f5"
+    },
+    {
+      "source": "_2020/editors.md",
+      "destination": "id/2020/editors.md",
+      "source_sha256": "06ef17e42ebdc4b728fb922d9d4f0d1684e479d8d6901d7daab861fc1a0920d3",
+      "destination_sha256": "ec6cd86eaa01f6677c34c1287d73a0f216f059b3f10f29b6c0c5e3f2eb95ea0a",
+      "status": "translated-independent-ai-reviewed",
+      "translation_engine": "hermes (deepseek-v4.1-flash)",
+      "ai_self_review": {
+        "done": true,
+        "method": "line-by-line comparison against source; headcount of headings, lists, code fences, links and image refs",
+        "checked_at": "2026-11-18T03:39:02+00:00"
+      },
+      "cross_engine_review": "complete: independent full source/translation paired review; corrections integrated",
+      "human_review": false,
+      "notes": [],
+      "draft_destination_sha256": "158d27b5d361c3291067c8c9dd191c94cc73d91c98cca668adc9f5fcb4f9f342"
+    },
+    {
+      "source": "_2020/index.md",
+      "destination": "id/2020/index.md",
+      "source_sha256": "261dddd9a94fe114589758310e698f06f8042be10709ec3fd09e002e4cc9bc94",
+      "destination_sha256": "c5cf4263bb7fdc5067f33fb99b04a94cdaf63c70cee9ece9113ccf0da2da5d2c",
+      "status": "translated-independent-ai-reviewed",
+      "translation_engine": "hermes (deepseek-v4.1-flash)",
+      "ai_self_review": {
+        "done": true,
+        "method": "line-by-line comparison against source; headcount of headings, lists, code fences, links and image refs",
+        "checked_at": "2026-11-18T03:47:58+00:00"
+      },
+      "cross_engine_review": "complete: independent full source/translation paired review; corrections integrated",
+      "human_review": false,
+      "notes": [],
+      "draft_destination_sha256": "a7fae10fe000db93aa100ced40cb5c872c187d113e06441f37af47b9999f3089"
+    },
+    {
+      "source": "_2020/metaprogramming.md",
+      "destination": "id/2020/metaprogramming.md",
+      "source_sha256": "37d0ccb1ecd4b94e95eb05564adbfadd0bcf5b4c2fa89f9e19e33f7337557ac0",
+      "destination_sha256": "8791fec18588dcad4e1e76141c88a3bb77f9b756858806c5c125e203d0504c00",
+      "status": "translated-independent-ai-reviewed",
+      "translation_engine": "hermes (deepseek-v4.1-flash)",
+      "ai_self_review": {
+        "done": true,
+        "method": "line-by-line comparison against source; headcount of headings, lists, code fences, links and image refs",
+        "checked_at": "2026-11-18T03:44:27+00:00"
+      },
+      "cross_engine_review": "complete: independent full source/translation paired review; corrections integrated",
+      "human_review": false,
+      "notes": [],
+      "draft_destination_sha256": "42211190fbef16ad8312e5f66ea39af113033ef5313aacbabeab90d684aa4da9"
+    },
+    {
+      "source": "_2020/potpourri.md",
+      "destination": "id/2020/potpourri.md",
+      "source_sha256": "52c8f3bf7b4da8cd1f1e42cefc0ecbea0b5697478ab1d210cf4635fb27577786",
+      "destination_sha256": "5d9f5e8be714fb76bb1903d3ff3cde9136b2ede70b576743abd99a9645eab5b4",
+      "status": "translated-independent-ai-reviewed",
+      "translation_engine": "hermes (deepseek-v4.1-flash)",
+      "ai_self_review": {
+        "done": true,
+        "method": "line-by-line comparison against source; headcount of headings, lists, code fences, links and image refs",
+        "checked_at": "2026-11-18T03:46:24+00:00"
+      },
+      "cross_engine_review": "complete: independent full source/translation paired review; corrections integrated",
+      "human_review": false,
+      "notes": [],
+      "draft_destination_sha256": "4233cfe629894b94d4cb31dc66c119476a4f46777bbb3dc9b43c497b87d4c51e"
+    },
+    {
+      "source": "_2020/qa.md",
+      "destination": "id/2020/qa.md",
+      "source_sha256": "a2d5c86cae42c7364c5fa1b6b8d399307cd7e57abfe672ed3769003f65123ce1",
+      "destination_sha256": "94554b496dbdeca140330a64fa50aeed6e3cdf6525c362f6850513e2e6ecdd59",
+      "status": "translated-independent-ai-reviewed",
+      "translation_engine": "hermes (deepseek-v4.1-flash)",
+      "ai_self_review": {
+        "done": true,
+        "method": "line-by-line comparison against source; headcount of headings, lists, code fences, links and image refs",
+        "checked_at": "2026-11-18T03:47:36+00:00"
+      },
+      "cross_engine_review": "complete: independent full source/translation paired review; corrections integrated",
+      "human_review": false,
+      "notes": [],
+      "draft_destination_sha256": "f53318dcb7a8ca922afb757dd040240a98d16cfc6f56469dbb4875ce7ea17941"
+    },
+    {
+      "source": "_2020/security.md",
+      "destination": "id/2020/security.md",
+      "source_sha256": "849faa3f84f5717892c11332b6b5a22b34d8e89b0379133eec4dae16fca1dabb",
+      "destination_sha256": "33df408bb623deacf42653434385e2bed855c1919128ad4be1a1046a4e5c6682",
+      "status": "translated-independent-ai-reviewed",
+      "translation_engine": "hermes (deepseek-v4.1-flash)",
+      "ai_self_review": {
+        "done": true,
+        "method": "line-by-line comparison against source; headcount of headings, lists, code fences, links and image refs",
+        "checked_at": "2026-11-18T03:45:16+00:00"
+      },
+      "cross_engine_review": "complete: independent full source/translation paired review; corrections integrated",
+      "human_review": false,
+      "notes": [],
+      "draft_destination_sha256": "bd953c096ab0f1d82fdfac2bb6cffdf95bc027970bc598e5ac8a7c9eac8a5b8f"
+    },
+    {
+      "source": "_2020/shell-tools.md",
+      "destination": "id/2020/shell-tools.md",
+      "source_sha256": "c4da44e76be25c385e48290181bd8de63d6de3d35e896cd24c346f5dc950a982",
+      "destination_sha256": "a8a6d9868c223f28d00395873e7210c21b2579835e0b7a3c12338df412035b41",
+      "status": "translated-independent-ai-reviewed",
+      "translation_engine": "hermes (deepseek-v4.1-flash)",
+      "ai_self_review": {
+        "done": true,
+        "method": "line-by-line comparison against source; headcount of headings, lists, code fences, links and image refs",
+        "checked_at": "2026-11-18T03:38:04+00:00"
+      },
+      "cross_engine_review": "complete: independent full source/translation paired review; corrections integrated",
+      "human_review": false,
+      "notes": [],
+      "draft_destination_sha256": "faa742de27257f30b85bc2ca9809c5315972f74870334082ee3dda606d60782e"
+    },
+    {
+      "source": "_2020/version-control.md",
+      "destination": "id/2020/version-control.md",
+      "source_sha256": "b7e34b049857de4f968f26d4ac5d0dfa159eee70e778e0e8e6254c9f0a9f7ac8",
+      "destination_sha256": "ad4f4a3e62e551201ed534e888fa7174b0d7cf2d8619e05173ffbc8f6cc5eaa0",
+      "status": "translated-independent-ai-reviewed",
+      "translation_engine": "hermes (deepseek-v4.1-flash)",
+      "ai_self_review": {
+        "done": true,
+        "method": "line-by-line comparison against source; headcount of headings, lists, code fences, links and image refs",
+        "checked_at": "2026-11-18T03:42:18+00:00"
+      },
+      "cross_engine_review": "complete: independent full source/translation paired review; corrections integrated",
+      "human_review": false,
+      "notes": [],
+      "draft_destination_sha256": "682b7abc8ced704b48a23bebb5f5ccd0c0d2524d38c6aa32a7f1cc65447d6223"
+    },
+    {
+      "source": "_2026/agentic-coding.md",
+      "destination": "id/2026/agentic-coding.md",
+      "source_sha256": "c5fab53c912d9ae9bbfec043804d3fc6251b6071b179d63672646fd82463e00d",
+      "destination_sha256": "8567d1390b6bb21fd006b8a7977294ba809e1d1c6b576ffebd9614067d04dfe9",
+      "status": "translated-independent-ai-reviewed",
+      "translation_engine": "hermes (deepseek-v4.1-flash)",
+      "ai_self_review": {
+        "done": true,
+        "method": "line-by-line comparison against source; headcount of headings, lists, code fences, links and image refs",
+        "checked_at": "2026-11-18T03:23:40+00:00"
+      },
+      "cross_engine_review": "complete: independent full source/translation paired review; corrections integrated",
+      "human_review": false,
+      "notes": [],
+      "draft_destination_sha256": "a81856b7b219483ff8221498c23272c7693ee80f03107fede92f26ad5d4131cd"
+    },
+    {
+      "source": "_2026/beyond-code.md",
+      "destination": "id/2026/beyond-code.md",
+      "source_sha256": "127dda7d9ac93dff758ed0c9afe1003d5f5b5d3e16607c44098aad6988998c58",
+      "destination_sha256": "72d8dc724ec471db401548c4b41e084a57088ecf006b2dea3f981b584307d848",
+      "status": "translated-independent-ai-reviewed",
+      "translation_engine": "hermes (deepseek-v4.1-flash)",
+      "ai_self_review": {
+        "done": true,
+        "method": "line-by-line comparison against source; headcount of headings, lists, code fences, links and image refs",
+        "checked_at": "2026-11-18T03:35:37+00:00"
+      },
+      "cross_engine_review": "complete: independent full source/translation paired review; corrections integrated",
+      "human_review": false,
+      "notes": [],
+      "draft_destination_sha256": "7f93507fc73d2a557c40938bb61969ee7cd240fe3e4617ffac6e889145244a42"
+    },
+    {
+      "source": "_2026/code-quality.md",
+      "destination": "id/2026/code-quality.md",
+      "source_sha256": "77e2190ce3e957893b7997bb3046d8db113720be7a716052629ca6942ec2eb8d",
+      "destination_sha256": "66cd3bda77c9da98c7a7cd1287b29dd18916a4d6c60ef051d78d9fc9e21023e1",
+      "status": "translated-independent-ai-reviewed",
+      "translation_engine": "hermes (deepseek-v4.1-flash)",
+      "ai_self_review": {
+        "done": true,
+        "method": "line-by-line comparison against source; headcount of headings, lists, code fences, links and image refs",
+        "checked_at": "2026-11-18T03:35:55+00:00"
+      },
+      "cross_engine_review": "complete: independent full source/translation paired review; corrections integrated",
+      "human_review": false,
+      "notes": [],
+      "draft_destination_sha256": "1439231ecee3fec60d3fa73356e1c91bc2bed6dae6501d9dbb3f7ff9a65e4666"
+    },
+    {
+      "source": "_2026/command-line-environment.md",
+      "destination": "id/2026/command-line-environment.md",
+      "source_sha256": "6d12709a04305cf40ead1c473002f70f9e42d2410b1e604cc10b5b38a91e0c89",
+      "destination_sha256": "c5ce980ec3db561879cf869f2d39461d6b5be83b8e1711e6db2e2a9b50d3e143",
+      "status": "translated-independent-ai-reviewed",
+      "translation_engine": "hermes (deepseek-v4.1-flash)",
+      "ai_self_review": {
+        "done": true,
+        "method": "line-by-line comparison against source; headcount of headings, lists, code fences, links and image refs",
+        "checked_at": "2026-11-18T03:27:18+00:00"
+      },
+      "cross_engine_review": "complete: independent full source/translation paired review; corrections integrated",
+      "human_review": false,
+      "notes": [],
+      "draft_destination_sha256": "901354a42e00d706359a2138f2ca1f7e15faebf5c4c611fb4250fe08e76931b2"
+    },
+    {
+      "source": "_2026/course-shell.md",
+      "destination": "id/2026/course-shell.md",
+      "source_sha256": "5faf16d0b8b1446cf7f8ca48e1ba60e403120d938ca0dbbf0f54b400756bbdef",
+      "destination_sha256": "b65e472536c7f5a26be2bca03f5f2a41ff76e280bf1e372dca64a0b4f8543ead",
+      "status": "translated-independent-ai-reviewed",
+      "translation_engine": "hermes (deepseek-v4.1-flash)",
+      "ai_self_review": {
+        "done": true,
+        "method": "line-by-line comparison against source; headcount of headings, lists, code fences, links and image refs",
+        "checked_at": "2026-11-18T03:25:00+00:00"
+      },
+      "cross_engine_review": "complete: independent full source/translation paired review; corrections integrated",
+      "human_review": false,
+      "notes": [],
+      "draft_destination_sha256": "aaea36081e3c451d1258e6b190313c84d537375113ffd838f5e274b058f267d1"
+    },
+    {
+      "source": "_2026/debugging-profiling.md",
+      "destination": "id/2026/debugging-profiling.md",
+      "source_sha256": "8fbf4b2dc8490002a16a5a7c01fe68ba6d96db5b7d29a98af668ad164182b0fc",
+      "destination_sha256": "d79c5f419f23e3d584b4c2404a3ff6552185bd976233f89587bd23b396c85a7f",
+      "status": "translated-independent-ai-reviewed",
+      "translation_engine": "hermes (deepseek-v4.1-flash)",
+      "ai_self_review": {
+        "done": true,
+        "method": "line-by-line comparison against source; headcount of headings, lists, code fences, links and image refs",
+        "checked_at": "2026-11-18T03:30:28+00:00"
+      },
+      "cross_engine_review": "complete: independent full source/translation paired review; corrections integrated",
+      "human_review": false,
+      "notes": [],
+      "draft_destination_sha256": "8d87f902930fd8e16013ef3e404668f7973ec47068a5b66762ffc255685c28e0"
+    },
+    {
+      "source": "_2026/development-environment.md",
+      "destination": "id/2026/development-environment.md",
+      "source_sha256": "d87f1a31bb2c795f99ce5f52a5e3425d8c2f75b23e4ec8946b900059b28e168c",
+      "destination_sha256": "2f45fedf74cd03608d7896e6a8d6ee12c04b232859b3c69cc1f1b8bc571f488b",
+      "status": "translated-independent-ai-reviewed",
+      "translation_engine": "hermes (deepseek-v4.1-flash)",
+      "ai_self_review": {
+        "done": true,
+        "method": "line-by-line comparison against source; headcount of headings, lists, code fences, links and image refs",
+        "checked_at": "2026-11-18T03:29:10+00:00"
+      },
+      "cross_engine_review": "complete: independent full source/translation paired review; corrections integrated",
+      "human_review": false,
+      "notes": [],
+      "draft_destination_sha256": "b7ecb4119c12033b6783258593224854b645e6588ac8650f2470ba6785de84b5"
+    },
+    {
+      "source": "_2026/index.md",
+      "destination": "id/2026/index.md",
+      "source_sha256": "b8019b3579dba827743d0aa71722fd186abfe90cd3d3aad7b1149f716130df85",
+      "destination_sha256": "119e210b29bc479eea0cd83800701e366d11af252aa75ce0d60fe3d0ff3e9da6",
+      "status": "translated-independent-ai-reviewed",
+      "translation_engine": "hermes (deepseek-v4.1-flash)",
+      "ai_self_review": {
+        "done": true,
+        "method": "line-by-line comparison against source; headcount of headings, lists, code fences, links and image refs",
+        "checked_at": "2026-11-18T03:36:02+00:00"
+      },
+      "cross_engine_review": "complete: independent full source/translation paired review; corrections integrated",
+      "human_review": false,
+      "notes": [],
+      "draft_destination_sha256": "c3b1f787a29f123a31abb506e67542bb84c792bb8bdada8e7dacde6146483f09"
+    },
+    {
+      "source": "_2026/shipping-code.md",
+      "destination": "id/2026/shipping-code.md",
+      "source_sha256": "71cd98fa167ee0a381c026d44320761dbfe367402c2db015b5ce5c5a6d5a34a8",
+      "destination_sha256": "7ad7228ad1ff28f56fcacec701f9cd526d9e484dcefcdf7cf89a1c565c252ff5",
+      "status": "translated-independent-ai-reviewed",
+      "translation_engine": "hermes (deepseek-v4.1-flash)",
+      "ai_self_review": {
+        "done": true,
+        "method": "line-by-line comparison against source; headcount of headings, lists, code fences, links and image refs",
+        "checked_at": "2026-11-18T03:33:47+00:00"
+      },
+      "cross_engine_review": "complete: independent full source/translation paired review; corrections integrated",
+      "human_review": false,
+      "notes": [],
+      "draft_destination_sha256": "1beafdfac3e2118ecdfdd5febbdd6b5e525d041f2fa8575151bc310094f55835"
+    },
+    {
+      "source": "_2026/version-control.md",
+      "destination": "id/2026/version-control.md",
+      "source_sha256": "ce428850eca68af5880d55f43da831c4f41dfad51ee8fe0c2265e5e05593c3c0",
+      "destination_sha256": "27aa40e61c84915cf3c0127e531818ce771e4b26cd25ff23d020c067a72deda8",
+      "status": "translated-independent-ai-reviewed",
+      "translation_engine": "hermes (deepseek-v4.1-flash)",
+      "ai_self_review": {
+        "done": true,
+        "method": "line-by-line comparison against source; headcount of headings, lists, code fences, links and image refs",
+        "checked_at": "2026-11-18T03:29:10+00:00"
+      },
+      "cross_engine_review": "complete: independent full source/translation paired review; corrections integrated",
+      "human_review": false,
+      "notes": [],
+      "draft_destination_sha256": "b6825eb5818deb859de2c1b3623e04b41d36edba1bdc69b50c97107481ca7f3b"
+    }
+  ],
+  "updated": "2026-11-18T03:55:25+00:00",
+  "native_qa": "TRANSLATION_QA.json",
+  "subtitle_qa": "SUBTITLE_QA.json"
+}

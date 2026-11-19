@@ -1,0 +1,2439 @@
+0:00:00.480,0:00:02.480
+Oke, apakah semua orang bisa mendengar saya dengan jelas?
+
+0:00:03.720,0:00:06.160
+Oke, selamat datang kembali.
+
+0:00:06.160,0:00:10.320
+Saya akan membahas beberapa hal administratif.
+
+0:00:10.640,0:00:13.080
+Dengan berakhirnya minggu pertama,
+
+0:00:13.179,0:00:16.349
+kami mengirim email yang memberitahukan bahwa
+
+0:00:16.600,0:00:20.219
+kami telah mengunggah video untuk minggu pertama, jadi Anda sekarang bisa menemukannya online.
+
+0:00:20.470,0:00:26.670
+Di dalamnya ada semua screen recording untuk hal-hal yang kami kerjakan, jadi Anda bisa kembali ke sana.
+
+0:00:26.830,0:00:31.439
+Kalau Anda bingung karena kami melakukan sesuatu dengan cepat dan, sekali lagi,
+
+0:00:31.440,0:00:37.560
+silakan tanyakan apa pun kepada kami jika ada bagian di lecture notes yang tidak jelas. Kami juga mengirimkan
+
+0:00:37.880,0:00:42.360
+survei agar Anda bisa memberi masukan tentang apa yang tidak jelas,
+
+0:00:42.360,0:00:46.280
+materi mana yang Anda ingin dijelaskan lebih mendalam, atau
+
+0:00:47.110,0:00:51.749
+hal lain apa pun, jika menurut Anda latihannya terlalu sulit, terlalu mudah,
+
+0:00:52.239,0:00:55.288
+buka URL itu dan kami akan sangat
+
+0:00:55.960,0:01:00.040
+menghargai masukan tersebut, karena itu akan membuat kursus lebih baik
+
+0:01:00.480,0:01:03.800
+untuk lecture berikutnya dan untuk iterasi kursus di masa depan.
+
+0:01:05.080,0:01:07.080
+Setelah itu selesai,
+
+0:01:07.080,0:01:10.840
+Oh, dan kami akan mencoba mengunggah video dengan lebih tepat waktu.
+
+0:01:11.200,0:01:16.040
+Kami tidak ingin menunggu sampai akhir minggu untuk itu. Jadi nantikan.
+
+0:01:18.760,0:01:19.840
+Setelah itu,
+
+0:01:19.920,0:01:20.800
+sekarang saya akan
+
+0:01:21.120,0:01:24.960
+Lecture ini berjudul command-line environment dan kita akan
+
+0:01:25.160,0:01:28.440
+membahas beberapa topik berbeda. Jadi
+
+0:01:28.990,0:01:30.990
+topik utama yang akan
+
+0:01:32.040,0:01:34.520
+kita bahas, supaya Anda bisa mengikuti,
+
+0:01:34.680,0:01:36.400
+mungkin lebih baik di sini,
+
+0:01:36.400,0:01:37.720
+mengikuti apa yang saya bicarakan.
+
+0:01:37.920,0:01:41.560
+Yang pertama adalah job control.
+
+0:01:42.040,0:01:44.280
+Yang kedua adalah
+
+0:01:44.600,0:01:46.600
+terminal multiplexer.
+
+0:01:51.720,0:01:57.360
+Lalu saya akan menjelaskan apa itu dotfiles dan cara mengonfigurasi shell Anda.
+
+0:01:57.360,0:02:03.240
+Dan terakhir, cara bekerja secara efisien dengan mesin remote. Jadi kalau ada yang belum
+
+0:02:05.110,0:02:07.589
+sepenuhnya jelas, ingatlah struktur ini.
+
+0:02:08.200,0:02:12.320
+Semuanya saling terkait dalam beberapa cara, dalam hal cara Anda menggunakan terminal,
+
+0:02:12.880,0:02:17.280
+tetapi topik-topiknya agak terpisah, jadi ingatlah hal itu.
+
+0:02:17.600,0:02:23.800
+Mari kita mulai dengan job control. Sejauh ini kita menggunakan shell dengan cara yang sangat
+
+0:02:24.800,0:02:27.720
+satu perintah. Misalnya, Anda menjalankan sebuah perintah lalu
+
+0:02:27.840,0:02:31.800
+perintah itu dieksekusi, lalu Anda mendapat output, dan hanya itu yang bisa Anda lakukan.
+
+0:02:32.200,0:02:36.520
+Dan jika Anda ingin menjalankan beberapa hal, tidak jelas
+
+0:02:36.540,0:02:41.099
+bagaimana caranya. Atau jika Anda ingin menghentikan eksekusi sebuah program, sekali lagi,
+
+0:02:41.099,0:02:43.768
+bagaimana saya tahu cara menghentikan sebuah program?
+
+0:02:44.650,0:02:47.940
+Mari kita tunjukkan dengan perintah bernama sleep.
+
+0:02:48.160,0:02:50.320
+Sleep adalah perintah yang menerima argumen,
+
+0:02:50.320,0:02:54.360
+dan argumen itu berupa bilangan bulat, lalu perintah itu akan sleep.
+
+0:02:54.360,0:02:58.440
+Perintah itu hanya akan berada di sana, di background, selama sekian detik.
+
+0:02:58.440,0:03:03.539
+Jadi jika kita menjalankan sesuatu seperti sleep 20, proses ini akan sleep selama 20 detik.
+
+0:03:03.539,0:03:07.720
+Tetapi kita tidak ingin menunggu 20 detik agar perintah itu selesai.
+
+0:03:08.040,0:03:10.800
+Jadi yang bisa kita lakukan adalah mengetik "Ctrl+C".
+
+0:03:10.840,0:03:12.580
+Dengan mengetik "Ctrl+C"
+
+0:03:12.580,0:03:17.840
+Kita bisa melihat bahwa terminal memberi tahu kita,
+
+0:03:18.880,0:03:22.840
+dan ini bagian dari sintaks yang kita bahas di lecture editors / Vim,
+
+0:03:23.000,0:03:27.200
+bahwa kita mengetik "Ctrl+C" dan itu menghentikan eksekusi proses.
+
+0:03:27.640,0:03:29.640
+Apa yang sebenarnya terjadi di sini
+
+0:03:29.880,0:03:34.840
+adalah bahwa ini menggunakan mekanisme komunikasi UNIX yang disebut signal.
+
+0:03:35.120,0:03:37.360
+Saat kita mengetik "Ctrl+C",
+
+0:03:37.800,0:03:42.080
+yang dilakukan terminal untuk kita, atau shell untuk kita,
+
+0:03:42.160,0:03:45.960
+adalah mengirim signal bernama SIGINT,
+
+0:03:45.960,0:03:51.320
+singkatan dari SIGnal INTerrupt, yang memberi tahu program untuk menghentikan dirinya sendiri.
+
+0:03:51.680,0:03:57.520
+Dan ada banyak sekali signal semacam ini. Jika Anda menjalankan man signal,
+
+0:03:58.880,0:04:05.060
+lalu turun sedikit, di sini Anda punya daftarnya.
+
+0:04:05.060,0:04:07.040
+Semuanya punya identifier berupa angka,
+
+0:04:07.520,0:04:10.640
+semuanya punya nama singkat dan Anda bisa menemukan deskripsinya.
+
+0:04:10.960,0:04:16.400
+Jadi misalnya, yang baru saya jelaskan ada di sini, nomor 2, SIGINT.
+
+0:04:16.520,0:04:22.200
+Ini adalah signal yang dikirim terminal ke sebuah program ketika terminal ingin menginterupsi eksekusinya.
+
+0:04:22.520,0:04:25.840
+Beberapa lagi yang perlu Anda kenali
+
+0:04:26.460,0:04:28.530
+adalah SIGQUIT, ini
+
+0:04:29.229,0:04:34.409
+lagi-lagi, jika Anda bekerja dari terminal dan ingin menghentikan eksekusi sebuah program.
+
+0:04:34.409,0:04:37.720
+Untuk sebagian besar program, efeknya sama,
+
+0:04:37.720,0:04:41.120
+tetapi sekarang kita akan menunjukkan sebuah program yang berbeda,
+
+0:04:41.440,0:04:43.760
+dan ini adalah signal yang akan dikirim.
+
+0:04:44.680,0:04:49.229
+Kadang ini bisa membingungkan. Melihat signal-signal ini, misalnya, SIGTERM
+
+0:04:50.080,0:04:54.100
+pada sebagian besar kasus setara dengan SIGINT dan SIGQUIT
+
+0:04:54.480,0:04:58.380
+tetapi hanya ketika signal itu tidak dikirim melalui terminal.
+
+0:04:59.680,0:05:01.680
+Beberapa lagi yang akan
+
+0:05:01.900,0:05:06.209
+kita bahas adalah SIGHUP, yaitu ketika terjadi semacam hang-up pada terminal.
+
+0:05:06.210,0:05:10.199
+Jadi misalnya, saat Anda berada di terminal, jika Anda menutup terminal Anda
+
+0:05:10.199,0:05:13.348
+dan masih ada hal-hal yang berjalan di terminal itu,
+
+0:05:13.480,0:05:17.000
+itulah signal yang akan dikirim program
+
+0:05:17.000,0:05:19.960
+ke semua proses untuk memberi tahu bahwa mereka sebaiknya menutup,
+
+0:05:19.960,0:05:25.080
+seolah-olah terjadi hang-up pada komunikasi command line
+
+0:05:25.080,0:05:26.800
+dan mereka sebaiknya menutup sekarang.
+
+0:05:28.400,0:05:34.260
+Signal bisa melakukan lebih dari sekadar menghentikan, menginterupsi program, dan meminta program untuk selesai.
+
+0:05:34.260,0:05:36.840
+Anda misalnya bisa menggunakan
+
+0:05:37.520,0:05:43.840
+SIGSTOP untuk menjeda eksekusi program, lalu Anda bisa menggunakan
+
+0:05:44.480,0:05:50.160
+perintah SIGCONT untuk melanjutkan, untuk melanjutkan eksekusi program pada waktu berikutnya.
+
+0:05:51.160,0:05:55.440
+Karena semua ini mungkin agak terlalu abstrak, mari kita lihat beberapa contoh.
+
+0:05:58.040,0:06:00.560
+Pertama, mari kita tunjukkan sebuah
+
+0:06:01.960,0:06:06.240
+program Python. Saya akan membahas program ini dengan sangat cepat.
+
+0:06:06.440,0:06:08.360
+Ini adalah program Python,
+
+0:06:08.720,0:06:10.760
+yang seperti sebagian besar program Python,
+
+0:06:11.520,0:06:13.960
+mengimpor library signal ini dan
+
+0:06:14.960,0:06:20.400
+mendefinisikan handler ini. Dan handler ini menulis,
+
+0:06:20.440,0:06:23.040
+"Oh, I got a SIGINT, but I'm not gonna stop here".
+
+0:06:23.480,0:06:24.960
+Dan setelah itu,
+
+0:06:24.960,0:06:30.720
+kita memberi tahu Python bahwa kita ingin program ini berhenti ketika menerima SIGINT.
+
+0:06:31.120,0:06:34.880
+Sisa programnya adalah program yang sangat konyol yang hanya akan mencetak angka.
+
+0:06:35.060,0:06:37.540
+Mari kita lihat aksinya.
+
+0:06:37.560,0:06:39.560
+Kita jalankan Python SIGINT.
+
+0:06:39.880,0:06:44.970
+Dan program itu menghitung. Kita coba menekan "Ctrl+C", ini mengirim SIGINT,
+
+0:06:44.970,0:06:50.000
+tetapi programnya tidak benar-benar berhenti. Ini karena di dalam program kita punya cara untuk
+
+0:06:50.400,0:06:54.600
+menangani exception ini, dan kita tidak ingin keluar.
+
+0:06:54.760,0:06:57.600
+Jika kita mengirim SIGQUIT, yang dilakukan dengan
+
+0:06:57.800,0:07:03.680
+"Ctrl+\", di sini kita bisa melihat bahwa karena program tidak punya cara menangani SIGQUIT,
+
+0:07:03.730,0:07:06.269
+program melakukan operasi default, yaitu
+
+0:07:06.820,0:07:08.800
+menghentikan program.
+
+0:07:09.080,0:07:11.460
+Dan Anda bisa menggunakan ini, misalnya,
+
+0:07:11.880,0:07:15.880
+jika seseorang menekan Ctrl+C pada program Anda, dan program Anda seharusnya melakukan sesuatu,
+
+0:07:16.040,0:07:19.320
+misalnya Anda mungkin ingin menyimpan state antara dari program Anda
+
+0:07:19.320,0:07:21.520
+ke sebuah file, agar bisa Anda pulihkan nanti.
+
+0:07:21.600,0:07:25.640
+Beginilah cara menulis handler seperti ini.
+
+0:07:29.520,0:07:30.720
+Bisa ulangi pertanyaannya?
+
+0:07:30.880,0:07:32.280
+Apa yang Anda ketik barusan, saat programnya berhenti?
+
+0:07:32.480,0:07:34.480
+Jadi saya...
+
+0:07:34.630,0:07:38.880
+Jadi yang saya ketik adalah, saya menekan "Ctrl+C" untuk mencoba menghentikannya
+
+0:07:38.880,0:07:42.869
+tetapi tidak berhasil, karena SIGINT ditangkap oleh program. Lalu saya menekan
+
+0:07:43.120,0:07:48.040
+"Ctrl+\", yang mengirim SIGQUIT, yaitu signal yang berbeda,
+
+0:07:49.000,0:07:51.720
+dan signal ini tidak ditangkap oleh program.
+
+0:07:52.090,0:07:54.869
+Perlu juga disebutkan bahwa ada beberapa
+
+0:07:54.970,0:07:59.970
+signal yang tidak dapat ditangkap oleh software. Ada beberapa signal
+
+0:08:00.820,0:08:02.820
+seperti SIGKILL
+
+0:08:03.940,0:08:06.600
+yang tidak dapat ditangkap. Begitu saja, signal itu akan
+
+0:08:06.660,0:08:09.300
+menghentikan eksekusi proses, apa pun yang terjadi.
+
+0:08:09.300,0:08:12.000
+Dan ini kadang bisa merugikan. Anda tidak ingin menggunakannya secara
+
+0:08:12.000,0:08:16.460
+default, karena ini bisa meninggalkan, misalnya, proses anak yang yatim.
+
+0:08:16.470,0:08:20.940
+Misalnya jika sebuah proses punya proses-proses anak kecil lain yang ia jalankan, dan Anda
+
+0:08:21.400,0:08:25.470
+SIGKILL proses itu, semua proses anak tersebut akan terus berjalan di sana,
+
+0:08:25.760,0:08:30.800
+tetapi mereka tidak akan punya parent, dan Anda mungkin akan mendapat perilaku yang sangat aneh.
+
+0:08:32.040,0:08:35.680
+Signal apa yang diberikan ke program jika kita log off?
+
+0:08:35.800,0:08:37.440
+Jika Anda log off?
+
+0:08:37.920,0:08:41.920
+Itu adalah... jadi misalnya, jika Anda berada dalam koneksi SSH dan Anda menutup koneksinya,
+
+0:08:41.920,0:08:45.600
+itu adalah signal hang-up,
+
+0:08:45.600,0:08:51.200
+SIGHUP, yang akan saya bahas dalam contoh. Jadi itulah yang akan dikirim.
+
+0:08:51.560,0:08:56.360
+Dan Anda bisa menulis, misalnya, jika Anda ingin prosesnya tetap bekerja meskipun Anda menutup
+
+0:08:56.960,0:09:02.560
+koneksi itu, Anda bisa menulis wrapper di sekitarnya untuk mengabaikan signal tersebut.
+
+0:09:04.720,0:09:09.760
+Mari kita tampilkan apa yang bisa kita lakukan dengan stop dan continue.
+
+0:09:09.980,0:09:16.389
+Jadi, misalnya, kita bisa memulai proses yang sangat panjang. Mari kita jalankan sleep 1000, ini akan memakan waktu lama sekali.
+
+0:09:16.960,0:09:18.920
+Kita bisa menekan Ctrl+C,
+
+0:09:18.920,0:09:20.360
+"Ctrl+Z", maaf,
+
+0:09:20.360,0:09:25.280
+dan jika kita menekan "Ctrl+Z" kita bisa melihat bahwa terminal mengatakan "suspended".
+
+0:09:25.400,0:09:31.520
+Apa yang sebenarnya terjadi adalah proses ini dikirimi signal SIGSTOP dan sekarang
+
+0:09:31.900,0:09:36.900
+masih ada di sana, Anda bisa melanjutkan eksekusinya, tetapi saat ini proses itu benar-benar berhenti dan berada di background
+
+0:09:38.580,0:09:41.720
+dan kita bisa menjalankan program lain.
+
+0:09:41.720,0:09:43.680
+Ketika kita mencoba menjalankan program ini,
+
+0:09:43.680,0:09:46.620
+perhatikan bahwa saya menyertakan sebuah "&" di akhir.
+
+0:09:46.820,0:09:52.380
+Ini memberi tahu bash bahwa saya ingin program ini mulai berjalan di background.
+
+0:09:52.560,0:09:55.660
+Ini semacam terkait dengan semua
+
+0:09:55.660,0:09:59.720
+konsep menjalankan program di shell, tetapi di background.
+
+0:10:00.350,0:10:04.359
+Dan yang akan terjadi adalah program itu akan mulai
+
+0:10:04.720,0:10:07.580
+tetapi tidak akan mengambil alih prompt saya.
+
+0:10:07.580,0:10:11.540
+Jika saya menjalankan perintah ini tanpa tambahan itu, saya tidak bisa melakukan apa pun.
+
+0:10:11.540,0:10:15.820
+Saya tidak akan punya akses ke prompt sampai perintah itu selesai
+
+0:10:16.060,0:10:19.380
+atau saya mengakhirinya secara mendadak. Tetapi jika saya melakukan ini,
+
+0:10:19.520,0:10:23.080
+shell mengatakan "ada proses baru, yaitu ini".
+
+0:10:23.080,0:10:25.180
+Ini adalah nomor identitas proses,
+
+0:10:25.180,0:10:26.940
+kita bisa mengabaikannya untuk sekarang.
+
+0:10:27.800,0:10:32.919
+Jika saya mengetik perintah "jobs", saya mendapat output bahwa saya punya satu job yang suspended
+
+0:10:32.920,0:10:35.800
+yaitu job "sleep 1000".
+
+0:10:36.040,0:10:38.100
+Lalu saya punya job lain yang sedang berjalan,
+
+0:10:38.120,0:10:42.200
+yaitu "NOHUP sleep 2000" ini.
+
+0:10:42.640,0:10:45.660
+Katakanlah saya ingin melanjutkan job pertama.
+
+0:10:45.660,0:10:48.520
+Job pertama sedang suspended, tidak dieksekusi lagi.
+
+0:10:48.640,0:10:52.600
+Saya bisa melanjutkannya dengan "BG %1"
+
+0:10:53.870,0:10:58.359
+Tanda "%" itu merujuk pada fakta bahwa saya ingin merujuk ke proses
+
+0:11:00.280,0:11:04.280
+yang spesifik ini. Dan sekarang, jika saya melakukannya dan melihat jobs,
+
+0:11:04.300,0:11:06.460
+sekarang job ini berjalan lagi. Sekarang
+
+0:11:06.460,0:11:08.940
+keduanya sedang berjalan.
+
+0:11:09.300,0:11:13.820
+Jika saya ingin menghentikan semuanya, saya bisa menggunakan perintah kill.
+
+0:11:14.040,0:11:16.060
+Perintah kill
+
+0:11:16.220,0:11:18.620
+adalah untuk membunuh job,
+
+0:11:19.180,0:11:22.080
+yang secara intuitif berarti menghentikannya,
+
+0:11:22.120,0:11:23.760
+tetapi sebenarnya perintah ini sangat berguna.
+
+0:11:23.860,0:11:28.200
+Perintah kill memungkinkan Anda mengirim signal Unix apa pun.
+
+0:11:28.360,0:11:32.220
+Jadi di sini misalnya, alih-alih membunuhnya sepenuhnya,
+
+0:11:32.220,0:11:34.640
+kita hanya mengirim signal stop.
+
+0:11:34.640,0:11:39.160
+Di sini saya akan mengirim signal stop, yang akan menjeda prosesnya lagi.
+
+0:11:39.160,0:11:41.280
+Saya tetap harus menyertakan identifier,
+
+0:11:41.600,0:11:46.480
+karena tanpa identifier shell tidak akan tahu apakah harus menghentikan yang pertama atau yang kedua.
+
+0:11:47.480,0:11:52.480
+Sekarang dikatakan proses ini telah suspended, karena ada signal yang dikirim.
+
+0:11:52.620,0:11:57.360
+Jika saya menjalankan "jobs" lagi, kita bisa melihat bahwa yang kedua sedang berjalan
+
+0:11:57.460,0:12:00.740
+dan yang pertama telah dihentikan.
+
+0:12:01.420,0:12:04.300
+Kembali ke salah satu pertanyaan,
+
+0:12:04.300,0:12:06.980
+apa yang terjadi ketika Anda menutup shell, misalnya,
+
+0:12:06.980,0:12:12.860
+dan mengapa kadang orang mengatakan bahwa Anda sebaiknya menggunakan perintah NOHUP ini
+
+0:12:12.860,0:12:15.960
+sebelum Anda menjalankan job di sesi remote.
+
+0:12:16.220,0:12:23.120
+Ini karena jika kita mencoba mengirim perintah hang-up ke job pertama
+
+0:12:23.560,0:12:27.820
+maka, dengan cara yang mirip dengan signal lain,
+
+0:12:27.820,0:12:32.280
+job itu akan di-hang-up dan itu akan menghentikan job tersebut.
+
+0:12:32.800,0:12:35.960
+Dan job pertama tidak ada lagi
+
+0:12:36.320,0:12:39.140
+sedangkan job kedua masih berjalan.
+
+0:12:39.400,0:12:42.920
+Namun, jika kita mencoba mengirim signal ke job kedua
+
+0:12:42.920,0:12:46.060
+apa yang akan terjadi jika kita menutup terminal kita sekarang
+
+0:12:47.040,0:12:48.660
+adalah job itu tetap berjalan.
+
+0:12:48.660,0:12:52.480
+Seperti NOHUP, yang dilakukannya adalah semacam membungkus
+
+0:12:52.480,0:12:54.480
+perintah apa pun yang Anda eksekusi dan
+
+0:12:54.740,0:12:58.720
+mengabaikannya kapan pun Anda menerima signal hang-up,
+
+0:12:58.900,0:13:03.680
+dan mengabaikannya saja supaya perintah itu bisa terus berjalan.
+
+0:13:05.060,0:13:08.500
+Dan jika kita mengirim signal "kill" ke job kedua,
+
+0:13:08.500,0:13:12.820
+signal itu tidak bisa diabaikan dan akan membunuh job tersebut, apa pun yang terjadi.
+
+0:13:13.280,0:13:15.780
+Dan kita tidak punya job apa pun lagi.
+
+0:13:17.000,0:13:22.540
+Itu semacam menyelesaikan bagian tentang job control.
+
+0:13:22.740,0:13:27.100
+Ada pertanyaan sejauh ini? Ada yang belum sepenuhnya jelas?
+
+0:13:29.040,0:13:30.400
+Apa fungsi BG?
+
+0:13:30.960,0:13:31.800
+Jadi BG...
+
+0:13:31.800,0:13:36.860
+Ada semacam dua perintah. Kapan pun Anda punya perintah yang telah dipindahkan ke background
+
+0:13:37.200,0:13:41.820
+dan dihentikan, Anda bisa menggunakan BG (singkatan dari background)
+
+0:13:41.820,0:13:44.180
+untuk melanjutkan proses itu berjalan di background.
+
+0:13:44.440,0:13:47.400
+Itu setara dengan semacam mengirimkan
+
+0:13:47.680,0:13:50.820
+signal continue, sehingga prosesnya terus berjalan.
+
+0:13:50.820,0:13:54.820
+Lalu ada satu lagi yang disebut FG, jika Anda ingin
+
+0:13:54.860,0:13:59.580
+mengembalikannya ke foreground dan ingin menyambungkan kembali standard output Anda.
+
+0:14:04.760,0:14:06.760
+Oke, bagus.
+
+0:14:07.120,0:14:11.420
+Job berguna dan secara umum, saya pikir mengetahui tentang signal bisa
+
+0:14:11.420,0:14:14.360
+sangat bermanfaat saat berhadapan dengan sebagian dari Unix
+
+0:14:14.360,0:14:19.420
+tetapi biasanya yang sebenarnya ingin Anda lakukan adalah sesuatu seperti
+
+0:14:19.670,0:14:24.099
+menaruh editor di satu sisi dan program di sisi lain, dan mungkin
+
+0:14:24.720,0:14:28.280
+memantau berapa konsumsi resource-nya di tab kita.
+
+0:14:28.680,0:14:33.640
+Kita bisa mencapainya dengan menggunakan, kemungkinan besar, apa yang sering Anda lihat,
+
+0:14:33.640,0:14:35.200
+yaitu hanya membuka lebih banyak jendela.
+
+0:14:35.200,0:14:37.200
+Kita bisa terus membuka jendela terminal.
+
+0:14:37.320,0:14:41.280
+Tetapi faktanya ada solusi yang semacam lebih nyaman untuk ini dan
+
+0:14:41.280,0:14:43.800
+inilah yang dilakukan terminal multiplexer.
+
+0:14:44.080,0:14:48.520
+Terminal multiplexer seperti tmux
+
+0:14:48.840,0:14:52.160
+akan memungkinkan Anda membuat workspace berbeda tempat Anda bisa bekerja,
+
+0:14:52.640,0:14:54.280
+dan dengan cepat semacam,
+
+0:14:54.280,0:14:56.960
+ini punya beragam fungsi yang sangat banyak,
+
+0:14:57.320,0:15:02.760
+Ini memungkinkan Anda menata ulang environment dan memungkinkan Anda memiliki sesi berbeda.
+
+0:15:03.400,0:15:05.400
+Ada satu lagi yang lebih...
+
+0:15:05.600,0:15:07.640
+perintah yang lebih lama, yang disebut "screen",
+
+0:15:07.640,0:15:09.360
+yang mungkin lebih mudah tersedia.
+
+0:15:09.360,0:15:12.200
+Tetapi saya pikir konsepnya semacam berlaku untuk keduanya.
+
+0:15:12.600,0:15:15.400
+Kami merekomendasikan tmux, agar Anda mempelajarinya.
+
+0:15:15.400,0:15:17.480
+Dan faktanya, kami punya latihan tentang itu.
+
+0:15:17.480,0:15:20.240
+Saya akan menunjukkan skenario yang berbeda sekarang.
+
+0:15:20.320,0:15:22.000
+Jadi kapan pun saya berbicara...
+
+0:15:22.320,0:15:24.880
+Oh, biar saya buat catatan cepat.
+
+0:15:25.200,0:15:28.800
+Ada semacam tiga konsep inti di tmux, yang akan saya bahas dan
+
+0:15:30.110,0:15:33.130
+ide utamanya adalah ada yang disebut
+
+0:15:35.180,0:15:37.180
+"session".
+
+0:15:37.760,0:15:40.510
+Session punya "window" dan
+
+0:15:42.019,0:15:44.019
+window punya "pane".
+
+0:15:45.709,0:15:49.539
+Akan semacam berguna untuk mengingat hierarki ini.
+
+0:15:50.760,0:15:57.280
+Anda bisa kurang lebih menyamakan "window" dengan "tab" di editor lain dan lainnya,
+
+0:15:57.280,0:16:00.720
+seperti misalnya browser web Anda.
+
+0:16:01.280,0:16:06.440
+Saya akan membahas fitur-fiturnya, terutama apa yang bisa Anda lakukan di level yang berbeda.
+
+0:16:07.000,0:16:10.480
+Jadi pertama, ketika kita menjalankan tmux, itu memulai sebuah session.
+
+0:16:11.360,0:16:14.960
+Dan di sini sekarang sepertinya tidak ada yang berubah
+
+0:16:14.960,0:16:20.360
+tetapi yang terjadi sekarang adalah kita berada di dalam shell yang berbeda dari yang kita mulai sebelumnya.
+
+0:16:20.640,0:16:24.840
+Jadi di shell kita, kita memulai sebuah proses, yaitu tmux
+
+0:16:24.840,0:16:28.840
+dan tmux itu memulai proses yang berbeda, yaitu shell tempat kita berada sekarang.
+
+0:16:28.980,0:16:30.400
+Dan hal yang bagus dari ini adalah
+
+0:16:30.580,0:16:34.740
+proses tmux itu terpisah dari proses shell asli.
+
+0:16:34.860,0:16:36.860
+Jadi
+
+0:16:40.580,0:16:44.460
+di sini, kita bisa melakukan berbagai hal.
+
+0:16:44.480,0:16:48.600
+Kita bisa menjalankan "ls -la", misalnya, untuk memberi tahu kita apa yang ada di sini.
+
+0:16:48.920,0:16:53.960
+Lalu kita bisa mulai menjalankan program kita, dan program itu akan berjalan di dalamnya
+
+0:16:54.160,0:16:57.880
+dan kita bisa menekan "Ctrl+A d", misalnya, untuk detach
+
+0:17:12.760,0:17:15.960
+untuk melepaskan diri dari session.
+
+0:17:16.140,0:17:19.120
+Dan jika kita menjalankan "tmux a"
+
+0:17:19.160,0:17:21.560
+itu akan menyambungkan kita kembali ke session.
+
+0:17:21.560,0:17:22.300
+Jadi prosesnya,
+
+0:17:22.300,0:17:25.180
+kita meninggalkan proses yang menghitung angka.
+
+0:17:25.180,0:17:28.300
+Program Python yang sangat konyol ini yang hanya menghitung angka,
+
+0:17:28.340,0:17:30.160
+kita biarkan berjalan di sana.
+
+0:17:30.200,0:17:31.720
+Dan jika kita menjalankan tmux...
+
+0:17:31.720,0:17:33.760
+Hei, prosesnya masih berjalan di sana.
+
+0:17:33.780,0:17:37.820
+Dan kita bisa menutup seluruh terminal ini dan membuka terminal baru dan
+
+0:17:37.880,0:17:41.860
+kita tetap bisa menyambung kembali karena session tmux ini masih berjalan.
+
+0:17:43.340,0:17:45.340
+Sekali lagi, kita bisa...
+
+0:17:46.640,0:17:48.640
+Sebelum saya melanjutkan.
+
+0:17:48.920,0:17:53.740
+Kurang lebih... Berbeda dengan Vim, yang punya gagasan tentang mode,
+
+0:17:53.960,0:17:58.180
+tmux bekerja dengan cara yang lebih ala emacs, yaitu
+
+0:17:58.180,0:18:04.140
+setiap perintah, hampir setiap perintah di tmux,
+
+0:18:04.220,0:18:06.020
+Anda bisa memasukkannya melalui...
+
+0:18:06.020,0:18:08.160
+tmux punya command line, yang bisa kita gunakan.
+
+0:18:08.240,0:18:11.320
+Tetapi saya sarankan Anda membiasakan diri dengan key binding.
+
+0:18:11.880,0:18:15.080
+Ini bisa terasa agak tidak intuitif pada awalnya,
+
+0:18:15.300,0:18:17.880
+tetapi begitu Anda terbiasa...
+
+0:18:22.140,0:18:23.020
+"Ctrl+C", ya
+
+0:18:24.440,0:18:30.760
+Saat Anda sudah terbiasa, Anda akan jauh lebih cepat menggunakan key binding daripada menggunakan perintah.
+
+0:18:31.280,0:18:35.980
+Satu catatan tentang key binding: semua key binding punya bentuk seperti
+
+0:18:36.140,0:18:39.840
+Anda mengetik prefix lalu sebuah tombol.
+
+0:18:40.060,0:18:44.000
+Jadi misalnya, untuk detach kita menekan "Ctrl+A" lalu "D".
+
+0:18:44.160,0:18:50.140
+Ini berarti Anda menekan "Ctrl+A" lebih dulu, melepaskannya, lalu menekan "D" untuk detach.
+
+0:18:50.380,0:18:54.200
+Pada tmux default, prefix-nya adalah "Ctrl+B",
+
+0:18:54.200,0:18:58.780
+tetapi Anda akan menemukan bahwa sebagian besar orang memetakan ulang ini ke "Ctrl+A"
+
+0:18:58.780,0:19:02.680
+karena jauh lebih ergonomis untuk diketik di keyboard.
+
+0:19:02.700,0:19:06.420
+Anda bisa menemukan lebih banyak tentang cara melakukan ini di salah satu latihan,
+
+0:19:06.960,0:19:12.780
+di mana kami menautkan Anda ke dasar-dasarnya dan cara melakukan beberapa modifikasi quality of life pada tmux.
+
+0:19:13.380,0:19:16.720
+Kembali ke konsep session,
+
+0:19:16.960,0:19:22.120
+kita bisa membuat session baru hanya dengan menjalankan sesuatu seperti tmux new
+
+0:19:22.320,0:19:24.540
+dan kita bisa memberi nama session.
+
+0:19:24.760,0:19:27.220
+Jadi kita bisa menjalankan seperti "tmux new -t foobar"
+
+0:19:27.220,0:19:30.900
+dan ini adalah session yang sepenuhnya berbeda, yang telah kita mulai.
+
+0:19:32.240,0:19:36.360
+Kita bisa bekerja di sini, kita bisa detach darinya.
+
+0:19:36.360,0:19:40.000
+"tmux ls" akan memberi tahu kita bahwa kita punya dua session berbeda:
+
+0:19:40.000,0:19:43.460
+yang pertama bernama "0", karena saya tidak memberinya nama,
+
+0:19:43.500,0:19:45.820
+dan yang kedua bernama "foobar".
+
+0:19:46.580,0:19:51.020
+Saya bisa attach ke session foobar
+
+0:19:51.020,0:19:53.700
+dan saya bisa mengakhirinya.
+
+0:19:54.680,0:19:56.340
+Dan ini sangat bagus karena
+
+0:19:56.340,0:20:00.139
+dengan ini Anda bisa semacam bekerja di proyek yang sepenuhnya berbeda.
+
+0:20:00.140,0:20:04.340
+Misalnya, punya dua session tmux berbeda dan
+
+0:20:04.480,0:20:08.440
+session editor yang berbeda, proses berbeda yang berjalan...
+
+0:20:10.160,0:20:15.100
+Saat Anda berada di dalam sebuah session, kita mulai dengan konsep window.
+
+0:20:15.100,0:20:21.160
+Di sini kita punya satu window, tetapi kita bisa menggunakan "Ctrl+A c" (untuk "create")
+
+0:20:21.160,0:20:23.720
+untuk membuka window baru.
+
+0:20:24.000,0:20:26.340
+Dan di sini tidak ada yang dieksekusi.
+
+0:20:26.380,0:20:29.420
+Yang terjadi adalah, tmux telah membuka shell baru untuk kita
+
+0:20:30.360,0:20:34.840
+dan kita bisa mulai menjalankan program lain di sini.
+
+0:20:35.460,0:20:42.460
+Dan untuk berpindah dengan cepat antar tab, kita bisa menekan "Ctrl+A" dan "previous",
+
+0:20:42.460,0:20:44.520
+"p" untuk "previous",
+
+0:20:45.220,0:20:48.020
+dan itu akan berpindah ke window sebelumnya.
+
+0:20:48.020,0:20:50.920
+"Ctrl+A" "next", untuk pergi ke window berikutnya.
+
+0:20:51.260,0:20:56.060
+Anda juga bisa menggunakan angka. Jadi jika kita mulai membuka banyak tab,
+
+0:20:56.200,0:21:00.160
+kita bisa menggunakan "Ctrl+A 1", untuk secara khusus melompat ke
+
+0:21:00.240,0:21:04.400
+ke window yang bernomor "1".
+
+0:21:04.780,0:21:08.620
+Dan, terakhir, kadang juga cukup berguna untuk mengetahui
+
+0:21:08.660,0:21:10.400
+bahwa Anda bisa mengganti namanya.
+
+0:21:10.400,0:21:13.380
+Misalnya di sini saya menjalankan proses Python ini,
+
+0:21:13.580,0:21:16.800
+tetapi itu mungkin tidak terlalu informatif dan saya ingin...
+
+0:21:16.880,0:21:21.160
+Saya mungkin ingin punya sesuatu seperti execution atau semacamnya dan
+
+0:21:21.740,0:21:26.840
+itu akan mengganti nama window tersebut sehingga Anda bisa menatanya dengan sangat rapi.
+
+0:21:27.080,0:21:33.500
+Ini masih belum menyelesaikan kebutuhan ketika Anda ingin punya dua hal sekaligus di terminal Anda,
+
+0:21:33.680,0:21:35.740
+misalnya di tampilan yang sama.
+
+0:21:35.740,0:21:38.320
+Untuk itulah pane. Saat ini, di sini
+
+0:21:38.420,0:21:40.420
+kita punya sebuah window dengan satu pane
+
+0:21:40.420,0:21:43.540
+(semua window yang kita buka sejauh ini punya satu pane).
+
+0:21:43.640,0:21:50.800
+Tetapi jika kita menekan 'Ctrl+A "'
+
+0:21:51.040,0:21:56.540
+ini akan membagi tampilan saat ini menjadi dua pane berbeda.
+
+0:21:56.540,0:22:01.400
+Jadi, Anda lihat, yang kita buka di bawah adalah shell yang berbeda dari yang kita punya di atas,
+
+0:22:01.640,0:22:05.440
+dan kita bisa menjalankan proses apa pun yang kita mau di sini.
+
+0:22:05.620,0:22:09.900
+Kita bisa terus membagi ini, jika kita menekan "Ctrl+A %"
+
+0:22:10.080,0:22:15.000
+itu akan membagi secara vertikal. Dan Anda bisa semacam
+
+0:22:15.000,0:22:18.220
+menata ulang tab-tab ini menggunakan banyak perintah berbeda.
+
+0:22:18.220,0:22:22.620
+Salah satu yang menurut saya sangat berguna, saat Anda baru mulai dan ini semacam membuat frustrasi,
+
+0:22:23.540,0:22:26.000
+menata ulangnya.
+
+0:22:26.160,0:22:30.160
+Sebelum saya menjelaskan itu, untuk berpindah antar pane ini, yang merupakan
+
+0:22:30.300,0:22:32.280
+sesuatu yang ingin Anda lakukan sepanjang waktu
+
+0:22:32.460,0:22:37.060
+Anda cukup menekan "Ctrl+A" dan tombol panah, dan itu akan memungkinkan Anda dengan cepat
+
+0:22:37.460,0:22:43.960
+bernavigasi melalui window yang berbeda, dan menjalankan lagi...
+
+0:22:44.340,0:22:46.300
+Saya banyak menjalankan "ls -a"
+
+0:22:47.340,0:22:52.780
+Saya bisa menjalankan "HTOP", yang akan kami jelaskan di lecture debugging and profiling.
+
+0:22:53.540,0:22:55.920
+Dan kita bisa bernavigasi di antaranya, sekali lagi
+
+0:22:55.920,0:22:59.040
+seperti untuk menata ulang ada banyak perintah lain,
+
+0:22:59.080,0:23:01.080
+Anda akan mempelajari sebagiannya di Exercises
+
+0:23:02.400,0:23:07.160
+"Ctrl+A" spasi cukup rapi, karena akan semacam membagi rata pane yang ada saat ini
+
+0:23:07.160,0:23:10.260
+dan membiarkan Anda mencoba layout yang berbeda.
+
+0:23:11.480,0:23:14.260
+Sebagian dari layout itu terlalu kecil untuk konfigurasi
+
+0:23:14.840,0:23:19.220
+terminal saya saat ini, tetapi saya pikir itu mencakup sebagian besar.
+
+0:23:19.440,0:23:21.440
+Oh, ada juga,
+
+0:23:22.660,0:23:29.200
+di sini, misalnya, eksekusi Vim yang telah kita mulai ini,
+
+0:23:29.200,0:23:33.380
+terlalu kecil untuk ukuran pane tmux saat ini.
+
+0:23:33.720,0:23:38.240
+Jadi salah satu hal yang benar-benar jauh lebih nyaman dilakukan di tmux,
+
+0:23:39.180,0:23:42.500
+dibandingkan memiliki banyak jendela terminal, adalah bahwa
+
+0:23:42.560,0:23:48.400
+Anda bisa melakukan zoom ke sini, Anda bisa memintanya dengan menekan "Ctrl+A z", untuk "zoom".
+
+0:23:48.400,0:23:52.960
+Ini akan memperluas pane agar mengambil seluruh ruang,
+
+0:23:52.960,0:23:56.660
+dan kemudian "Ctrl+A z" lagi akan kembali ke tampilan semula.
+
+0:24:02.760,0:24:08.080
+Ada pertanyaan tentang terminal multiplexer, atau tentang tmux secara konkret?
+
+0:24:14.140,0:24:16.780
+Apakah itu menjalankan hal yang sama?
+
+0:24:18.680,0:24:22.700
+Misalnya, apakah ada perbedaan dalam eksekusi antara menjalankannya di window yang berbeda?
+
+0:24:24.880,0:24:28.640
+Apakah sebenarnya hanya melakukan hal yang sama, sehingga Anda bisa melihatnya?
+
+0:24:28.800,0:24:34.900
+Ya, itu tidak akan berbeda dari membuka dua jendela terminal di komputer Anda.
+
+0:24:34.920,0:24:39.220
+Keduanya akan berjalan. Tentu saja, saat sampai ke CPU,
+
+0:24:39.220,0:24:41.400
+ini akan di-multiplex lagi.
+
+0:24:41.460,0:24:44.400
+Ada semacam mekanisme timesharing yang bekerja di sana
+
+0:24:44.480,0:24:45.920
+tetapi tidak ada perbedaan.
+
+0:24:46.040,0:24:52.260
+tmux hanya membuatnya jauh lebih nyaman digunakan dengan memberi Anda layout visual ini
+
+0:24:52.560,0:24:55.020
+yang bisa Anda manipulasi dengan cepat.
+
+0:24:55.020,0:24:59.860
+Dan salah satu keuntungan utamanya akan muncul ketika kita sampai ke mesin remote
+
+0:24:59.860,0:25:05.300
+karena Anda bisa meninggalkan salah satunya, kita bisa detach dari salah satu sistem tmux ini,
+
+0:25:05.300,0:25:09.120
+menutup koneksi dan bahkan jika kita menutup koneksi dan
+
+0:25:09.120,0:25:11.640
+dan terminal akan mengirim signal hang-up,
+
+0:25:11.680,0:25:15.420
+itu tidak akan menutup semua tmux yang telah dimulai.
+
+0:25:17.110,0:25:19.110
+Ada pertanyaan lain?
+
+0:25:23.620,0:25:27.980
+Biar saya menonaktifkan key-caster.
+
+0:25:33.580,0:25:38.040
+Jadi sekarang kita akan beralih ke topik dotfiles dan, secara umum,
+
+0:25:38.040,0:25:42.460
+cara semacam mengonfigurasi shell Anda agar melakukan hal-hal yang ingin Anda lakukan
+
+0:25:42.460,0:25:45.580
+dan terutama cara melakukannya lebih cepat dan dengan cara yang lebih nyaman.
+
+0:25:46.360,0:25:49.260
+Saya akan memulainya dengan alias sebagai motivasi.
+
+0:25:49.380,0:25:51.060
+Jadi apa itu alias,
+
+0:25:51.060,0:25:54.260
+adalah bahwa sekarang, Anda mungkin mulai melakukan sesuatu seperti
+
+0:25:54.920,0:26:01.680
+sering kali, saya hanya ingin menjalankan LS pada sebuah direktori dan saya ingin menampilkan semua isinya dalam format daftar
+
+0:26:02.180,0:26:05.040
+dan dalam bentuk yang mudah dibaca manusia.
+
+0:26:05.260,0:26:07.400
+Dan itu tidak masalah. Perintahnya tidak sepanjang itu.
+
+0:26:07.400,0:26:10.300
+Tetapi saat Anda mulai menyusun perintah yang semakin panjang,
+
+0:26:10.320,0:26:14.440
+akan semacam merepotkan karena harus mengetiknya berulang kali.
+
+0:26:14.440,0:26:17.540
+Ini salah satu alasan mengapa alias berguna.
+
+0:26:17.540,0:26:21.740
+Alias adalah perintah yang built-in di shell Anda,
+
+0:26:21.960,0:26:23.680
+dan yang akan dilakukannya adalah
+
+0:26:23.680,0:26:27.540
+memetakan ulang urutan karakter pendek ke urutan yang lebih panjang.
+
+0:26:27.780,0:26:31.500
+Jadi jika saya menjalankan, misalnya, di sini
+
+0:26:31.500,0:26:36.840
+alias ll="ls -lah"
+
+0:26:37.440,0:26:42.520
+Jika saya mengeksekusi perintah ini, ini akan memanggil perintah "alias" dengan argumen ini
+
+0:26:42.520,0:26:44.320
+dan shell akan memperbarui
+
+0:26:44.540,0:26:49.040
+environment di shell saya agar mengetahui pemetaan ini.
+
+0:26:49.320,0:26:52.920
+Jadi jika sekarang saya menjalankan LL,
+
+0:26:52.920,0:26:57.520
+itu mengeksekusi perintah tersebut tanpa saya harus mengetik seluruh perintahnya.
+
+0:26:57.720,0:27:01.180
+Ini bisa sangat berguna untuk banyak sekali alasan.
+
+0:27:01.180,0:27:04.740
+Satu hal yang perlu dicatat sebelum saya melanjutkan adalah bahwa
+
+0:27:05.000,0:27:09.960
+di sini, alias tidak istimewa dibandingkan perintah lain,
+
+0:27:09.960,0:27:11.400
+ia hanya menerima satu argumen.
+
+0:27:11.680,0:27:15.600
+Dan tidak ada spasi di sekitar tanda sama dengan ini dan itu
+
+0:27:16.020,0:27:18.720
+karena alias menerima satu argumen
+
+0:27:18.720,0:27:21.640
+dan jika Anda mencoba melakukan
+
+0:27:21.960,0:27:25.120
+sesuatu seperti ini, itu memberinya lebih dari satu argumen
+
+0:27:25.120,0:27:28.360
+dan itu tidak akan berhasil karena bukan format yang diharapkan.
+
+0:27:29.520,0:27:33.680
+Jadi penggunaan lain yang cocok untuk alias,
+
+0:27:34.720,0:27:36.549
+seperti yang saya katakan,
+
+0:27:36.549,0:27:39.920
+untuk beberapa hal ini mungkin jauh lebih nyaman,
+
+0:27:40.040,0:27:41.020
+seperti
+
+0:27:41.020,0:27:43.200
+salah satu favorit saya adalah git status.
+
+0:27:43.200,0:27:47.500
+Perintah itu sangat panjang, dan saya tidak suka mengetik perintah sepanjang itu sesering itu,
+
+0:27:47.560,0:27:48.960
+karena akhirnya Anda menghabiskan banyak waktu.
+
+0:27:49.120,0:27:53.000
+Jadi GS akan menggantikan untuk melakukan git status
+
+0:27:53.820,0:27:58.620
+Anda juga bisa menggunakannya untuk membuat alias bagi hal-hal yang sering Anda salah ketik,
+
+0:27:58.620,0:28:01.160
+jadi Anda bisa menjalankan "sl=ls",
+
+0:28:01.160,0:28:02.540
+itu akan berhasil.
+
+0:28:05.800,0:28:10.620
+Pemetaan berguna lainnya adalah,
+
+0:28:10.680,0:28:15.460
+Anda mungkin ingin membuat alias sebuah perintah ke dirinya sendiri
+
+0:28:15.740,0:28:17.520
+tetapi dengan flag default.
+
+0:28:17.520,0:28:21.100
+Jadi di sini yang terjadi adalah saya membuat alias
+
+0:28:21.100,0:28:23.100
+yaitu alias untuk perintah move,
+
+0:28:23.300,0:28:29.780
+yaitu MV dan saya membuat alias ke perintah yang sama tetapi menambahkan flag "-i".
+
+0:28:29.980,0:28:34.460
+Dan flag "-i" ini, jika Anda membaca man page-nya dan melihatnya, singkatan dari "interactive".
+
+0:28:34.780,0:28:39.880
+Dan yang akan dilakukannya adalah meminta konfirmasi kepada saya sebelum melakukan penimpaan.
+
+0:28:39.880,0:28:44.420
+Jadi setelah saya mengeksekusi ini, saya bisa melakukan sesuatu seperti
+
+0:28:44.700,0:28:47.360
+Saya ingin memindahkan "aliases" ke "case".
+
+0:28:47.700,0:28:53.140
+Secara default "move" tidak akan bertanya, dan jika "case" sudah ada, isinya akan ditimpa.
+
+0:28:53.160,0:28:55.780
+Tidak masalah, saya akan menimpa apa pun yang ada di sana.
+
+0:28:56.020,0:28:58.580
+Tetapi di sini sekarang sudah diekspansi,
+
+0:28:58.580,0:29:01.660
+"move" telah diekspansi menjadi "move -i" ini
+
+0:29:01.660,0:29:03.540
+dan itu yang digunakan untuk bertanya kepada saya
+
+0:29:03.540,0:29:07.400
+"Oh, are you sure you want to overwrite this?"
+
+0:29:07.700,0:29:11.780
+Dan saya bisa menjawab tidak, saya tidak ingin kehilangan file itu.
+
+0:29:12.180,0:29:15.820
+Terakhir, Anda bisa menggunakan "alias move"
+
+0:29:15.820,0:29:18.520
+untuk menanyakan apa arti alias ini.
+
+0:29:19.100,0:29:22.060
+Jadi ini akan memberi tahu Anda sehingga Anda bisa dengan cepat memastikan
+
+0:29:22.080,0:29:25.400
+perintah apa yang sebenarnya Anda eksekusi.
+
+0:29:27.040,0:29:31.400
+Salah satu bagian yang tidak nyaman, misalnya, dari memiliki alias adalah bagaimana Anda akan
+
+0:29:31.760,0:29:35.340
+menyimpannya agar tetap ada di environment Anda saat ini?
+
+0:29:35.500,0:29:38.120
+Misalnya, jika saya menutup terminal ini sekarang,
+
+0:29:38.280,0:29:40.160
+semua alias ini akan hilang.
+
+0:29:40.160,0:29:43.020
+Dan Anda tidak ingin semacam mengetik ulang perintah-perintah ini
+
+0:29:43.020,0:29:46.760
+dan secara lebih umum, jika Anda mulai mengonfigurasi shell Anda semakin banyak,
+
+0:29:46.860,0:29:50.880
+Anda ingin semacam cara untuk melakukan bootstrap semua konfigurasi ini.
+
+0:29:51.380,0:29:56.780
+Anda akan menemukan bahwa sebagian besar program perintah shell
+
+0:29:56.880,0:30:01.440
+menggunakan semacam file konfigurasi berbasis teks.
+
+0:30:01.440,0:30:06.740
+Dan inilah yang biasanya kita sebut "dotfiles", karena mereka diawali dengan titik karena alasan historis.
+
+0:30:07.060,0:30:13.160
+Jadi untuk bash dalam kasus kita, yang merupakan sebuah shell,
+
+0:30:13.160,0:30:15.560
+kita bisa melihat bashrc.
+
+0:30:16.180,0:30:19.840
+Untuk tujuan demonstrasi, di sini saya telah menggunakan ZSH,
+
+0:30:19.900,0:30:24.460
+yang merupakan shell berbeda, dan saya akan mengonfigurasi bash, dan memulai bash.
+
+0:30:24.640,0:30:29.640
+Jadi jika saya membuat entri di sini dan saya menulis
+
+0:30:29.940,0:30:31.960
+SL dipetakan ke LS
+
+0:30:32.600,0:30:36.020
+Dan saya telah memodifikasinya, dan sekarang saya memulai bash.
+
+0:30:36.540,0:30:40.660
+Bash ini semacam benar-benar belum dikonfigurasi, tetapi sekarang jika saya menjalankan SL...
+
+0:30:41.360,0:30:44.040
+Hm, itu tidak terduga.
+
+0:30:46.280,0:30:48.000
+Oh, bagus. Bagus kita menemukannya.
+
+0:30:48.300,0:30:52.200
+Jadi lokasi file config Anda penting,
+
+0:30:52.200,0:30:55.260
+file config Anda harus berada di folder home Anda.
+
+0:30:55.640,0:31:00.940
+Jadi file konfigurasi Anda untuk bash akan berada di "~" itu,
+
+0:31:00.940,0:31:03.940
+yang akan diekspansi menjadi direktori home Anda,
+
+0:31:03.940,0:31:05.560
+lalu bashrc.
+
+0:31:06.160,0:31:08.840
+Dan di sini kita bisa membuat alias
+
+0:31:12.040,0:31:15.840
+dan sekarang kita memulai session bash dan kita menjalankan SL.
+
+0:31:15.840,0:31:21.500
+Sekarang konfigurasi itu telah dimuat, dan ini dimuat di awal ketika
+
+0:31:22.300,0:31:24.300
+program bash ini dimulai.
+
+0:31:24.700,0:31:31.200
+Semua konfigurasi ini dimuat dan Anda tidak hanya bisa menggunakan alias, konfigurasi bisa punya banyak bagian.
+
+0:31:31.390,0:31:35.729
+Jadi misalnya di sini, saya punya prompt yang cukup tidak berguna.
+
+0:31:35.730,0:31:38.429
+Prompt itu hanya memberi saya nama shell, yaitu bash,
+
+0:31:38.640,0:31:43.820
+dan versinya, yaitu 5.0. Saya tidak ingin ini ditampilkan dan
+
+0:31:44.360,0:31:48.540
+seperti banyak hal di shell Anda, ini hanyalah sebuah environment variable.
+
+0:31:48.600,0:31:53.120
+Jadi "PS1" hanyalah prompt string
+
+0:31:53.710,0:31:55.480
+untuk prompt Anda dan
+
+0:31:55.480,0:32:02.520
+kita sebenarnya bisa memodifikasi ini menjadi hanya simbol "> ".
+
+0:32:02.520,0:32:08.280
+dan sekarang itu sudah dimodifikasi, dan kita punya itu. Tetapi jika kita keluar dan memanggil bash lagi,
+
+0:32:08.620,0:32:15.059
+itu hilang. Namun, jika kita menambahkan entri ini dan berkata, oh kita ingin "PS1"
+
+0:32:15.760,0:32:17.230
+menjadi
+
+0:32:17.230,0:32:19.179
+ini dan
+
+0:32:19.179,0:32:24.689
+kita memanggil bash lagi, ini telah tersimpan. Dan kita bisa terus memodifikasi konfigurasi ini.
+
+0:32:25.090,0:32:27.209
+Jadi mungkin kita ingin menyertakan
+
+0:32:27.880,0:32:29.880
+di mana
+
+0:32:30.370,0:32:32.939
+direktori kerja tempat kita berada, dan
+
+0:32:34.140,0:32:37.380
+itu memberi tahu kita informasi yang sama seperti yang kita punya di shell lain.
+
+0:32:37.380,0:32:40.480
+Dan ada sangat banyak pilihan,
+
+0:32:40.780,0:32:45.060
+shell sangat, sangat dapat dikonfigurasi, dan
+
+0:32:45.700,0:32:49.920
+bukan hanya shell yang dikonfigurasi melalui file-file ini,
+
+0:32:50.590,0:32:55.740
+ada banyak program lain. Seperti yang kita lihat misalnya di lecture editors, Vim juga
+
+0:32:55.840,0:33:02.900
+dikonfigurasi dengan cara ini. Kami memberi Anda file vimrc ini dan menyuruh Anda meletakkannya di
+
+0:33:03.460,0:33:06.380
+home/.vimrc
+
+0:33:06.380,0:33:11.800
+dan ini konsep yang sama, tetapi hanya untuk Vim. Ini hanya memberinya sekumpulan
+
+0:33:12.160,0:33:18.340
+instruksi yang harus dimuat saat Vim dimulai, sehingga Anda bisa mempertahankan konfigurasi yang Anda inginkan.
+
+0:33:19.140,0:33:21.240
+Dan bahkan non...
+
+0:33:21.580,0:33:27.140
+semacam banyak program akan mendukung ini. Misalnya, terminal emulator saya, yang merupakan konsep lain,
+
+0:33:27.260,0:33:30.159
+yaitu program yang
+
+0:33:30.159,0:33:35.459
+menjalankan shell, dalam arti tertentu, dan menampilkannya ke layar di komputer saya.
+
+0:33:35.950,0:33:38.610
+Ini juga bisa dikonfigurasi dengan cara ini, jadi
+
+0:33:39.940,0:33:43.620
+jika saya memodifikasi ini saya bisa
+
+0:33:46.510,0:33:53.279
+mengubah ukuran font. Seperti sekarang, misalnya, saya telah memperbesar ukuran font
+
+0:33:53.279,0:33:55.768
+untuk tujuan demonstrasi, tetapi
+
+0:33:56.440,0:34:00.360
+jika saya mengubah entri ini dan membuatnya misalnya
+
+0:34:01.320,0:34:06.820
+28 dan menulis nilai ini, Anda lihat bahwa ukuran font telah berubah,
+
+0:34:06.820,0:34:12.920
+karena saya mengedit file teks ini yang menentukan bagaimana terminal emulator saya seharusnya bekerja.
+
+0:34:19.480,0:34:20.900
+Ada pertanyaan sejauh ini?
+
+0:34:20.900,0:34:22.280
+Tentang dotfiles.
+
+0:34:28.040,0:34:35.940
+Oke, bisa agak menakutkan mengetahui bahwa ada semacam dinding konfigurasi yang tak berujung,
+
+0:34:35.940,0:34:40.600
+dan bagaimana cara Anda mempelajari apa saja yang bisa dikonfigurasi?
+
+0:34:42.020,0:34:44.300
+Kabar baiknya adalah
+
+0:34:44.640,0:34:48.900
+kami telah menautkan Anda ke sumber daya yang sangat bagus di lecture notes.
+
+0:34:48.960,0:34:56.440
+Tetapi ide utamanya adalah banyak orang sangat suka mengonfigurasi alat-alat ini dan telah mengunggah
+
+0:34:56.640,0:35:01.140
+file konfigurasi mereka ke GitHub, semacam repositori online lain yang berbeda.
+
+0:35:01.140,0:35:03.300
+Jadi misalnya, di sini kita berada di GitHub,
+
+0:35:03.300,0:35:06.640
+kita mencari dotfiles, dan bisa melihat bahwa ada
+
+0:35:06.780,0:35:12.540
+ribuan repositori orang yang membagikan file konfigurasi mereka. Kami juga...
+
+0:35:12.540,0:35:15.460
+Misalnya, para pengajar kelas telah menautkan dotfiles kami.
+
+0:35:15.460,0:35:19.420
+Jadi jika Anda benar-benar ingin tahu bagaimana bagian mana pun dari setup kami bekerja
+
+0:35:19.420,0:35:22.220
+Anda bisa menelusurinya dan mencoba memahaminya.
+
+0:35:22.220,0:35:24.220
+Anda juga bisa bertanya kepada kami.
+
+0:35:24.380,0:35:27.060
+Jika kita pergi misalnya ke repositori ini
+
+0:35:27.210,0:35:30.649
+kita bisa melihat bahwa ada sangat banyak file yang bisa Anda konfigurasi.
+
+0:35:30.650,0:35:37.520
+Misalnya, ada satu untuk bash, beberapa yang pertama untuk git, yang mungkin akan dibahas di
+
+0:35:38.610,0:35:40.819
+lecture version control besok.
+
+0:35:41.400,0:35:48.500
+Jika kita pergi misalnya ke bash profile, yang merupakan bentuk berbeda dari apa yang kita lihat di bashrc,
+
+0:35:49.400,0:35:52.900
+itu bisa sangat berguna karena Anda bisa belajar melalui
+
+0:35:53.940,0:35:58.320
+hanya dengan melihat manual page, tetapi manual page sering kali
+
+0:35:58.480,0:36:03.520
+hanya semacam penjelasan deskriptif tentang semua opsi yang berbeda
+
+0:36:03.520,0:36:04.880
+dan kadang lebih membantu
+
+0:36:04.880,0:36:09.600
+menelusuri contoh-contoh yang dilakukan orang dan mencoba memahami mengapa mereka melakukannya
+
+0:36:09.600,0:36:12.200
+dan bagaimana itu membantu alur kerja mereka.
+
+0:36:12.960,0:36:17.300
+Di sini bisa kita lihat bahwa orang ini telah mengaktifkan globbing yang tidak peka huruf besar-kecil.
+
+0:36:17.320,0:36:21.220
+Kita membahas globbing sebagai semacam ekspansi nama file
+
+0:36:22.100,0:36:25.760
+trik di shell scripting and tools.
+
+0:36:25.900,0:36:28.800
+Dan di sini Anda mengatakan tidak, saya tidak ingin ini menjadi masalah,
+
+0:36:28.800,0:36:30.760
+apakah menggunakan huruf besar dan huruf kecil,
+
+0:36:30.760,0:36:32.760
+dan hanya dengan menetapkan opsi ini di shell agar hal-hal ini bekerja seperti itu
+
+0:36:35.360,0:36:38.140
+Demikian pula, ada misalnya alias.
+
+0:36:38.140,0:36:42.220
+Di sini Anda bisa melihat banyak alias yang dilakukan orang ini. Misalnya, "d" untuk
+
+0:36:44.200,0:36:47.400
+"d" untuk "Dropbox", maaf, karena itu jauh lebih pendek.
+
+0:36:47.400,0:36:49.200
+"g" untuk "git"...
+
+0:36:49.740,0:36:54.560
+Katakanlah kita pergi, misalnya, ke vimrc. Ini bisa sangat, sangat informatif,
+
+0:36:54.560,0:36:58.860
+menelusuri ini dan mencoba mengekstrak informasi yang berguna.
+
+0:36:59.000,0:37:06.420
+Kami tidak menyarankan sekadar mengambil satu blok besar ini dan menyalinnya ke file config Anda,
+
+0:37:07.110,0:37:12.439
+karena mungkin tampilannya lebih cantik, tetapi Anda mungkin tidak benar-benar memahami apa yang terjadi.
+
+0:37:15.150,0:37:19.579
+Terakhir, satu hal yang ingin saya sebutkan tentang dotfiles adalah bahwa
+
+0:37:20.460,0:37:23.390
+orang tidak hanya mencoba mendorong
+
+0:37:24.660,0:37:28.849
+file-file ini ke GitHub supaya orang lain bisa membacanya, itu
+
+0:37:29.400,0:37:33.319
+salah satu alasannya. Mereka juga benar-benar memastikan bisa
+
+0:37:34.140,0:37:39.440
+mereproduksi setup mereka. Dan untuk itu mereka menggunakan banyak alat berbeda.
+
+0:37:39.440,0:37:41.280
+Ups, tadi terlalu jauh.
+
+0:37:41.280,0:37:44.840
+Jadi GNU Stow misalnya adalah salah satunya
+
+0:37:45.720,0:37:49.060
+dan trik yang mereka lakukan adalah
+
+0:37:50.280,0:37:54.520
+mereka semacam menaruh semua dotfiles mereka di sebuah folder dan mereka
+
+0:37:55.200,0:37:59.520
+memalsukan ke sistem, menggunakan alat yang disebut symlink,
+
+0:37:59.520,0:38:02.440
+bahwa file-file itu sebenarnya berada di tempat yang bukan sebenarnya. Saya akan
+
+0:38:03.150,0:38:05.150
+menggambar dengan cepat apa maksudnya.
+
+0:38:05.790,0:38:10.939
+Jadi struktur folder yang umum mungkin terlihat seperti ini: Anda punya folder home dan
+
+0:38:11.670,0:38:14.300
+di folder home ini Anda mungkin punya
+
+0:38:16.050,0:38:21.380
+bashrc, yang berisi konfigurasi bash Anda, Anda mungkin punya vimrc dan
+
+0:38:22.500,0:38:25.760
+akan sangat bagus jika Anda bisa menyimpan ini di bawah version control.
+
+0:38:26.580,0:38:29.300
+Tetapi masalahnya, Anda mungkin tidak ingin memiliki repositori git,
+
+0:38:29.300,0:38:31.300
+yang akan dibahas besok,
+
+0:38:31.300,0:38:32.300
+di folder home Anda.
+
+0:38:32.300,0:38:37.360
+Jadi yang biasanya dilakukan orang adalah mereka membuat repositori dotfiles,
+
+0:38:38.280,0:38:42.160
+dan lalu mereka punya entri di sini untuk
+
+0:38:43.050,0:38:47.239
+bashrc dan vimrc mereka. Dan di sinilah sebenarnya
+
+0:38:47.820,0:38:49.820
+file-file itu berada
+
+0:38:50.100,0:38:52.400
+dan yang mereka lakukan adalah mereka hanya
+
+0:38:53.460,0:38:56.510
+memberi tahu OS untuk meneruskan, kapan pun ada orang
+
+0:38:56.760,0:39:01.849
+ingin membaca file ini atau menulis ke file ini, teruskan saja ke file lain ini.
+
+0:39:03.000,0:39:05.719
+Ini adalah konsep yang disebut symlink
+
+0:39:06.690,0:39:08.630
+dan ini berguna dalam skenario ini,
+
+0:39:08.630,0:39:12.600
+tetapi secara umum ini adalah alat yang sangat berguna di UNIX
+
+0:39:12.700,0:39:14.700
+yang belum kita bahas sejauh ini di lecture
+
+0:39:14.960,0:39:16.740
+tetapi Anda mungkin...
+
+0:39:16.740,0:39:18.740
+yang sebaiknya Anda kenali.
+
+0:39:19.100,0:39:22.840
+Dan secara umum, sintaksnya adalah "ln -s"
+
+0:39:22.840,0:39:29.980
+untuk menentukan symbolic link dan kemudian Anda meletakkan path ke file
+
+0:39:30.570,0:39:33.049
+yang ingin Anda buat dan kemudian
+
+0:39:33.780,0:39:35.780
+symlink yang ingin Anda buat.
+
+0:39:39.390,0:39:41.390
+Dan
+
+0:39:41.880,0:39:45.619
+Semua alat-alat canggih yang kita lihat terdaftar di sini,
+
+0:39:45.810,0:39:52.159
+semuanya pada dasarnya melakukan semacam trik ini, sehingga Anda bisa menyimpan semua dotfiles Anda dengan rapi
+
+0:39:52.680,0:39:57.829
+di dalam satu folder, lalu mereka bisa dikelola dengan version control, dan bisa
+
+0:39:58.349,0:40:02.689
+di-symlink sehingga program lain bisa menemukannya di lokasi defaultnya.
+
+0:40:06.720,0:40:09.020
+Ada pertanyaan tentang dotfiles?
+
+0:40:13.200,0:40:20.200
+Apakah Anda perlu memiliki dotfiles di folder home Anda, dan juga dotfiles di folder version control?
+
+0:40:20.780,0:40:24.640
+Jadi yang akan Anda miliki adalah, hampir setiap program,
+
+0:40:24.640,0:40:26.180
+misalnya bash,
+
+0:40:26.180,0:40:29.560
+akan selalu mencari "home/.bashrc".
+
+0:40:29.560,0:40:33.480
+Itulah tempat program akan mencarinya.
+
+0:40:33.820,0:40:40.200
+Yang Anda lakukan saat membuat symlink adalah, Anda menempatkan "home/.bashrc"
+
+0:40:40.200,0:40:44.900
+itu hanyalah file yang semacam file khusus di UNIX,
+
+0:40:45.150,0:40:49.609
+yang mengatakan oh, kapan pun Anda ingin membaca file ini, pergilah ke file lain ini.
+
+0:40:51.500,0:40:53.440
+Tidak ada isinya, seperti tidak ada...
+
+0:40:53.600,0:40:58.099
+alias Anda bukan bagian dari dotfile ini. File itu hanya semacam pointer, yang mengatakan sekarang Anda harus
+
+0:40:58.100,0:40:59.400
+pergi ke arah lain itu.
+
+0:40:59.400,0:41:02.600
+Dan dengan melakukan itu Anda bisa menaruh file Anda yang lain
+
+0:41:02.600,0:41:04.400
+di folder lain itu.
+
+0:41:04.560,0:41:06.360
+Jika version control tidak berguna, pikirkan
+
+0:41:06.360,0:41:10.740
+bagaimana jika Anda ingin menyimpannya di folder Dropbox Anda, agar tersinkronisasi ke cloud,
+
+0:41:10.759,0:41:15.019
+misalnya. Itu semacam kasus penggunaan lain di mana symlink bisa sangat berguna
+
+0:41:16.240,0:41:21.040
+Jadi Anda tidak perlu folder dotfiles berada di direktori home, kan?
+
+0:41:21.040,0:41:23.820
+Karena Anda bisa menggunakan symlink, yang menunjuk ke tempat lain.
+
+0:41:23.960,0:41:29.760
+Selama Anda punya cara agar path default bisa resolve ke mana pun file itu berada, ya.
+
+0:41:35.100,0:41:38.000
+Hal terakhir yang ingin saya bahas di lecture ini...
+
+0:41:38.000,0:41:40.380
+Oh, maaf, ada pertanyaan lain tentang dotfiles?
+
+0:41:49.200,0:41:52.580
+Hal terakhir yang ingin saya bahas di lecture ini adalah bekerja dengan mesin remote,
+
+0:41:52.580,0:41:55.549
+yang merupakan hal yang akan Anda temui,
+
+0:41:55.559,0:41:56.900
+cepat atau lambat.
+
+0:41:56.900,0:42:02.238
+Dan ada beberapa hal yang akan membuat hidup Anda jauh lebih mudah saat berhadapan dengan mesin remote
+
+0:42:03.180,0:42:05.180
+jika Anda mengetahuinya.
+
+0:42:05.220,0:42:08.380
+Saat ini mungkin karena Anda menggunakan cluster Athena,
+
+0:42:08.380,0:42:10.740
+tetapi nanti, selama karier pemrograman Anda,
+
+0:42:10.740,0:42:11.960
+hampir pasti bahwa
+
+0:42:11.960,0:42:15.400
+ada konsep yang cukup universal tentang memiliki
+
+0:42:15.400,0:42:20.380
+environment kerja lokal lalu memiliki semacam production server yang benar-benar menjalankan
+
+0:42:20.970,0:42:23.239
+kode, jadi sangat baik untuk membiasakan diri
+
+0:42:24.480,0:42:26.749
+tentang cara bekerja di/dengan mesin remote.
+
+0:42:27.420,0:42:35.180
+Jadi perintah utama untuk bekerja dengan mesin remote adalah SSH.
+
+0:42:37.760,0:42:43.900
+SSH itu seperti secure shell, ia akan bertanggung jawab untuk
+
+0:42:43.900,0:42:46.540
+mencapai ke mana pun yang kita inginkan atau yang kita suruh
+
+0:42:47.560,0:42:50.700
+dan mencoba membuka session di sana.
+
+0:42:50.700,0:42:52.400
+Jadi di sini sintaksnya:
+
+0:42:53.130,0:42:56.660
+"JJGO" adalah user yang ingin saya gunakan di mesin remote,
+
+0:42:56.660,0:42:58.430
+dan ini karena user-nya
+
+0:42:58.529,0:43:03.460
+berbeda dari yang ada di mesin lokal saya, yang akan sering terjadi,
+
+0:43:03.460,0:43:07.400
+lalu "@" memberi tahu terminal bahwa ini memisahkan
+
+0:43:07.400,0:43:12.540
+apa user-nya dari apa alamatnya.
+
+0:43:12.540,0:43:16.540
+Dan di sini saya menggunakan alamat IP karena yang sebenarnya saya lakukan adalah
+
+0:43:16.540,0:43:20.500
+saya punya mesin virtual di komputer saya,
+
+0:43:20.500,0:43:23.240
+itulah yang sekarang menjadi remote.
+
+0:43:23.240,0:43:26.400
+Dan saya akan SSH ke dalamnya. Ini adalah
+
+0:43:26.580,0:43:27.880
+URL yang saya gunakan,
+
+0:43:27.880,0:43:29.860
+maaf, IP yang saya gunakan,
+
+0:43:29.860,0:43:32.280
+tetapi Anda mungkin juga melihat hal seperti
+
+0:43:32.360,0:43:36.820
+oh saya ingin SSH sebagai "JJGO"
+
+0:43:36.820,0:43:39.840
+di "foobar.mit.edu"
+
+0:43:39.840,0:43:42.960
+Itu mungkin sesuatu yang lebih umum, jika Anda menggunakan suatu
+
+0:43:42.960,0:43:47.260
+remote server yang punya nama DNS.
+
+0:43:48.180,0:43:51.860
+Jadi kembali ke perintah biasa,
+
+0:43:53.220,0:43:56.580
+kita mencoba SSH, ia meminta password,
+
+0:43:56.580,0:43:58.180
+hal yang sangat umum.
+
+0:43:58.190,0:43:59.480
+Dan sekarang kita di sana. Kita punya...
+
+0:43:59.480,0:44:02.629
+kita masih di terminal emulator yang sama
+
+0:44:02.630,0:44:09.529
+tetapi sekarang SSH semacam meneruskan seluruh tampilan virtual untuk menampilkan apa yang
+
+0:44:09.869,0:44:14.358
+ditampilkan shell remote. Dan kita bisa mengeksekusi perintah di sini dan
+
+0:44:15.630,0:44:17.630
+kita akan melihat file-file remote
+
+0:44:18.390,0:44:22.819
+Beberapa hal praktis yang perlu diketahui tentang SSH, yang sempat dibahas di
+
+0:44:23.220,0:44:27.080
+lecture data wrangling, adalah bahwa SSH tidak hanya berguna untuk
+
+0:44:28.280,0:44:33.760
+membuka koneksi. Ini juga memungkinkan Anda menjalankan perintah secara remote.
+
+0:44:33.770,0:44:36.979
+Jadi misalnya, jika saya melakukan itu, ia akan bertanya
+
+0:44:37.710,0:44:39.020
+apa password saya?, lagi.
+
+0:44:39.020,0:44:41.059
+Dan ia mengeksekusi perintah ini
+
+0:44:41.279,0:44:43.420
+lalu kembali ke terminal saya
+
+0:44:43.420,0:44:47.420
+dan menyalurkan output dari perintah itu, di mesin remote,
+
+0:44:47.420,0:44:50.480
+melalui standard output di shell saya saat ini.
+
+0:44:50.480,0:44:53.940
+Dan saya bisa menaruh ini di...
+
+0:44:58.100,0:45:00.480
+Saya bisa menaruh ini dalam pipe, dan
+
+0:45:00.980,0:45:03.580
+ini akan bekerja dan kita akan
+
+0:45:03.600,0:45:06.100
+membuang semua output ini lalu memiliki pipe lokal
+
+0:45:06.100,0:45:07.879
+tempat saya bisa terus bekerja.
+
+0:45:08.640,0:45:12.140
+Sejauh ini, cukup merepotkan karena harus mengetik password kita.
+
+0:45:12.630,0:45:14.820
+Ada satu trik yang sangat bagus untuk ini.
+
+0:45:14.820,0:45:16.880
+Kita bisa menggunakan sesuatu yang disebut "SSH keys".
+
+0:45:17.140,0:45:20.660
+SSH keys menggunakan public key encryption
+
+0:45:20.660,0:45:24.980
+untuk membuat sepasang SSH key, public key dan private key, lalu
+
+0:45:25.170,0:45:29.320
+Anda bisa memberikan bagian publik dari key tersebut kepada server.
+
+0:45:29.320,0:45:32.810
+Jadi Anda menyalin public key itu dan kemudian kapan pun Anda mencoba
+
+0:45:33.390,0:45:37.129
+melakukan autentikasi alih-alih menggunakan password Anda, ia akan menggunakan private key untuk
+
+0:45:37.820,0:45:40.800
+membuktikan kepada server bahwa Anda benar-benar siapa yang Anda katakan.
+
+0:45:43.860,0:45:48.020
+Kita bisa dengan cepat menunjukkan bagaimana Anda akan
+
+0:45:48.020,0:45:49.400
+melakukan ini.
+
+0:45:49.400,0:45:53.180
+Saat ini saya tidak punya SSH key, jadi saya akan membuat sepasang.
+
+0:45:53.940,0:45:58.250
+Hal pertama, ia hanya akan bertanya di mana saya ingin key ini disimpan.
+
+0:45:58.980,0:46:00.640
+Tidak mengherankan, ia melakukannya.
+
+0:46:00.640,0:46:04.820
+Ini folder home saya lalu ia menggunakan path ".ssh" ini,
+
+0:46:05.460,0:46:08.750
+yang merujuk kembali ke konsep yang sama yang kita bahas sebelumnya tentang memiliki
+
+0:46:08.850,0:46:12.439
+dotfiles. Misalnya ".ssh" adalah folder yang berisi banyak
+
+0:46:13.320,0:46:16.540
+file konfigurasi untuk bagaimana Anda ingin SSH berperilaku.
+
+0:46:17.060,0:46:19.420
+Jadi ia akan meminta passphrase kepada kita.
+
+0:46:19.680,0:46:23.120
+Passphrase itu untuk mengenkripsi bagian privat dari key
+
+0:46:23.120,0:46:27.160
+karena jika seseorang mendapatkan private key Anda, jika private key Anda tidak dilindungi
+
+0:46:27.920,0:46:29.580
+password, jika mereka mendapatkan key itu
+
+0:46:29.580,0:46:32.240
+mereka bisa menggunakan key itu untuk menyamar sebagai Anda di server mana pun.
+
+0:46:32.310,0:46:34.360
+Sedangkan jika Anda menambahkan passphrase,
+
+0:46:34.360,0:46:37.640
+mereka harus mengetahui passphrase-nya untuk benar-benar bisa menggunakan key tersebut.
+
+0:46:40.800,0:46:51.740
+Ini telah membuat key pair. Kita bisa memeriksa bahwa kedua file ini sekarang ada di bawah ssh.
+
+0:46:51.740,0:46:53.920
+Dan kita bisa melihat...
+
+0:46:57.720,0:47:02.960
+Kita punya dua file ini: kita punya 25519 dan public key.
+
+0:47:03.320,0:47:06.300
+Dan jika kita menjalankan "cat" pada outputnya,
+
+0:47:06.300,0:47:09.760
+key itu ternyata bukan file biner yang canggih, ini
+
+0:47:15.430,0:47:20.760
+hanya file teks yang berisi isi public key dan beberapa
+
+0:47:23.050,0:47:26.729
+nama alias untuknya, sehingga kita bisa tahu public key ini apa.
+
+0:47:26.950,0:47:32.220
+Cara kita memberi tahu server bahwa kita berwenang untuk SSH ke sana
+
+0:47:32.260,0:47:38.400
+adalah dengan benar-benar menyalin file ini, misalnya menyalin string ini ke sebuah file,
+
+0:47:38.400,0:47:41.540
+yaitu ".ssh/authorized_keys".
+
+0:47:42.100,0:47:46.160
+Jadi di sini yang saya lakukan adalah saya
+
+0:47:46.960,0:47:49.770
+menjalankan cat pada output file ini
+
+0:47:49.800,0:47:53.920
+yang isinya hanya satu baris teks ini yang ingin kita salin
+
+0:47:53.920,0:47:57.440
+dan saya menyalurkannya ke SSH lalu secara remote
+
+0:47:57.960,0:48:02.080
+saya meminta "tee" untuk menuliskan isi standard input
+
+0:48:02.080,0:48:05.220
+ke ".ssh/authorized_keys".
+
+0:48:05.440,0:48:10.360
+Dan jika kita melakukannya, tentu saja ia akan meminta password.
+
+0:48:14.800,0:48:18.740
+Itu tersalin, dan sekarang kita bisa memeriksa bahwa jika kita mencoba
+
+0:48:19.690,0:48:21.690
+melakukan SSH lagi,
+
+0:48:21.960,0:48:24.840
+Ia pertama-tama akan meminta passphrase
+
+0:48:24.840,0:48:29.100
+tetapi Anda bisa mengaturnya agar tersimpan di session
+
+0:48:29.460,0:48:34.840
+dan kita tidak perlu benar-benar mengetik key untuk server.
+
+0:48:34.840,0:48:36.840
+Dan saya bisa semacam menunjukkan itu lagi.
+
+0:48:45.820,0:48:47.540
+Hal lain yang berguna.
+
+0:48:47.540,0:48:49.040
+Oh, kita bisa melakukan...
+
+0:48:49.220,0:48:51.880
+Jika perintah itu terasa agak janggal,
+
+0:48:51.980,0:48:55.000
+Anda sebenarnya bisa menggunakan perintah yang memang dibuat untuk ini,
+
+0:48:55.000,0:49:00.640
+jadi Anda tidak perlu semacam merangkai perintah "ssh t" ini.
+
+0:49:00.640,0:49:03.800
+Perintah itu disebut "ssh-copy-id".
+
+0:49:05.000,0:49:08.080
+Dan kita bisa melakukan hal yang sama
+
+0:49:08.080,0:49:09.660
+dan ia akan menyalin key-nya.
+
+0:49:09.660,0:49:14.280
+Dan sekarang, jika kita mencoba SSH,
+
+0:49:14.500,0:49:18.320
+kita bisa SSH tanpa benar-benar mengetik key apa pun,
+
+0:49:18.860,0:49:20.320
+atau password apa pun.
+
+0:49:20.660,0:49:21.520
+Hal lainnya.
+
+0:49:21.520,0:49:23.520
+Kita mungkin akan ingin menyalin file.
+
+0:49:23.740,0:49:25.310
+Anda tidak bisa menggunakan "CP"
+
+0:49:25.310,0:49:29.720
+tetapi Anda bisa menggunakan "SCP", untuk "SSH copy".
+
+0:49:29.720,0:49:34.500
+Dan di sini kita bisa menentukan bahwa kita ingin menyalin file lokal bernama notes ini
+
+0:49:34.500,0:49:36.880
+dan sintaksnya semacam mirip.
+
+0:49:36.880,0:49:39.760
+Kita ingin menyalin ke remote ini dan
+
+0:49:39.920,0:49:44.020
+lalu kita punya titik dua untuk memisahkan apa path-nya.
+
+0:49:44.020,0:49:45.040
+Dan lalu kita punya
+
+0:49:45.040,0:49:46.620
+oh, kita ingin menyalin ini sebagai notes
+
+0:49:46.620,0:49:51.000
+tetapi kita juga bisa menyalin ini sebagai foobar.
+
+0:49:51.740,0:49:55.600
+Dan jika kita melakukannya, itu telah dieksekusi
+
+0:49:55.780,0:49:59.280
+dan ia memberi tahu kita bahwa semua isinya telah disalin ke sana.
+
+0:49:59.540,0:50:02.200
+Jika Anda akan menyalin banyak file,
+
+0:50:02.200,0:50:05.100
+ada perintah yang lebih baik yang sebaiknya Anda gunakan
+
+0:50:05.100,0:50:07.740
+yaitu "RSYNC". Misalnya, di sini
+
+0:50:07.900,0:50:10.780
+hanya dengan menentukan tiga flag ini,
+
+0:50:10.820,0:50:15.960
+saya memberi tahu RSYNC untuk semacam mempertahankan semua permission jika memungkinkan
+
+0:50:16.240,0:50:19.740
+untuk mencoba memeriksa apakah file sudah pernah disalin.
+
+0:50:19.740,0:50:24.100
+Misalnya, SCP akan mencoba menyalin file yang sudah ada di sana.
+
+0:50:24.200,0:50:26.440
+Ini akan terjadi misalnya jika Anda mencoba menyalin
+
+0:50:26.440,0:50:29.060
+dan koneksi terputus di tengahnya.
+
+0:50:29.120,0:50:32.060
+SCP akan memulai dari awal sekali, mencoba menyalin setiap file,
+
+0:50:32.080,0:50:36.600
+sedangkan RSYNC akan melanjutkan dari tempat ia berhenti.
+
+0:50:37.240,0:50:38.440
+Dan di sini,
+
+0:50:39.060,0:50:42.760
+kita memintanya menyalin seluruh folder dan
+
+0:50:43.780,0:50:46.560
+ia menyalin seluruh folder itu dengan sangat cepat.
+
+0:50:48.080,0:50:54.100
+Salah satu hal lain yang perlu diketahui tentang SSH adalah bahwa
+
+0:50:54.320,0:50:59.860
+padanan dotfile untuk SSH adalah "SSH config".
+
+0:50:59.860,0:51:06.340
+Jadi jika kita mengedit SSH config menjadi
+
+0:51:13.120,0:51:17.940
+Jika saya mengedit SSH config agar terlihat seperti ini,
+
+0:51:17.940,0:51:22.900
+alih-alih harus, setiap kali, mengetik "ssh jjgo",
+
+0:51:23.040,0:51:27.760
+memiliki string yang sangat panjang ini agar saya bisa merujuk ke remote spesifik ini,
+
+0:51:27.760,0:51:30.140
+saya ingin merujuk, dengan nama user yang spesifik,
+
+0:51:30.140,0:51:32.760
+saya bisa punya sesuatu di sini yang mengatakan
+
+0:51:33.160,0:51:35.680
+ini adalah username-nya, ini adalah hostname-nya, bahwa
+
+0:51:36.860,0:51:40.540
+host ini merujuk ke itu dan Anda sebaiknya menggunakan identity file ini.
+
+0:51:41.460,0:51:43.960
+Dan jika saya menyalin ini,
+
+0:51:43.960,0:51:46.100
+ini sekarang ada di folder lokal saya,
+
+0:51:46.100,0:51:49.000
+saya bisa menyalinnya ke ssh.
+
+0:51:49.600,0:51:53.520
+Sekarang, alih-alih harus menjalankan perintah yang sangat panjang ini, saya bisa cukup mengatakan
+
+0:51:53.520,0:51:57.100
+saya hanya ingin SSH ke host bernama VM.
+
+0:51:58.260,0:52:03.220
+Dan dengan melakukan itu, ia mengambil semua konfigurasi itu dari SSH config
+
+0:52:03.220,0:52:05.220
+dan menerapkannya di sini.
+
+0:52:05.240,0:52:10.060
+Solusi ini jauh lebih baik daripada misalnya membuat alias untuk SSH,
+
+0:52:10.360,0:52:13.360
+karena program lain seperti SCP dan RSYNC
+
+0:52:13.360,0:52:19.440
+juga mengetahui dotfiles untuk SSH dan akan menggunakannya kapan pun ada.
+
+0:52:22.820,0:52:30.400
+Hal terakhir yang ingin saya bahas tentang mesin remote adalah di sini, misalnya, kita akan punya tmux dan kita bisa,
+
+0:52:31.760,0:52:35.780
+seperti yang saya katakan sebelumnya, kita bisa mulai mengedit sebuah file
+
+0:52:39.160,0:52:44.500
+dan kita bisa mulai menjalankan sebuah job.
+
+0:52:54.200,0:52:56.180
+Misalnya, sesuatu seperti HTOP.
+
+0:52:56.180,0:52:58.720
+Dan ini berjalan di sini, kita bisa
+
+0:52:59.320,0:53:01.320
+detach darinya,
+
+0:53:01.430,0:53:03.430
+menutup koneksi dan
+
+0:53:03.740,0:53:07.780
+lalu SSH kembali. Dan kemudian, jika Anda menjalankan "tmux a",
+
+0:53:07.780,0:53:11.340
+semuanya seperti saat Anda tinggalkan, seolah tidak ada yang benar-benar berubah.
+
+0:53:11.340,0:53:15.220
+Dan jika ada hal yang dieksekusi di sana di background, hal itu akan terus dieksekusi.
+
+0:53:17.500,0:53:23.300
+Saya pikir itu kurang lebih mengakhiri semua yang ingin saya sampaikan tentang alat ini.
+
+0:53:23.300,0:53:26.420
+Ada pertanyaan terkait mesin remote?
+
+0:53:32.860,0:53:36.780
+Itu pertanyaan yang sangat bagus. Jadi yang saya lakukan untuk itu,
+
+0:53:38.700,0:53:39.460
+Oh, ya, maaf.
+
+0:53:39.460,0:53:44.880
+Jadi pertanyaannya adalah, bagaimana Anda menangani keinginan menggunakan tmux di mesin lokal Anda,
+
+0:53:44.880,0:53:47.640
+dan juga mencoba menggunakan tmux di mesin remote?
+
+0:53:48.400,0:53:50.760
+Ada beberapa trik untuk menangani itu.
+
+0:53:50.760,0:53:53.220
+Yang pertama adalah mengubah prefix.
+
+0:53:53.360,0:53:55.340
+Jadi yang saya lakukan, misalnya, adalah
+
+0:53:55.340,0:54:00.020
+di mesin lokal saya, prefix saya ubah dari "Ctrl+B" menjadi "Ctrl+A" dan
+
+0:54:00.220,0:54:02.580
+lalu di mesin remote ini masih "Ctrl+B".
+
+0:54:02.800,0:54:05.580
+Jadi saya bisa semacam berganti-ganti,
+
+0:54:05.580,0:54:09.840
+jika saya ingin melakukan sesuatu pada tmux lokal saya akan menekan "Ctrl+A"
+
+0:54:09.840,0:54:13.460
+dan jika saya ingin melakukan sesuatu pada tmux remote saya akan menekan "Ctrl+B".
+
+0:54:15.080,0:54:19.900
+Hal lain adalah bahwa Anda bisa memiliki config yang terpisah,
+
+0:54:20.080,0:54:24.100
+jadi saya bisa melakukan sesuatu seperti ini, dan lalu...
+
+0:54:27.260,0:54:31.040
+Ah, karena saya tidak punya ssh config sendiri, ya.
+
+0:54:32.240,0:54:33.000
+Tetapi jika Anda...
+
+0:54:33.000,0:54:34.420
+Um, saya bisa SSH "VM".
+
+0:54:36.820,0:54:38.900
+Di sini, apa yang Anda lihat,
+
+0:54:38.900,0:54:41.000
+perbedaan antara dua bar ini, misalnya,
+
+0:54:41.000,0:54:43.680
+adalah karena konfigurasi tmux-nya berbeda.
+
+0:54:44.380,0:54:48.500
+Seperti yang akan Anda lihat di exercises, konfigurasi tmux ada di
+
+0:54:50.320,0:54:53.780
+tmux.conf
+
+0:54:56.720,0:54:58.140
+Dan di tmux.conf,
+
+0:54:58.140,0:55:02.020
+di sini Anda bisa melakukan banyak hal seperti mengubah warna tergantung host tempat Anda berada
+
+0:55:02.210,0:55:06.879
+sehingga Anda bisa mendapat feedback visual cepat tentang di mana Anda berada, atau
+
+0:55:06.880,0:55:10.240
+jika Anda memiliki session bersarang. Selain itu, tmux akan,
+
+0:55:10.520,0:55:15.280
+jika Anda berada di host yang sama dan Anda mencoba menjalankan tmux di dalam session tmux,
+
+0:55:15.290,0:55:18.759
+ia akan semacam mencegah Anda melakukannya agar Anda tidak mengalami masalah.
+
+0:55:21.700,0:55:25.400
+Ada pertanyaan lain terkait, semacam, semua topik yang telah kita bahas.
+
+0:55:29.100,0:55:32.720
+Jawaban lain untuk pertanyaan itu juga, jika Anda mengetik prefix dua kali,
+
+0:55:32.880,0:55:35.760
+ia mengirimkannya sekali ke shell yang mendasarinya.
+
+0:55:35.920,0:55:40.100
+Jadi binding lokalnya adalah "Ctrl+A" dan binding remote-nya adalah "Ctrl+A",
+
+0:55:40.100,0:55:45.260
+Anda bisa mengetik "Ctrl+A", "Ctrl+A" lalu "D", misalnya, pada dasarnya itu detach dari yang remote.
+
+0:55:52.480,0:55:59.660
+Saya pikir itu mengakhiri kelas untuk hari ini, ada banyak latihan terkait semua topik utama ini dan
+
+0:56:00.380,0:56:05.410
+kami juga akan mengadakan office hours hari ini. Jadi silakan datang dan tanyakan apa pun kepada kami.
+

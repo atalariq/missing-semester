@@ -1,0 +1,124 @@
+Saya menggunakan catatan ini sebagai referensi saat mengajar. Jika Anda mahasiswa yang
+sampai di sini, Anda mungkin lebih baik melihat editors.md.
+
+menulis kata (esai) vs pemrograman
+- pemrograman: lebih banyak waktu dihabiskan untuk membaca, bernavigasi, mengedit, daripada menulis dalam
+  aliran panjang
+- program berbeda untuk tujuan berbeda
+
+layak menguasai sebuah editor
+- akan menghemat ratusan jam Anda
+- layak menginvestasikan waktu untuk ini, tidak seperti banyak hal lain
+
+cara belajar
+- mulai dari tutorial
+- konsisten menggunakan editor untuk semua tugas editing kode (dan idealnya kata)
+- hindari kebiasaan buruk
+- cari tahu seiring berjalan
+- jika tampaknya pasti ada cara yang lebih baik, kemungkinan besar memang ada
+    - programmer peduli pada editor mereka, sehingga editor adalah tool yang sangat kuat
+- garis waktu pembelajaran
+    - dalam beberapa jam: akan mempelajari fungsi dasar editor (save, quit, ...)
+    - dalam 20 jam: akan secepat dengan editor lama Anda
+    - setelah itu: manfaatnya mulai
+    - Anda tidak pernah berhenti belajar (ini tool yang sangat canggih dan kuat)
+
+editor mana yang harus dipelajari?
+- orang memiliki pendapat kuat: editor wars
+- https://insights.stackoverflow.com/survey/2019/#development-environments-and-tools
+- VS Code adalah tool berbasis GUI paling populer
+- Vim adalah tool berbasis CLI paling populer
+- kami mengajarkan Vim kepada Anda
+    - semua pengajar menggunakan Vim
+    - berasal dari editor Vi (1976), masih dikembangkan hingga hari ini
+    - gagasan yang menarik
+    - banyak tool mendukung binding Vim (misalnya emulasi Vim untuk VS Code memiliki
+      1,4 juta unduhan)
+    - memiliki kurva belajar (dibandingkan editor GUI), tetapi sepadan
+    - layak dipelajari bahkan jika akhirnya Anda memilih menggunakan editor lain
+
+kuliah ini
+- filosofi vim: gagasan rapi dari editor ini
+- dasar-dasar
+- demo
+- latihan, sumber daya untuk belajar lebih lanjut
+    - dimulai dengan vimtutor
+    - kuliah ini: fokus pada gagasan, bukan detail
+
+modal editing (modal ~ "mode")
+- dirancang di sekitar gagasan bahwa banyak waktu dihabiskan untuk membaca/bernavigasi/membuat edit kecil
+- gambaran sederhana: normal mode <-> insert mode
+- gambaran lebih kompleks: normal <-> {insert, replace, visual, v-line, v-block, command-line}
+- mode ditampilkan di kiri bawah
+- ketukan tombol memiliki arti berbeda pada mode berbeda: misalnya `x`
+- memetakan ulang caps lock ke escape
+
+dasar-dasar
+- beralih antara normal mode dan insert mode
+- hanya itu yang Anda butuhkan untuk memulai. insert mode bekerja seperti yang Anda harapkan.
+- buffer vs tab vs window
+    - buffer ~ berkas yang terbuka
+    - setiap tab memiliki satu atau lebih window
+    - sebuah buffer dapat terbuka di 0 atau lebih window
+    - berbeda dengan misalnya web browser
+- command line
+    - `:` pada normal mode
+    - :q, :w, :wq, :e {name of file}, :ls, :help {topic} (:help :w, :help w)
+
+vim normal mode adalah bahasa pemrograman (gagasan terpenting dalam vim)
+- setelah Anda mempelajari primitifnya, Anda dapat menggabungkannya dengan cara menarik
+- menjadi muscle memory
+- movement
+- selection
+- edits
+- counts
+- modifiers
+
+demo (fizzbuzz rusak)
+- main tidak pernah dipanggil
+  - `G` akhir berkas
+  - `o` buka baris baru di bawah
+  - ketik bagian "if __name__ ..."
+- dimulai dari 0 alih-alih 1
+  - cari `/range`
+  - `ww` untuk maju 2 kata
+  - `i` untuk menyisipkan teks, "1, "
+  - `ea` untuk menyisipkan setelah limit, "+1"
+- newline untuk "fizzbuzz"
+  - `jj$i` untuk menyisipkan teks di akhir baris
+  - tambahkan ", end=''"
+  - `jj.` untuk mengulangi pada print kedua
+  - `jjo` untuk membuka baris di bawah if
+  - tambahkan "else: print()"
+- fizz fizz
+  - `ci'` untuk mengubah fizz
+- argumen command-line
+  - `ggO` untuk membuka baris di atas
+  - "import sys"
+  - `/10`
+  - `ci(` menjadi "int(sys.argv[1])"
+
+kustomisasi vim
+- ~/.vimrc
+- mulai dengan config dasar kami
+- cari inspirasi secara daring
+
+plugin
+- tidak perlu plugin manager: cukup letakkan plugin di `~/.vim/pack/vendor/start/`
+- plugin yang direkomendasikan
+    - fuzzy file finder: ctrlp.vim
+    - code search: ack.vim
+    - directory navigation: nerdtree
+    - magic motions: vim-easymotion
+- lihat apa yang digunakan pengajar Anda
+- temukan lebih banyak: https://vimawesome.com/
+
+binding vim di tool lain
+- shell (set -o vi / bindkey -v)
+- $EDITOR
+- readline
+- Jupyter notebook
+
+demo vim tingkat lanjut
+
+pekerjaan rumah

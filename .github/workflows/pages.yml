@@ -28,6 +28,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Check original teaching sources
+        run: python3 scripts/check-source.py
       - name: Setup Pages
         uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
       - name: Build with Jekyll
@@ -35,6 +40,17 @@ jobs:
         with:
           source: ./
           destination: ./_site
+      - name: Prepare pinned English reference
+        run: |
+          mkdir .source-reference
+          git archive 1d695c94ccafdce3f06d6b9dfe3e6f106097693a | tar -x -C .source-reference
+      - name: Build pinned English reference with the same Jekyll
+        uses: actions/jekyll-build-pages@44a6e6beabd48582f863aeeb6cb2151cc1716697 # v1
+        with:
+          source: ./.source-reference
+          destination: ./_reference
+      - name: Restore source anchors, mount project links, and check rendered fidelity
+        run: python3 scripts/prepare-pages.py _site _reference
       - name: Upload artifact
         uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3
 

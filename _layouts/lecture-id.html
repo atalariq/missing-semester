@@ -7,7 +7,7 @@ layout: default
 
 {% if page.video.id %}
   <div class="youtube-wrapper" style="padding-bottom: {{ page.video.aspect }}%;">
-    <iframe src="https://www.youtube.com/embed/{{ page.video.id }}" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe title="Video kuliah asli berbahasa Inggris" src="https://www.youtube.com/embed/{{ page.video.id }}" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
 {% elsif page.panopto %}
   <p class="center padded bordered"><strong><a href="{{ page.panopto }}">Lihat video kuliah asli di Panopto (memerlukan login MIT Kerberos).</a></strong><br>
@@ -19,11 +19,19 @@ layout: default
   <p class="center padded bordered"><strong>Video kuliah akan segera tersedia!</strong></p>
 {% endif %}
 
+{% assign caption_name = page.name | remove: '.md' %}
+{% if page.url contains '/2020/' %}
+  {% if caption_name == 'command-line' or caption_name == 'debugging-profiling' or caption_name == 'qa' or caption_name == 'shell-tools' %}
+    <p><a href="{{ '/id/subtitles/2020/' | append: caption_name | append: '.sbv' | relative_url }}">Unduh subtitle Indonesia (SBV)</a> · <a href="{{ '/id/subtitles/2020/' | relative_url }}">Catatan transkrip</a>. Audio video berbahasa Inggris.</p>
+  {% endif %}
+{% endif %}
+
 {{ content }}
 
 <hr>
 
 <div class="small center">
-<p><a href="https://github.com/missing-semester/missing-semester/blob/master/{{ page.path }}">Sunting halaman ini</a>.</p>
+<p><a href="https://github.com/atalariq/missing-semester/blob/master/{{ page.path }}">Sunting halaman ini</a>.</p>
+<p><a href="https://missing.csail.mit.edu{{ page.url | remove_first: '/id' }}">Baca halaman sumber dalam bahasa Inggris</a>.</p>
 <p>Berlisensi <a href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA</a>.</p>
 </div>

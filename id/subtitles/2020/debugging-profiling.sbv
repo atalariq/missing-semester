@@ -1,0 +1,2145 @@
+0:00:00.000,0:00:04.200
+Jadi selamat datang kembali. Hari ini kita akan membahas debugging dan profiling.
+
+0:00:04.720,0:00:09.340
+Sebelum saya masuk ke topiknya, kami akan mengingatkan lagi untuk mengisi survei.
+
+0:00:09.520,0:00:14.580
+Salah satu hal utama yang ingin kami dapatkan dari Anda adalah pertanyaan, karena hari terakhir
+
+0:00:14.820,0:00:18.080
+akan berisi pertanyaan dari kalian: tentang hal-hal yang
+
+0:00:18.080,0:00:22.020
+belum kami bahas, atau yang Anda ingin kami bahas lebih mendalam.
+
+0:00:23.350,0:00:26.969
+Semakin banyak pertanyaan yang kami terima, semakin menarik bagian itu bisa kami buat,
+
+0:00:26.970,0:00:28.900
+jadi silakan isi surveinya.
+
+0:00:28.900,0:00:35.660
+Jadi lecture hari ini akan mencakup banyak topik. Semua topik berkisar pada konsep
+
+0:00:35.820,0:00:39.920
+apa yang Anda lakukan ketika Anda punya program yang memiliki bug.
+
+0:00:39.920,0:00:42.520
+Yang mana terjadi sebagian besar waktu, misalnya saat Anda memprogram, Anda semacam memikirkan
+
+0:00:42.720,0:00:47.400
+bagaimana Anda mengimplementasikan sesuatu dan ada semacam half-life dalam memperbaiki semua masalah yang
+
+0:00:47.620,0:00:52.140
+dimiliki program itu. Dan meskipun program Anda berperilaku seperti yang Anda inginkan, bisa jadi program itu
+
+0:00:52.390,0:00:55.680
+sangat lambat, atau menghabiskan banyak resource dalam prosesnya.
+
+0:00:55.680,0:01:00.569
+Jadi hari ini kita akan melihat banyak pendekatan berbeda dalam menangani masalah ini.
+
+0:01:01.300,0:01:05.099
+Jadi pertama, bagian pertama adalah tentang debugging.
+
+0:01:06.159,0:01:08.279
+Debugging bisa dilakukan dengan banyak cara berbeda,
+
+0:01:08.380,0:01:10.119
+ada berbagai macam...
+
+0:01:10.120,0:01:13.640
+Pendekatan paling sederhana yang, kurang lebih, akan dilakukan semua
+
+0:01:13.640,0:01:17.140
+mahasiswa CS, adalah: Anda punya kode, dan kode itu tidak berperilaku
+
+0:01:17.160,0:01:20.280
+seperti yang Anda inginkan, jadi Anda menyelidiki kode itu dengan menambahkan
+
+0:01:20.280,0:01:23.420
+statement print. Ini disebut "printf debugging" dan
+
+0:01:23.440,0:01:24.450
+itu bekerja cukup baik.
+
+0:01:24.450,0:01:26.680
+Misalnya, saya harus jujur,
+
+0:01:26.820,0:01:33.120
+saya sering menggunakannya karena sangat sederhana untuk disiapkan dan feedback-nya bisa sangat cepat.
+
+0:01:34.360,0:01:39.320
+Salah satu masalah dengan printf debugging adalah Anda bisa mendapat banyak output
+
+0:01:39.320,0:01:40.740
+dan mungkin Anda tidak ingin
+
+0:01:40.800,0:01:43.240
+mendapat output sebanyak yang Anda dapatkan.
+
+0:01:43.780,0:01:49.349
+Ada... orang-orang telah memikirkan cara yang sedikit lebih kompleks untuk melakukan printf debugging dan
+
+0:01:53.920,0:01:58.320
+salah satu caranya adalah yang biasanya disebut "logging".
+
+0:01:58.420,0:02:04.530
+Jadi keuntungan melakukan logging dibandingkan printf debugging adalah, saat Anda membuat log,
+
+0:02:05.080,0:02:09.780
+Anda tidak selalu membuat log karena ada masalah spesifik yang ingin Anda perbaiki;
+
+0:02:09.780,0:02:12.460
+terutama karena Anda telah membangun
+
+0:02:12.480,0:02:16.840
+sistem software yang lebih kompleks dan Anda ingin mencatat kapan peristiwa tertentu terjadi.
+
+0:02:17.360,0:02:21.560
+Salah satu keuntungan inti menggunakan library logging adalah bahwa
+
+0:02:22.180,0:02:27.040
+Anda bisa mendefinisikan severity level, dan Anda bisa memfilter berdasarkan level tersebut.
+
+0:02:27.400,0:02:31.620
+Mari kita lihat contoh bagaimana kita bisa melakukan hal seperti itu.
+
+0:02:32.320,0:02:35.840
+Ya, semuanya muat di sini. Ini contoh yang sangat konyol:
+
+0:02:36.340,0:02:37.520
+Kita hanya akan
+
+0:02:37.520,0:02:40.980
+mengambil sampel angka acak dan, tergantung nilai angka tersebut,
+
+0:02:41.120,0:02:44.720
+yang bisa kita tafsirkan sebagai semacam "seberapa salah keadaan berjalan".
+
+0:02:44.740,0:02:48.760
+Kita akan mencatat nilai angka tersebut dan kemudian
+
+0:02:49.340,0:02:51.640
+kita bisa melihat apa yang terjadi.
+
+0:02:52.580,0:02:59.280
+Saya perlu menonaktifkan formatter ini...
+
+0:02:59.620,0:03:03.720
+Dan jika kita mengeksekusi kode itu apa adanya,
+
+0:03:04.160,0:03:07.420
+kita hanya mendapat output dan kita terus mendapat output yang semakin banyak.
+
+0:03:07.420,0:03:13.599
+Tetapi Anda harus semacam menatapnya dan memahami apa yang terjadi, dan kita tidak tahu
+
+0:03:13.600,0:03:19.629
+berapa waktu relatif antara printf, kita tidak benar-benar tahu apakah ini hanya pesan informasi
+
+0:03:19.630,0:03:22.960
+atau pesan bahwa ada sesuatu yang salah.
+
+0:03:23.810,0:03:25.810
+Jika kita masuk saja,
+
+0:03:27.320,0:03:29.780
+dan undo, bukan yang itu...
+
+0:03:34.220,0:03:37.140
+Yang itu, kita bisa menetapkan formatter tersebut.
+
+0:03:38.620,0:03:41.600
+Sekarang outputnya terlihat lebih seperti ini
+
+0:03:41.620,0:03:44.840
+Jadi misalnya, jika Anda punya beberapa modul berbeda yang Anda gunakan untuk memprogram,
+
+0:03:44.840,0:03:46.940
+Anda bisa mengidentifikasinya dengan level yang berbeda.
+
+0:03:46.940,0:03:49.800
+Di sini, kita punya, kita punya debug level,
+
+0:03:50.330,0:03:51.890
+kita punya critical
+
+0:03:51.890,0:03:57.540
+info, level yang berbeda. Dan itu mungkin berguna karena di sini kita mungkin hanya peduli pada pesan error.
+
+0:03:57.740,0:04:00.640
+Seperti itu adalah, yang... Kita telah
+
+0:04:00.700,0:04:03.960
+mengerjakan kode kita, sejauh ini lancar, dan tiba-tiba kita mendapat error.
+
+0:04:03.960,0:04:06.540
+Kita bisa mencatatnya untuk mengidentifikasi di mana hal itu terjadi.
+
+0:04:06.580,0:04:11.640
+Tetapi mungkin ada banyak pesan informasi, tetapi kita bisa menanganinya
+
+0:04:12.709,0:04:16.809
+hanya dengan mengubah levelnya ke level error.
+
+0:04:17.400,0:04:17.900
+Dan
+
+0:04:18.890,0:04:22.960
+sekarang jika kita menjalankan ini lagi, kita hanya akan mendapat
+
+0:04:23.620,0:04:28.160
+error tersebut di output, dan kita bisa menelusurinya untuk memahami apa yang terjadi.
+
+0:04:28.920,0:04:33.320
+Alat lain yang sangat berguna saat Anda berhadapan dengan log adalah
+
+0:04:34.130,0:04:36.670
+Saat Anda melihat ini,
+
+0:04:36.670,0:04:42.580
+ini menjadi lebih mudah karena sekarang kita punya level critical dan error yang bisa kita kenali dengan cepat.
+
+0:04:43.310,0:04:46.750
+Tetapi karena manusia adalah makhluk yang cukup visual,
+
+0:04:48.680,0:04:53.109
+salah satu hal yang bisa Anda lakukan adalah menggunakan warna dari terminal Anda untuk
+
+0:04:53.630,0:04:57.369
+mengidentifikasi hal-hal ini. Jadi sekarang, dengan mengubah formatter,
+
+0:04:57.369,0:05:03.320
+yang saya lakukan adalah sedikit mengubah bagaimana output diformat.
+
+0:05:03.580,0:05:09.340
+Ketika saya melakukan itu, sekarang setiap kali saya mendapat pesan warning, warnanya kuning;
+
+0:05:09.340,0:05:10.880
+setiap kali saya mendapat semacam error,
+
+0:05:10.960,0:05:16.140
+merah pudar; dan ketika critical, saya punya merah tebal yang menandakan ada sesuatu yang salah.
+
+0:05:16.280,0:05:22.620
+Dan di sini outputnya sangat pendek, tetapi saat Anda mulai memiliki ribuan dan ribuan baris log,
+
+0:05:22.620,0:05:26.380
+yang bukan tidak realistis dan terjadi setiap hari di banyak aplikasi,
+
+0:05:27.140,0:05:32.500
+menelusuri dengan cepat dan mengidentifikasi di mana error atau bagian merahnya berada
+
+0:05:32.600,0:05:35.320
+bisa sangat berguna.
+
+0:05:35.600,0:05:41.400
+Sebuah catatan singkat, Anda mungkin penasaran bagaimana terminal menampilkan warna-warna ini.
+
+0:05:41.580,0:05:45.320
+Pada akhirnya, terminal hanya mengeluarkan karakter.
+
+0:05:47.160,0:05:49.480
+Misalnya, bagaimana program ini atau bagaimana program lain, seperti LS,
+
+0:05:50.060,0:05:56.050
+yang punya semua warna canggih ini. Bagaimana mereka memberi tahu terminal bahwa ia seharusnya menggunakan warna-warna berbeda ini?
+
+0:05:56.360,0:05:58.779
+Ini bukan sesuatu yang sangat canggih,
+
+0:05:59.440,0:06:03.440
+yang dilakukan alat-alat ini adalah sesuatu seperti ini.
+
+0:06:03.740,0:06:04.540
+Di sini kita punya...
+
+0:06:05.420,0:06:08.340
+Saya bisa membersihkan sisa output, agar kita bisa fokus ke ini.
+
+0:06:08.660,0:06:14.000
+Ada beberapa karakter khusus, beberapa escape character di sini,
+
+0:06:14.260,0:06:19.740
+lalu kita punya teks dan lalu kita punya karakter khusus lain. Dan jika kita mengeksekusi baris ini
+
+0:06:19.940,0:06:22.360
+kita mendapat "This is red" berwarna merah.
+
+0:06:22.480,0:06:26.640
+Dan Anda mungkin menyadari fakta bahwa kita punya "255;0;0" di sini,
+
+0:06:26.720,0:06:31.400
+ini hanya memberi tahu nilai RGB dari warna yang kita inginkan di terminal.
+
+0:06:31.400,0:06:38.100
+Dan Anda kurang lebih bisa melakukan ini di potongan kode apa pun yang Anda punya, dan dengan begitu Anda bisa memberi kode warna pada output.
+
+0:06:38.100,0:06:42.540
+Terminal Anda cukup canggih dan mendukung banyak warna berbeda di output.
+
+0:06:42.550,0:06:45.400
+Ini bahkan belum semuanya, ini seperti seperenam belasnya.
+
+0:06:46.100,0:06:49.119
+Saya pikir cukup berguna untuk mengetahui hal itu.
+
+0:06:52.100,0:06:55.960
+Hal lain adalah mungkin Anda tidak menikmati atau tidak menganggap
+
+0:06:56.200,0:06:58.620
+log benar-benar cocok untuk Anda.
+
+0:06:58.620,0:07:02.480
+Masalahnya, banyak sistem lain yang mungkin mulai Anda gunakan akan menggunakan log.
+
+0:07:02.840,0:07:05.360
+Saat Anda mulai membangun sistem yang semakin besar,
+
+0:07:05.360,0:07:10.140
+Anda mungkin bergantung pada dependency lain. Dependency yang umum mungkin web server atau
+
+0:07:10.220,0:07:12.320
+database, itu yang sangat umum.
+
+0:07:12.440,0:07:17.740
+Dan mereka akan mencatat error atau exception mereka di log mereka sendiri.
+
+0:07:17.740,0:07:20.540
+Tentu saja, Anda akan mendapat beberapa error di sisi client,
+
+0:07:20.620,0:07:25.140
+tetapi itu kadang tidak cukup informatif untuk Anda mengetahui apa yang terjadi.
+
+0:07:25.900,0:07:33.940
+Di sebagian besar sistem UNIX, log biasanya ditempatkan di folder bernama "/var/log"
+
+0:07:33.940,0:07:37.980
+dan jika kita menampilkannya, kita bisa melihat ada banyak log di sini.
+
+0:07:42.680,0:07:48.040
+Jadi kita punya misalnya log shutdown monitor, atau beberapa log mingguan.
+
+0:07:49.669,0:07:56.199
+Hal-hal terkait Wi-Fi, misalnya. Dan jika kita menampilkan
+
+0:07:57.560,0:08:00.840
+System log, yang berisi banyak informasi tentang sistem,
+
+0:08:00.840,0:08:03.940
+kita bisa mendapat informasi tentang apa yang terjadi.
+
+0:08:04.120,0:08:06.780
+Demikian pula, ada alat yang memungkinkan Anda
+
+0:08:07.460,0:08:13.090
+menelusuri output ini dengan lebih waras. Tetapi di sini, melihat system log,
+
+0:08:13.090,0:08:15.520
+saya bisa melihat ini, dan berkata:
+
+0:08:15.760,0:08:20.040
+oh ada layanan yang keluar dengan kode yang tidak normal
+
+0:08:20.420,0:08:25.460
+dan berdasarkan informasi itu, saya bisa mencoba mencari tahu apa yang terjadi,
+
+0:08:25.510,0:08:27.500
+misalnya apa yang salah.
+
+0:08:29.020,0:08:32.000
+Satu hal yang perlu diketahui saat bekerja dengan log adalah bahwa
+
+0:08:32.000,0:08:35.900
+secara lebih tradisional, setiap software punya
+
+0:08:35.920,0:08:42.540
+log sendiri, tetapi semakin populer untuk memiliki system log terpadu tempat semuanya ditempatkan.
+
+0:08:43.010,0:08:49.299
+Hampir semua aplikasi bisa mencatat ke system log, tetapi alih-alih dalam format teks biasa,
+
+0:08:49.300,0:08:52.380
+isinya akan dikompresi dalam beberapa format khusus.
+
+0:08:52.380,0:08:56.460
+Contohnya adalah apa yang kita bahas di lecture data wrangling.
+
+0:08:56.520,0:08:59.900
+Di lecture data wrangling kita menggunakan "journalctl",
+
+0:09:00.200,0:09:04.280
+yang mengakses log dan mengeluarkan semua output itu.
+
+0:09:04.340,0:09:07.380
+Di sini, di Mac, sekarang perintahnya adalah "log show",
+
+0:09:07.380,0:09:10.020
+yang akan menampilkan banyak informasi.
+
+0:09:10.100,0:09:15.760
+Saya akan menampilkan sepuluh detik terakhir saja, karena log sangat, sangat verbose dan
+
+0:09:17.060,0:09:23.720
+menampilkan 10 detik terakhir saja masih akan mengeluarkan jumlah baris yang cukup banyak.
+
+0:09:23.900,0:09:28.240
+Jadi jika kita menelusuri kembali apa yang terjadi,
+
+0:09:28.240,0:09:33.460
+di sini kita melihat banyak hal Apple yang terjadi, karena ini adalah macbook.
+
+0:09:33.500,0:09:38.460
+Mungkin kita bisa menemukan error tentang semacam masalah sistem di sini.
+
+0:09:39.280,0:09:46.920
+Sekali lagi, isinya cukup verbose, jadi Anda mungkin ingin melatih teknik data wrangling Anda di sini,
+
+0:09:46.920,0:09:50.440
+misalnya 10 detik setara dengan sekitar 500 baris log, jadi Anda bisa semacam
+
+0:09:50.960,0:09:54.960
+mendapat gambaran berapa baris per detik yang Anda dapatkan.
+
+0:09:56.360,0:10:01.060
+Log tidak hanya berguna untuk mengetahui output program lain,
+
+0:10:01.060,0:10:05.619
+tetapi juga berguna untuk Anda, jika Anda ingin mencatat ke sana alih-alih ke file Anda sendiri.
+
+0:10:05.779,0:10:11.319
+Jadi dengan menggunakan perintah "logger", di linux maupun mac,
+
+0:10:11.839,0:10:13.480
+Anda bisa mengatakan oke
+
+0:10:13.480,0:10:18.880
+saya akan mencatat "Hello Logs" ini ke system log ini.
+
+0:10:18.880,0:10:21.939
+Kita mengeksekusi perintahnya dan kemudian
+
+0:10:22.760,0:10:27.640
+kita bisa memeriksa dengan menelusuri log satu menit terakhir,
+
+0:10:27.640,0:10:31.760
+karena isinya akan cukup baru, dan melakukan grep untuk "Hello" itu
+
+0:10:31.760,0:10:38.260
+kita menemukan entri kita. Entri yang cukup baru, yang baru saja kita buat dan bertuliskan "Hello Logs".
+
+0:10:39.220,0:10:46.840
+Saat Anda semakin akrab dengan alat-alat ini, Anda akan mendapati diri Anda menggunakan
+
+0:10:48.800,0:10:51.279
+log semakin sering, karena
+
+0:10:51.529,0:10:56.349
+bahkan jika Anda punya bug yang belum Anda deteksi, dan program sudah berjalan cukup lama,
+
+0:10:56.349,0:11:02.240
+mungkin informasinya sudah ada di log dan bisa memberi tahu Anda cukup banyak untuk memahami apa yang terjadi.
+
+0:11:02.800,0:11:08.260
+Namun, printf debugging bukanlah segalanya. Jadi sekarang saya akan membahas debugger.
+
+0:11:08.260,0:11:10.380
+Tetapi pertama, ada pertanyaan tentang log sejauh ini?
+
+0:11:11.720,0:11:15.040
+Jadi hal seperti apa yang bisa Anda ketahui dari log?
+
+0:11:15.040,0:11:18.800
+misalnya Hello Logs ini mengatakan bahwa Anda melakukan sesuatu dengan Hello pada saat itu?
+
+0:11:18.940,0:11:25.040
+Ya, misalnya, saya bisa menulis skrip bash yang mendeteksi...
+
+0:11:25.060,0:11:29.480
+Yah, yang memeriksa setiap kali jaringan Wi-Fi apa yang sedang saya sambungkan.
+
+0:11:29.480,0:11:34.150
+Dan setiap kali mendeteksi bahwa itu berubah, ia membuat entri di log dan berkata
+
+0:11:34.150,0:11:37.440
+Oh sekarang sepertinya kita telah berganti jaringan Wi-Fi.
+
+0:11:37.440,0:11:41.400
+dan kemudian Anda mungkin menelusuri kembali log dan mengambil, oke
+
+0:11:41.510,0:11:47.559
+Kapan komputer saya berganti dari satu jaringan Wi-Fi ke jaringan lain. Dan ini hanyalah semacam contoh sederhana
+
+0:11:47.560,0:11:50.260
+Tetapi ada banyak, banyak cara,
+
+0:11:50.660,0:11:54.020
+banyak jenis informasi yang bisa Anda catat di sini.
+
+0:11:54.020,0:11:59.040
+Yang lebih umum, Anda mungkin ingin memeriksa apakah komputer Anda, misalnya,
+
+0:11:59.100,0:12:02.540
+masuk ke mode sleep, misalnya, karena alasan yang tidak diketahui.
+
+0:12:02.680,0:12:04.660
+Misalnya komputer berada dalam mode hibernasi.
+
+0:12:04.820,0:12:09.100
+Mungkin ada informasi di log tentang siapa yang meminta hal itu terjadi,
+
+0:12:09.100,0:12:10.240
+atau mengapa hal itu terjadi.
+
+0:12:11.720,0:12:14.880
+Ada pertanyaan lain? Oke.
+
+0:12:14.880,0:12:17.380
+Jadi ketika printf debugging tidak cukup,
+
+0:12:18.320,0:12:22.360
+alternatif terbaik setelah itu adalah menggunakan...
+
+0:12:23.360,0:12:25.360
+[Keluar dari itu]
+
+0:12:28.480,0:12:30.260
+Jadi, menggunakan debugger.
+
+0:12:30.580,0:12:37.620
+Jadi debugger adalah alat yang membungkus kode Anda dan memungkinkan Anda menjalankan kode Anda,
+
+0:12:38.120,0:12:40.480
+tetapi ia semacam mempertahankan kendali atasnya.
+
+0:12:40.480,0:12:42.500
+Jadi ia memungkinkan Anda melangkah
+
+0:12:42.500,0:12:47.080
+melalui kode dan mengeksekusinya serta menetapkan breakpoint.
+
+0:12:47.080,0:12:50.020
+Anda mungkin pernah melihat debugger dalam suatu bentuk, jika Anda
+
+0:12:50.020,0:12:55.800
+pernah menggunakan sesuatu seperti IDE, karena IDE punya semacam tampilan canggih: tetapkan breakpoint di sini, eksekusi, ...
+
+0:12:56.080,0:12:59.040
+Tetapi pada akhirnya, yang digunakan alat-alat ini hanyalah
+
+0:12:59.040,0:13:04.740
+debugger command line ini dan mereka hanya menyajikannya dalam format yang sangat canggih.
+
+0:13:04.850,0:13:09.969
+Di sini kita punya bubble sort yang benar-benar rusak, sebuah algoritma pengurutan sederhana.
+
+0:13:10.000,0:13:11.560
+Jangan khawatir tentang detailnya,
+
+0:13:11.560,0:13:14.980
+tetapi kita hanya ingin mengurutkan array yang kita punya di sini.
+
+0:13:17.360,0:13:19.460
+Kita bisa mencobanya dengan hanya menjalankan
+
+0:13:21.340,0:13:23.340
+Python bubble.py
+
+0:13:23.500,0:13:28.360
+Dan ketika kita melakukannya... Oh ada index error, list index out of range.
+
+0:13:28.480,0:13:31.200
+Kita bisa mulai menambahkan print
+
+0:13:31.200,0:13:33.740
+tetapi jika string-nya sangat panjang, kita bisa mendapat banyak informasi.
+
+0:13:33.820,0:13:37.820
+Jadi bagaimana kalau kita pergi ke saat kita crash?
+
+0:13:37.900,0:13:41.020
+Kita bisa pergi ke saat itu dan memeriksa apa
+
+0:13:41.020,0:13:43.360
+state program saat itu.
+
+0:13:43.520,0:13:49.080
+Jadi untuk melakukan itu saya akan menjalankan programnya menggunakan debugger Python.
+
+0:13:49.080,0:13:53.820
+Di sini secara teknis saya menggunakan debugger ipython, hanya karena sintaksnya berwarna bagus
+
+0:13:54.060,0:13:59.140
+jadi mungkin lebih mudah bagi kita berdua untuk memahami
+
+0:13:59.300,0:14:01.300
+apa yang terjadi di output.
+
+0:14:01.310,0:14:04.929
+Tetapi keduanya kurang lebih identik.
+
+0:14:05.140,0:14:09.400
+Jadi kita mengeksekusi ini, dan sekarang kita diberi prompt
+
+0:14:09.400,0:14:13.080
+di mana kita diberi tahu bahwa kita berada di sini, di baris paling awal program kita.
+
+0:14:13.100,0:14:15.440
+Dan kita bisa...
+
+0:14:15.980,0:14:20.380
+"L" adalah singkatan dari "List", jadi seperti banyak alat ini
+
+0:14:21.140,0:14:24.400
+ada semacam bahasa operasi yang bisa Anda lakukan,
+
+0:14:24.400,0:14:28.220
+dan sering kali bersifat mnemonic, seperti halnya di VIM atau TMUX.
+
+0:14:28.860,0:14:32.940
+Jadi di sini, "L" adalah untuk "Listing" kode, dan kita bisa melihat seluruh kodenya.
+
+0:14:34.540,0:14:38.880
+"S" adalah untuk "Step" dan memungkinkan kita semacam satu
+
+0:14:38.880,0:14:42.180
+baris setiap kali, menelusuri eksekusinya.
+
+0:14:42.300,0:14:47.360
+Masalahnya, kita baru memicu error itu beberapa saat kemudian.
+
+0:14:47.360,0:14:48.710
+Jadi
+
+0:14:48.710,0:14:55.150
+kita bisa memulai ulang program dan alih-alih mencoba melangkah sampai kita mencapai masalahnya,
+
+0:14:55.150,0:15:00.820
+kita bisa meminta program untuk continue, yaitu perintah "C" dan
+
+0:15:01.480,0:15:04.160
+hei, kita mencapai masalahnya.
+
+0:15:04.640,0:15:08.080
+Kita sampai di baris ini tempat semuanya crash,
+
+0:15:08.080,0:15:11.020
+kita mendapat list index out of range ini.
+
+0:15:11.020,0:15:13.560
+Dan sekarang kita berada di sini, kita bisa berkata, huh?
+
+0:15:14.120,0:15:17.520
+Oke, pertama, mari kita cetak nilai array-nya.
+
+0:15:18.080,0:15:21.520
+Ini nilai array saat ini
+
+0:15:23.120,0:15:26.840
+Jadi kita punya enam item. Oke. Apa nilai "J" di sini?
+
+0:15:27.200,0:15:31.929
+Jadi kita lihat nilai "J". "J" adalah 5 di sini, yang akan menjadi elemen terakhir, tetapi
+
+0:15:32.480,0:15:37.119
+"J" plus 1 akan menjadi 6, jadi itu memicu error out of bounds.
+
+0:15:37.970,0:15:40.389
+Jadi yang harus kita lakukan adalah
+
+0:15:40.660,0:15:47.660
+"N" ini, alih-alih "N" seharusnya "N minus one". Kita telah mengidentifikasi bahwa error-nya ada di sana.
+
+0:15:47.660,0:15:50.800
+Jadi kita bisa quit, yaitu "Q".
+
+0:15:52.010,0:15:54.729
+Sekali lagi, karena ini adalah post-mortem debugger.
+
+0:15:56.090,0:16:00.219
+Kita kembali ke kode dan berkata oke,
+
+0:16:02.860,0:16:06.180
+kita perlu menambahkan "N minus one" ini.
+
+0:16:06.760,0:16:11.140
+Itu akan mencegah list index out of range dan
+
+0:16:11.480,0:16:14.260
+jika kita menjalankan ini lagi tanpa debugger,
+
+0:16:15.020,0:16:18.729
+oke, tidak ada error sekarang. Tetapi ini bukan list terurut kita.
+
+0:16:18.729,0:16:21.200
+Ini terurut, tetapi bukan list kita.
+
+0:16:21.300,0:16:23.000
+Kita kehilangan entri dari list kita,
+
+0:16:23.160,0:16:27.420
+jadi ada semacam masalah perilaku yang kita temui di sini.
+
+0:16:27.920,0:16:32.409
+Sekali lagi, kita bisa mulai menggunakan printf debugging tetapi semacam firasat sekarang
+
+0:16:32.409,0:16:37.940
+adalah bahwa mungkin cara kita menukar entri di program bubble sort salah.
+
+0:16:38.480,0:16:45.920
+Kita bisa menggunakan debugger untuk ini. Kita bisa menelusurinya sampai saat kita melakukan swap dan
+
+0:16:46.120,0:16:48.320
+memeriksa bagaimana swap itu dilakukan.
+
+0:16:48.540,0:16:50.600
+Jadi gambaran singkat,
+
+0:16:50.600,0:16:56.590
+kita punya dua for loop dan di loop yang paling bersarang,
+
+0:16:56.720,0:17:03.220
+kita memeriksa apakah array lebih besar dari array lainnya. Masalahnya, jika kita hanya mencoba mengeksekusi sampai baris ini,
+
+0:17:03.589,0:17:06.609
+itu hanya akan terpicu setiap kali kita melakukan swap.
+
+0:17:06.700,0:17:11.640
+Jadi yang bisa kita lakukan adalah menetapkan breakpoint di baris keenam.
+
+0:17:11.820,0:17:15.520
+Kita bisa membuat breakpoint di baris ini dan kemudian
+
+0:17:15.580,0:17:20.820
+program akan mengeksekusi dan saat kita mencoba menukar variabel, program akan berhenti.
+
+0:17:21.080,0:17:22.940
+Jadi kita membuat breakpoint di sana
+
+0:17:22.940,0:17:27.000
+dan kemudian kita melanjutkan eksekusi program. Program berhenti
+
+0:17:27.000,0:17:30.520
+dan berkata hei, saya telah mengeksekusi dan saya telah mencapai baris ini.
+
+0:17:30.820,0:17:31.860
+Sekarang
+
+0:17:31.920,0:17:39.120
+saya bisa menggunakan "locals()", yang merupakan fungsi Python yang mengembalikan dictionary berisi semua nilai
+
+0:17:39.120,0:17:41.220
+untuk dengan cepat melihat seluruh konteksnya.
+
+0:17:43.100,0:17:48.140
+String-nya, array-nya baik-baik saja dan berisi enam, lagi-lagi, hanya bagian awal dan
+
+0:17:48.680,0:17:51.100
+saya step, pergi ke baris berikutnya.
+
+0:17:51.780,0:17:52.620
+Oh,
+
+0:17:52.620,0:17:57.000
+dan saya mengidentifikasi masalahnya: saya menukar satu item setiap kali, bukan secara bersamaan,
+
+0:17:57.020,0:18:01.840
+jadi itulah yang memicu fakta bahwa kita kehilangan variabel saat kita menelusurinya.
+
+0:18:03.200,0:18:06.729
+Itu semacam contoh yang sangat sederhana, tetapi
+
+0:18:07.490,0:18:09.050
+debugger benar-benar kuat.
+
+0:18:09.050,0:18:13.320
+Sebagian besar bahasa pemrograman akan memberi Anda semacam debugger,
+
+0:18:13.540,0:18:19.920
+dan ketika Anda masuk ke debugging yang lebih low level Anda mungkin menemui alat seperti...
+
+0:18:19.920,0:18:21.920
+Anda mungkin ingin menggunakan sesuatu seperti
+
+0:18:25.340,0:18:27.340
+GDB.
+
+0:18:31.580,0:18:34.360
+Dan GDB punya satu sifat bagus:
+
+0:18:34.460,0:18:37.740
+GDB bekerja sangat baik dengan C/C++ dan semua bahasa mirip C ini.
+
+0:18:37.780,0:18:42.720
+Tetapi GDB sebenarnya memungkinkan Anda bekerja dengan hampir semua binary yang bisa Anda eksekusi.
+
+0:18:42.720,0:18:47.800
+Jadi misalnya di sini kita punya sleep, yang hanyalah program yang akan sleep selama 20 detik.
+
+0:18:48.520,0:18:55.340
+Program itu dimuat dan kemudian kita bisa menjalankan run, dan kemudian kita bisa menginterupsinya dengan mengirim signal interrupt.
+
+0:18:55.340,0:19:02.020
+Dan GDB menampilkan untuk kita, di sini, informasi yang sangat low level tentang apa yang terjadi di program.
+
+0:19:02.030,0:19:06.820
+Jadi kita mendapat stack trace, kita melihat kita berada di fungsi nanosleep ini,
+
+0:19:07.060,0:19:11.660
+kita bisa melihat nilai semua register hardware di mesin Anda. Jadi
+
+0:19:12.300,0:19:17.160
+Anda bisa mendapat banyak detail low level menggunakan alat-alat ini.
+
+0:19:18.560,0:19:22.520
+Saya pikir itu semua yang ingin saya bahas tentang debugger.
+
+0:19:22.520,0:19:25.540
+Ada pertanyaan terkait itu?
+
+0:19:33.520,0:19:39.040
+Alat menarik lainnya saat Anda mencoba debug adalah kadang Anda ingin melakukan debug seolah-olah
+
+0:19:39.480,0:19:42.220
+program Anda adalah kotak hitam.
+
+0:19:42.220,0:19:46.059
+Jadi Anda, mungkin, tahu apa bagian dalam programnya tetapi pada saat yang sama
+
+0:19:46.430,0:19:52.119
+komputer Anda mengetahui setiap kali program Anda mencoba melakukan beberapa operasi.
+
+0:19:52.280,0:19:54.729
+Jadi ini di sistem UNIX,
+
+0:19:54.760,0:19:58.060
+ada gagasan tentang user level code dan kernel level code.
+
+0:19:58.060,0:20:03.180
+Dan ketika Anda mencoba melakukan beberapa operasi seperti membaca file atau membaca koneksi jaringan
+
+0:20:03.340,0:20:06.020
+Anda harus melakukan sesuatu yang disebut system call.
+
+0:20:06.180,0:20:12.560
+Anda bisa mengambil sebuah program dan menelusuri operasi-operasi itu dan menanyakan
+
+0:20:14.000,0:20:18.300
+operasi apa yang dilakukan software ini?
+
+0:20:18.300,0:20:20.920
+Jadi misalnya, jika Anda punya semacam fungsi Python
+
+0:20:20.980,0:20:26.660
+yang seharusnya hanya melakukan operasi matematika dan Anda menjalankannya melalui program ini,
+
+0:20:26.660,0:20:28.460
+dan ternyata ia membaca file,
+
+0:20:28.460,0:20:31.940
+Mengapa ia membaca file? Ia seharusnya tidak membaca file. Jadi, mari kita lihat.
+
+0:20:34.520,0:20:37.200
+Ini adalah "strace".
+
+0:20:37.200,0:20:38.740
+Jadi misalnya, kita bisa melakukannya seperti ini.
+
+0:20:38.740,0:20:41.260
+Jadi di sini kita akan menjalankan "LS - L"
+
+0:20:42.220,0:20:47.900
+Dan kemudian kita mengabaikan output LS, tetapi kita tidak mengabaikan output STRACE.
+
+0:20:47.900,0:20:49.740
+Jadi jika kita mengeksekusi itu...
+
+0:20:52.300,0:20:54.720
+Kita akan mendapat banyak output.
+
+0:20:54.920,0:20:58.740
+Ini semua system call yang berbeda
+
+0:21:00.520,0:21:02.080
+Yang telah
+
+0:21:02.090,0:21:07.510
+dieksekusi oleh LS. Anda akan melihat banyak OPEN, Anda akan melihat FSTAT.
+
+0:21:08.150,0:21:14.170
+Dan misalnya, karena ia harus menampilkan semua properti file yang ada di folder ini, kita bisa
+
+0:21:15.110,0:21:20.410
+memeriksa panggilan LSTAT. Jadi panggilan LSTAT akan memeriksa properti file dan
+
+0:21:21.020,0:21:27.420
+kita bisa melihat bahwa, memang, semua file dan folder yang ada di direktori ini
+
+0:21:27.700,0:21:31.540
+telah diakses melalui system call, melalui LS.
+
+0:21:34.120,0:21:43.400
+Menariknya, kadang Anda sebenarnya tidak perlu menjalankan kode Anda untuk
+
+0:21:44.360,0:21:47.000
+mengetahui bahwa ada sesuatu yang salah dengan kode Anda.
+
+0:21:47.960,0:21:52.449
+Sejauh ini kita telah melihat cukup banyak cara mengidentifikasi masalah dengan menjalankan kode,
+
+0:21:52.450,0:21:54.410
+tetapi bagaimana jika Anda...
+
+0:21:54.410,0:21:58.980
+Anda bisa melihat potongan kode seperti ini, seperti yang baru saya tampilkan di layar ini,
+
+0:21:58.980,0:22:00.560
+dan mengidentifikasi masalah.
+
+0:22:00.560,0:22:02.030
+Jadi misalnya di sini,
+
+0:22:02.030,0:22:06.670
+kita punya potongan kode yang sangat konyol. Kode ini mendefinisikan sebuah fungsi, mencetak beberapa variabel,
+
+0:22:07.720,0:22:11.780
+mengalikan beberapa variabel, kode itu sleep beberapa saat dan kemudian kita mencoba mencetak BAZ.
+
+0:22:12.020,0:22:14.840
+Dan Anda bisa mencoba melihat ini dan berkata, hei, BAZ
+
+0:22:15.500,0:22:20.650
+tidak pernah didefinisikan di mana pun. Ini variabel baru. Anda mungkin bermaksud menulis BAR
+
+0:22:20.650,0:22:22.540
+tetapi Anda salah mengetiknya.
+
+0:22:22.540,0:22:26.480
+Masalahnya, jika kita mencoba menjalankan program ini,
+
+0:22:28.820,0:22:36.820
+itu akan memakan 60 detik, karena kita harus menunggu sampai fungsi time.sleep ini selesai. Di sini, sleep hanya untuk
+
+0:22:37.790,0:22:42.070
+memotivasi contohnya tetapi secara umum Anda mungkin memuat dataset yang memakan waktu sangat lama
+
+0:22:42.140,0:22:44.740
+karena Anda harus menyalin semuanya ke memori.
+
+0:22:44.740,0:22:48.780
+Dan masalahnya, ada program yang menerima source code sebagai input,
+
+0:22:49.340,0:22:54.940
+akan memprosesnya dan berkata, oh mungkin ada yang salah dengan potongan kode ini. Jadi di Python,
+
+0:22:55.760,0:23:00.600
+atau secara umum, ini disebut static analysis tool.
+
+0:23:00.780,0:23:02.860
+Di Python kita punya misalnya pyflakes.
+
+0:23:02.860,0:23:06.640
+Jika kita mengambil potongan kode ini dan menjalankannya melalui pyflakes,
+
+0:23:06.860,0:23:09.820
+pyflakes akan memberi kita beberapa masalah.
+
+0:23:10.040,0:23:15.700
+Yang pertama adalah yang.... Yang kedua adalah yang kita identifikasi: di sini ada nama yang tidak terdefinisi bernama BAZ.
+
+0:23:15.700,0:23:17.760
+Anda mungkin sebaiknya melakukan sesuatu tentang itu.
+
+0:23:17.760,0:23:22.720
+Dan yang lainnya adalah seperti oh, Anda mendefinisikan ulang
+
+0:23:23.060,0:23:27.240
+nama variabel FOO di baris itu.
+
+0:23:27.540,0:23:31.400
+Jadi di sini kita punya fungsi FOO dan kemudian kita semacam
+
+0:23:31.400,0:23:34.620
+menutupi fungsi itu dengan menggunakan variabel loop di sini.
+
+0:23:34.760,0:23:38.460
+Jadi sekarang fungsi FOO yang kita definisikan tidak bisa diakses lagi
+
+0:23:38.470,0:23:41.650
+dan kemudian jika kita mencoba memanggilnya setelahnya, kita akan mendapat error.
+
+0:23:43.520,0:23:45.520
+Ada jenis lain dari
+
+0:23:46.250,0:23:53.170
+Static Analysis tool. MYPY adalah yang berbeda. MYPY akan melaporkan dua error yang sama, tetapi ia juga
+
+0:23:53.840,0:24:00.160
+akan mengeluh tentang type checking. Jadi ia akan berkata, oh di sini Anda mengalikan int dengan float dan
+
+0:24:00.680,0:24:06.320
+jika Anda peduli tentang type checking kode Anda, Anda seharusnya tidak mencampur keduanya.
+
+0:24:07.490,0:24:12.219
+bisa jadi agak tidak nyaman, harus menjalankan ini, melihat barisnya, kembali ke
+
+0:24:12.800,0:24:17.409
+VIM atau editor Anda, dan mencari tahu error itu cocok dengan apa.
+
+0:24:18.380,0:24:21.190
+Sudah ada solusi untuk itu. Salah
+
+0:24:22.340,0:24:27.069
+satunya adalah Anda bisa mengintegrasikan sebagian besar editor dengan alat-alat ini dan di sini..
+
+0:24:28.279,0:24:34.059
+Anda bisa melihat ada semacam highlighting merah pada bash, dan ia akan membaca baris terakhir di sini.
+
+0:24:34.059,0:24:36.059
+Jadi, undefined named 'baz'.
+
+0:24:36.160,0:24:39.080
+Jadi saat saya mengedit potongan kode Python ini,
+
+0:24:39.080,0:24:43.360
+editor saya akan memberi saya feedback tentang apa yang salah dengan ini.
+
+0:24:43.560,0:24:48.480
+Atau seperti di sini ada yang lain yang mengatakan redefinition of unused foo.
+
+0:24:49.849,0:24:51.849
+Dan
+
+0:24:53.080,0:24:56.060
+bahkan, ada beberapa keluhan gaya.
+
+0:24:56.060,0:24:58.060
+Jadi, oh, saya mengharapkan dua baris kosong.
+
+0:24:58.120,0:25:03.660
+Jadi seperti di Python, Anda seharusnya memiliki dua baris kosong di antara definisi fungsi.
+
+0:25:05.779,0:25:07.009
+Ada...
+
+0:25:07.009,0:25:09.280
+ada sumber daya di lecture notes
+
+0:25:09.280,0:25:13.160
+tentang kurang lebih static analyzer untuk banyak bahasa pemrograman berbeda.
+
+0:25:13.700,0:25:18.460
+Bahkan ada static analyzer untuk bahasa Inggris.
+
+0:25:18.840,0:25:24.260
+Jadi saya punya catatan saya
+
+0:25:24.580,0:25:30.280
+untuk kelas di sini, dan jika saya menjalankannya melalui static analyzer untuk bahasa Inggris ini, yaitu "writegood".
+
+0:25:30.409,0:25:33.008
+Ia akan mengeluh tentang beberapa sifat gaya.
+
+0:25:33.009,0:25:33.489
+Jadi seperti, oh,
+
+0:25:33.489,0:25:37.460
+saya menggunakan "very", yang merupakan kata yang samar dan saya seharusnya tidak menggunakannya.
+
+0:25:37.480,0:25:43.080
+Atau "quickly" bisa melemahkan makna, dan Anda bisa memiliki ini untuk pemeriksaan ejaan, atau untuk banyak jenis
+
+0:25:43.600,0:25:48.000
+analisis gaya yang berbeda.
+
+0:25:48.760,0:25:52.020
+Ada pertanyaan sejauh ini?
+
+0:25:57.500,0:25:59.490
+Oh,
+
+0:25:59.490,0:26:01.490
+saya lupa menyebutkan...
+
+0:26:01.640,0:26:07.320
+Tergantung tugas yang Anda lakukan, akan ada jenis debugger yang berbeda.
+
+0:26:07.320,0:26:09.740
+Misalnya, jika Anda melakukan web development,
+
+0:26:09.860,0:26:13.520
+Firefox dan Chrome sama-sama
+
+0:26:13.740,0:26:20.600
+punya seperangkat alat yang benar-benar sangat bagus untuk melakukan debugging untuk website.
+
+0:26:20.600,0:26:23.880
+Jadi di sini kita pergi dan mengatakan inspect element,
+
+0:26:23.880,0:26:25.880
+kita bisa mendapat... apakah Anda tahu? bagaimana membuat ini lebih besar...
+
+0:26:27.660,0:26:29.220
+Kita mendapat
+
+0:26:29.220,0:26:33.380
+seluruh source code untuk halaman web untuk kelas ini.
+
+0:26:35.549,0:26:37.549
+Oh, ya, ini dia.
+
+0:26:38.640,0:26:40.640
+Apakah itu lebih baik?
+
+0:26:40.799,0:26:47.149
+Dan kita sebenarnya bisa mengubah properti tentang kursusnya. Jadi kita bisa mengatakan... kita bisa mengedit judulnya.
+
+0:26:47.400,0:26:51.280
+Misalnya, ini bukan kelas tentang debugging dan profiling.
+
+0:26:51.620,0:26:53.940
+Dan sekarang kode untuk website-nya telah berubah.
+
+0:26:54.120,0:26:56.000
+Ini salah satu alasan mengapa Anda seharusnya tidak pernah percaya
+
+0:26:56.200,0:27:00.560
+screenshot website mana pun, karena itu bisa sepenuhnya dimodifikasi.
+
+0:27:01.320,0:27:05.030
+Dan Anda juga bisa memodifikasi gaya ini. Misalnya, di sini saya punya hal-hal
+
+0:27:06.120,0:27:07.559
+menggunakan
+
+0:27:07.560,0:27:09.500
+preferensi dark mode,
+
+0:27:09.680,0:27:11.900
+tetapi kita bisa mengubahnya.
+
+0:27:11.900,0:27:16.560
+Karena pada akhirnya, browser-lah yang merender ini untuk kita.
+
+0:27:17.840,0:27:21.780
+Kita bisa memeriksa cookies, tetapi ada banyak operasi berbeda.
+
+0:27:21.799,0:27:27.619
+Ada juga debugger bawaan untuk JavaScript, jadi Anda bisa melangkah melalui kode JavaScript.
+
+0:27:27.620,0:27:34.020
+Jadi semacam intinya adalah, tergantung apa yang Anda lakukan, Anda mungkin ingin mencari alat apa
+
+0:27:34.320,0:27:36.820
+yang telah dibuat programmer untuk itu.
+
+0:27:44.880,0:27:47.630
+Sekarang saya akan beralih dan
+
+0:27:48.200,0:27:51.800
+berhenti membahas debugging, yang semacam menemukan masalah pada kode, kan?
+
+0:27:51.800,0:27:54.200
+lebih tentang perilakunya, dan kemudian mulai membahas
+
+0:27:54.200,0:27:56.860
+tentang bagaimana Anda bisa menggunakan profiling.
+
+0:27:56.860,0:27:59.240
+Dan profiling adalah cara mengoptimalkan kode.
+
+0:28:01.100,0:28:05.940
+Mungkin karena Anda ingin mengoptimalkan CPU, memori, jaringan, ...
+
+0:28:06.330,0:28:09.889
+Ada banyak alasan berbeda mengapa Anda ingin mengoptimalkannya.
+
+0:28:10.440,0:28:14.000
+Seperti halnya debugging, pendekatan tingkat pertama
+
+0:28:14.000,0:28:16.680
+yang sudah banyak dialami orang adalah
+
+0:28:16.880,0:28:21.880
+oh, mari kita gunakan semacam printf profiling, misalnya kita bisa mengambil...
+
+0:28:22.770,0:28:25.610
+Biar saya buat ini lebih besar. Kita bisa
+
+0:28:26.130,0:28:28.110
+mengambil waktu saat ini di sini,
+
+0:28:28.110,0:28:34.610
+lalu kita bisa memeriksa, kita bisa melakukan beberapa eksekusi dan kemudian kita bisa mengambil waktunya lagi dan
+
+0:28:35.060,0:28:37.320
+menguranginya dari waktu awal.
+
+0:28:37.320,0:28:39.320
+Dan dengan melakukan ini Anda bisa semacam mempersempit
+
+0:28:39.540,0:28:46.040
+dan membatasi beberapa bagian kode Anda dan mencoba mencari tahu berapa waktu yang dihabiskan di antara dua bagian itu.
+
+0:28:47.040,0:28:52.639
+Dan itu bagus. Tetapi kadang hasilnya bisa menarik. Jadi di sini, kita sleep selama
+
+0:28:53.730,0:28:59.809
+0.5 detik dan outputnya mengatakan, oh ini 0.5 ditambah waktu tambahan,
+
+0:28:59.810,0:29:05.929
+yang semacam menarik. Dan jika kita terus menjalankannya, kita melihat ada semacam error kecil dan masalahnya
+
+0:29:06.240,0:29:11.680
+di sini, yang sebenarnya kita ukur adalah apa yang biasanya disebut "real time".
+
+0:29:12.060,0:29:14.340
+Real time itu seolah-olah Anda mengambil
+
+0:29:14.340,0:29:15.930
+semacam
+
+0:29:15.930,0:29:19.249
+jam, dan Anda memulainya saat program Anda mulai, dan Anda menghentikannya saat program Anda selesai.
+
+0:29:19.500,0:29:23.060
+Tetapi masalahnya, di komputer Anda bukan hanya program Anda yang berjalan.
+
+0:29:23.060,0:29:27.460
+Ada banyak program lain yang berjalan pada saat yang sama dan itu mungkin
+
+0:29:27.760,0:29:34.640
+yang sedang mengambil CPU. Jadi, untuk mencoba memahami itu,
+
+0:29:35.790,0:29:39.259
+Banyak... Anda akan melihat banyak program
+
+0:29:40.620,0:29:43.250
+menggunakan terminologi
+
+0:29:44.100,0:29:46.760
+real time, user time dan system time.
+
+0:29:46.760,0:29:51.460
+Real time adalah yang saya jelaskan, yaitu semacam seluruh durasi waktu dari awal sampai akhir.
+
+0:29:51.840,0:29:59.780
+Lalu ada user time, yaitu jumlah waktu yang dihabiskan program Anda di CPU untuk melakukan user level cycle.
+
+0:29:59.780,0:30:06.100
+Jadi seperti yang saya sebutkan, di UNIX, Anda bisa menjalankan user level code atau kernel level code.
+
+0:30:06.920,0:30:12.940
+System semacam kebalikannya, yaitu jumlah CPU, semacam jumlah waktu yang dihabiskan program Anda di CPU
+
+0:30:13.500,0:30:18.480
+untuk mengeksekusi instruksi kernel mode. Jadi mari kita tunjukkan dengan contoh.
+
+0:30:18.620,0:30:22.180
+Di sini saya akan menjalankan "time", yang merupakan perintah,
+
+0:30:22.460,0:30:27.840
+perintah shell yang akan mengambil tiga metrik ini untuk perintah berikutnya, dan kemudian saya hanya
+
+0:30:28.100,0:30:30.560
+mengambil sebuah URL dari
+
+0:30:31.160,0:30:36.760
+sebuah website yang dihosting di Spanyol. Jadi itu akan memakan waktu tambahan untuk pergi ke sana lalu kembali.
+
+0:30:37.410,0:30:39.499
+Jika kita lihat, di sini, jika kita hanya...
+
+0:30:39.780,0:30:43.670
+Kita punya dua print, antara awal dan akhir program.
+
+0:30:43.670,0:30:49.039
+Kita bisa mengira program ini memakan sekitar 600 milidetik untuk dieksekusi, tetapi sebenarnya
+
+0:30:49.500,0:30:56.930
+sebagian besar waktu itu dihabiskan hanya untuk menunggu respons di sisi lain jaringan dan
+
+0:30:57.330,0:31:04.880
+kita sebenarnya hanya menghabiskan 16 milidetik di user level dan sekitar 9 detik, totalnya 25 milidetik, sebenarnya
+
+0:31:05.280,0:31:08.149
+mengeksekusi kode CURL. Sisanya hanya menunggu.
+
+0:31:12.090,0:31:14.480
+Ada pertanyaan terkait timing?
+
+0:31:19.860,0:31:21.860
+Oke, jadi
+
+0:31:21.990,0:31:23.580
+timing bisa
+
+0:31:23.580,0:31:29.480
+bisa menjadi rumit, ini juga semacam solusi kotak hitam. Atau jika Anda mulai menambahkan statement print,
+
+0:31:29.660,0:31:35.860
+agak sulit menambahkan statement print dengan time di mana-mana. Jadi programmer telah menemukan alat yang lebih baik.
+
+0:31:36.140,0:31:38.700
+Ini biasanya disebut "profiler".
+
+0:31:39.980,0:31:44.260
+Satu catatan cepat yang akan saya sampaikan, adalah bahwa
+
+0:31:44.720,0:31:46.720
+profiler, seperti biasanya ketika orang
+
+0:31:46.800,0:31:48.800
+menyebut profiler mereka biasanya berbicara tentang
+
+0:31:49.050,0:31:55.190
+CPU profiler karena itu yang paling umum, dalam mengidentifikasi di mana waktu dihabiskan di CPU.
+
+0:31:56.790,0:31:59.180
+Profiler biasanya hadir dalam semacam dua jenis:
+
+0:31:59.180,0:32:02.140
+ada tracing profiler dan sampling profiler.
+
+0:32:02.140,0:32:06.380
+dan cukup baik untuk mengetahui perbedaannya karena outputnya mungkin berbeda.
+
+0:32:07.640,0:32:10.300
+Tracing profiler semacam melakukan instrumentasi pada kode Anda.
+
+0:32:10.680,0:32:15.799
+Jadi mereka semacam mengeksekusi bersama kode Anda dan setiap kali kode Anda memasuki pemanggilan fungsi,
+
+0:32:15.800,0:32:20.479
+mereka semacam mencatatnya. Seperti, oh kita memasuki pemanggilan fungsi ini pada saat ini dan
+
+0:32:21.860,0:32:24.860
+mereka terus berjalan dan, setelah selesai, mereka bisa melaporkan
+
+0:32:24.860,0:32:28.300
+oh, Anda menghabiskan sekian waktu mengeksekusi di fungsi ini dan
+
+0:32:28.580,0:32:33.760
+sekian waktu di fungsi lain ini. Dan seterusnya, yang merupakan contoh yang akan kita lihat sekarang.
+
+0:32:34.590,0:32:38.329
+Jenis alat lain adalah tracing, maaf, sampling profiler.
+
+0:32:38.430,0:32:44.840
+Masalah dengan tracing profiler adalah mereka menambahkan banyak overhead. Misalnya Anda mungkin menjalankan kode Anda dan memiliki semacam
+
+0:32:46.280,0:32:49.400
+profiling di samping Anda yang membuat semua hitungan ini,
+
+0:32:49.400,0:32:54.340
+akan menghambat performa program Anda, jadi Anda mungkin mendapat hitungan yang sedikit meleset.
+
+0:32:55.380,0:32:59.450
+Sampling profiler, yang akan dilakukannya adalah mengeksekusi program Anda dan setiap
+
+0:32:59.940,0:33:05.239
+100 milidetik, 10 milidetik, semacam periode yang ditentukan, ia akan menghentikan program Anda. Ia akan menghentikannya,
+
+0:33:05.580,0:33:12.379
+ia akan melihat stack trace dan berkata, oh, Anda sekarang berada di titik ini dalam hierarki, dan
+
+0:33:12.630,0:33:15.530
+mengidentifikasi fungsi mana yang akan dieksekusi pada saat itu.
+
+0:33:16.260,0:33:19.760
+Idenya adalah selama Anda mengeksekusinya cukup lama,
+
+0:33:19.760,0:33:24.290
+Anda akan mendapat cukup statistik untuk mengetahui di mana sebagian besar waktu dihabiskan.
+
+0:33:25.800,0:33:28.800
+Jadi, mari kita lihat contoh tracing profiling.
+
+0:33:28.800,0:33:32.340
+Jadi di sini kita punya potongan kode yang semacam
+
+0:33:33.480,0:33:35.540
+reimplementasi grep yang sangat sederhana
+
+0:33:36.330,0:33:38.330
+yang dibuat dalam Python.
+
+0:33:38.400,0:33:44.030
+Yang ingin kita periksa adalah apa bottleneck dari program ini? Misalnya kita hanya membuka banyak file,
+
+0:33:44.900,0:33:49.620
+mencoba mencocokkan pola ini, dan kemudian mencetak setiap kali kita menemukan kecocokan.
+
+0:33:49.620,0:33:52.340
+Dan mungkin itu regex-nya, mungkin itu print-nya...
+
+0:33:52.460,0:33:53.940
+Kita tidak benar-benar tahu.
+
+0:33:53.940,0:33:59.040
+Jadi untuk melakukan ini di Python, kita punya "cProfile".
+
+0:33:59.040,0:34:00.080
+Dan
+
+0:34:00.990,0:34:06.620
+di sini saya hanya memanggil modul ini dan mengatakan saya ingin mengurutkan ini berdasarkan jumlah total waktu, yang
+
+0:34:06.780,0:34:13.429
+akan kita lihat sebentar. Saya memanggil program yang baru kita lihat di editor.
+
+0:34:13.429,0:34:18.679
+Saya akan mengeksekusi ini seribu kali dan kemudian saya ingin mencocokkan (argumen grep
+
+0:34:18.960,0:34:21.770
+di sini) adalah saya ingin mencocokkan regex ini
+
+0:34:22.919,0:34:27.469
+ke semua file Python di sini. Dan ini akan mengeluarkan beberapa...
+
+0:34:30.780,0:34:34.369
+Ini akan menghasilkan beberapa output, lalu kita akan melihatnya. Pertama,
+
+0:34:34.369,0:34:38.539
+adalah semua output dari grep, tetapi di bagian paling akhir, kita mendapat
+
+0:34:39.119,0:34:42.979
+output dari profiler itu sendiri. Jika kita naik
+
+0:34:44.129,0:34:46.939
+kita bisa melihat bahwa, hei,
+
+0:34:47.730,0:34:55.250
+dengan mengurutkan kita bisa melihat jumlah total pemanggilan. Jadi kita melakukan 8000 pemanggilan, karena kita mengeksekusi ini 1000 kali dan
+
+0:34:57.360,0:35:03.440
+ini adalah jumlah total waktu yang kita habiskan di fungsi ini (cumulative time). Dan di sini kita bisa mulai mengidentifikasi
+
+0:35:03.920,0:35:06.040
+di mana bottleneck-nya.
+
+0:35:06.050,0:35:11.449
+Jadi di sini, built-in method IO open ini, mengatakan bahwa kita menghabiskan banyak waktu hanya untuk menunggu
+
+0:35:12.080,0:35:14.340
+membaca dari disk atau...
+
+0:35:14.340,0:35:15.680
+Di sana, kita bisa memeriksa, hei,
+
+0:35:15.680,0:35:19.840
+banyak waktu juga dihabiskan untuk mencoba mencocokkan regex.
+
+0:35:19.840,0:35:22.640
+Yang merupakan sesuatu yang akan Anda perkirakan.
+
+0:35:22.640,0:35:26.220
+Salah satu caveat menggunakan ini
+
+0:35:26.480,0:35:29.540
+caveat tracing profiler adalah, seperti yang Anda lihat, di sini
+
+0:35:29.540,0:35:35.239
+kita melihat fungsi kita tetapi kita juga melihat banyak fungsi yang merupakan built-in.
+
+0:35:35.240,0:35:35.910
+Jadi seperti,
+
+0:35:35.910,0:35:41.899
+fungsi yang merupakan fungsi pihak ketiga dari library. Dan saat Anda mulai membangun kode yang semakin kompleks,
+
+0:35:41.900,0:35:43.560
+ini akan menjadi jauh lebih sulit.
+
+0:35:44.200,0:35:44.760
+Jadi
+
+0:35:46.080,0:35:49.720
+di sini ada potongan kode Python lain yang,
+
+0:35:51.540,0:35:53.779
+jangan dibaca seluruhnya, yang dilakukannya hanyalah
+
+0:35:54.420,0:35:57.589
+mengambil website kursus dan kemudian mencetak semua...
+
+0:35:58.440,0:36:01.960
+Ia mem-parsing-nya, dan kemudian mencetak semua hyperlink yang ditemukannya.
+
+0:36:01.960,0:36:03.520
+Jadi ada semacam dua operasi ini:
+
+0:36:03.520,0:36:07.800
+pergi ke sana, mengambil website, lalu mem-parsing-nya, mencetak link-nya.
+
+0:36:07.800,0:36:09.740
+Dan kita mungkin ingin mendapat gambaran
+
+0:36:09.740,0:36:16.180
+bagaimana kedua operasi itu dibandingkan satu sama lain. Jika kita hanya mencoba mengeksekusi
+
+0:36:16.680,0:36:18.680
+cProfiler di sini dan
+
+0:36:19.260,0:36:24.949
+kita melakukan hal yang sama, ini tidak akan mencetak apa pun. Saya menggunakan alat yang belum kita lihat sejauh ini,
+
+0:36:24.950,0:36:25.700
+tetapi menurut saya cukup bagus.
+
+0:36:25.700,0:36:32.810
+Ini "TAC", yang merupakan kebalikan dari "CAT", dan ia akan membalik outputnya sehingga saya tidak perlu naik dan melihat.
+
+0:36:33.430,0:36:35.430
+Jadi kita lakukan ini dan...
+
+0:36:36.250,0:36:39.179
+Hei, kita mendapat output yang menarik.
+
+0:36:39.880,0:36:46.200
+kita menghabiskan banyak waktu di built-in method socket_getaddr_info ini dan seperti di _imp_create_dynamic dan
+
+0:36:46.510,0:36:48.540
+method_connect dan posix_stat...
+
+0:36:49.210,0:36:55.740
+tidak ada di kode saya yang secara langsung memanggil fungsi-fungsi ini jadi saya tidak benar-benar tahu apa pembagian antara operasi
+
+0:36:56.349,0:37:03.929
+melakukan web request dan mem-parsing output dari web request tersebut. Jadi, untuk itu, kita bisa menggunakan
+
+0:37:04.900,0:37:07.920
+jenis profiler yang berbeda, yaitu
+
+0:37:09.819,0:37:14.309
+line profiler. Dan line profiler hanya akan menyajikan hasil yang sama
+
+0:37:14.310,0:37:20.879
+tetapi dengan cara yang lebih mudah dibaca manusia, yaitu, untuk baris kode ini, inilah jumlah waktu yang dihabiskan.
+
+0:37:24.819,0:37:31.079
+Jadi ia tahu ia harus melakukan itu, kita harus menambahkan decorator ke fungsi Python, kita lakukan itu.
+
+0:37:34.869,0:37:36.869
+Dan saat kita melakukannya,
+
+0:37:37.119,0:37:39.749
+sekarang kita mendapat output yang sedikit terpotong,
+
+0:37:39.750,0:37:46.169
+tetapi ide utamanya, kita bisa melihat persentase waktu dan kita bisa melihat bahwa melakukan request ini, operasi get, memakan
+
+0:37:46.450,0:37:52.829
+88% waktu, sedangkan mem-parsing responsnya hanya memakan 10.9% waktu.
+
+0:37:54.069,0:38:00.869
+Ini bisa sangat informatif dan banyak bahasa pemrograman berbeda akan mendukung jenis line profiling ini.
+
+0:38:04.569,0:38:07.439
+Kadang, Anda mungkin tidak peduli tentang CPU.
+
+0:38:07.440,0:38:15.000
+Mungkin Anda peduli tentang memori atau semacam resource lain. Demikian pula, ada memory profiler: di Python
+
+0:38:15.000,0:38:21.599
+ada "memory_profiler", untuk C Anda punya "Valgrind". Jadi di sini ada contoh yang cukup sederhana,
+
+0:38:21.760,0:38:28.530
+kita hanya membuat list ini dengan satu juta elemen. Itu akan menghabiskan semacam megabyte ruang dan
+
+0:38:29.200,0:38:33.920
+kita melakukan hal yang sama, membuat list lain dengan 20 juta elemen.
+
+0:38:34.860,0:38:38.180
+Untuk memeriksa, berapa alokasi memorinya?
+
+0:38:38.980,0:38:44.369
+Bagaimana itu akan terjadi, berapa konsumsinya? Kita bisa menjalankan satu memory profiler dan
+
+0:38:44.950,0:38:46.619
+kita mengeksekusinya,
+
+0:38:46.620,0:38:51.380
+dan ia memberi tahu kita total penggunaan memori dan kenaikannya.
+
+0:38:51.380,0:38:57.980
+Dan kita bisa melihat bahwa kita punya semacam overhead, karena ini bahasa yang diinterpretasi dan ketika kita membuat
+
+0:38:58.450,0:39:00.599
+yang satu juta ini,
+
+0:39:03.520,0:39:07.340
+list ini dengan satu juta entri, kita akan membutuhkan sekian megabyte informasi.
+
+0:39:07.660,0:39:15.299
+Lalu kita mendapat 150 megabyte lagi. Lalu, kita membebaskan entri ini dan itu menurunkan jumlah totalnya.
+
+0:39:15.299,0:39:19.169
+Kita tidak mendapat increment negatif karena bug, mungkin di profiler-nya.
+
+0:39:19.509,0:39:26.549
+Tetapi jika Anda tahu bahwa program Anda memakan memori yang sangat besar dan Anda tidak tahu mengapa, mungkin karena Anda menyalin
+
+0:39:26.920,0:39:30.269
+objek padahal seharusnya melakukan operasi in place, maka
+
+0:39:31.140,0:39:33.320
+menggunakan memory profiler bisa sangat berguna.
+
+0:39:33.320,0:39:37.780
+Dan faktanya ada latihan yang akan semacam memandu Anda melalui itu, membandingkan
+
+0:39:37.980,0:39:39.980
+versi in-place dari quicksort dengan semacam
+
+0:39:40.059,0:39:44.008
+versi non-inplace, yang terus membuat salinan baru. Dan jika Anda menggunakan memory profiler
+
+0:39:44.009,0:39:47.909
+Anda bisa mendapat perbandingan yang sangat baik antara keduanya
+
+0:39:51.069,0:39:53.459
+Ada pertanyaan sejauh ini, tentang profiling?
+
+0:39:53.460,0:39:57.940
+Apakah memory profiler menjalankan programnya untuk mendapatkan itu?
+
+0:39:58.140,0:40:03.180
+Ya... Anda mungkin bisa mengetahuinya hanya dengan melihat kodenya.
+
+0:40:03.180,0:40:05.759
+Tetapi saat kode Anda semakin kompleks (setidaknya untuk kode ini)
+
+0:40:06.009,0:40:10.738
+Tetapi pada program yang semakin kompleks, yang dilakukan ini adalah menjalankan programnya
+
+0:40:10.739,0:40:16.739
+dan untuk setiap baris, di bagian paling awal, ia melihat heap dan berkata
+
+0:40:16.739,0:40:19.319
+"Objek apa saja yang telah saya alokasikan sekarang?"
+
+0:40:19.319,0:40:22.979
+"Saya punya tujuh megabyte objek", dan kemudian ke baris berikutnya,
+
+0:40:23.190,0:40:27.869
+melihat lagi, "Oh sekarang saya punya 50, jadi saya telah menambahkan 43 di sana".
+
+0:40:28.839,0:40:34.709
+Sekali lagi, Anda bisa melakukan ini sendiri dengan menanyakan operasi-operasi itu di kode Anda, di setiap baris.
+
+0:40:34.920,0:40:39.899
+Tetapi bukan begitu cara Anda seharusnya melakukannya karena orang sudah menulis alat ini untuk Anda gunakan.
+
+0:40:43.089,0:40:46.078
+Seperti halnya dengan...
+
+0:40:51.480,0:40:58.220
+Jadi seperti halnya strace, Anda bisa melakukan sesuatu yang serupa dalam profiling.
+
+0:40:58.340,0:41:03.380
+Anda mungkin tidak peduli tentang baris kode spesifik yang Anda punya,
+
+0:41:03.440,0:41:08.200
+tetapi mungkin Anda ingin memeriksa event eksternal. Misalnya, Anda mungkin ingin memeriksa berapa banyak
+
+0:41:09.410,0:41:14.469
+CPU cycle yang digunakan program komputer Anda, atau berapa banyak page fault yang dibuatnya.
+
+0:41:14.469,0:41:19.239
+Mungkin Anda punya cache locality yang buruk dan itu termanifestasi dalam suatu cara.
+
+0:41:19.340,0:41:22.960
+Jadi untuk itu, ada perintah "perf".
+
+0:41:22.960,0:41:27.220
+Perintah perf akan melakukan ini, yaitu ia akan menjalankan program Anda dan ia akan
+
+0:41:28.720,0:41:33.360
+melacak semua statistik ini dan melaporkannya kembali kepada Anda. Dan ini bisa sangat membantu jika Anda
+
+0:41:33.680,0:41:36.060
+bekerja di level yang lebih rendah. Jadi
+
+0:41:37.300,0:41:42.840
+kita mengeksekusi perintah ini, saya akan menjelaskan singkat apa yang dilakukannya.
+
+0:41:48.650,0:41:51.639
+Dan program stress ini hanya
+
+0:41:52.219,0:41:54.698
+berjalan di CPU, dan ini hanyalah program untuk
+
+0:41:54.829,0:41:59.528
+menghabiskan satu CPU dan semacam menguji bahwa Anda bisa menghabiskan CPU. Dan sekarang jika kita Ctrl-C,
+
+0:42:00.619,0:42:02.708
+kita bisa kembali dan
+
+0:42:03.410,0:42:08.559
+kita mendapat beberapa informasi tentang jumlah page fault yang kita punya atau jumlah
+
+0:42:09.769,0:42:11.769
+CPU cycle yang kita gunakan, dan metrik
+
+0:42:12.469,0:42:14.329
+berguna
+
+0:42:14.329,0:42:18.968
+lainnya dari kode kita. Untuk beberapa program Anda bisa
+
+0:42:21.469,0:42:25.089
+melihat fungsi apa yang digunakan.
+
+0:42:26.120,0:42:30.140
+Jadi kita bisa merekam apa yang dilakukan program ini,
+
+0:42:30.940,0:42:34.920
+yang tidak kita ketahui karena ini program yang ditulis orang lain.
+
+0:42:35.240,0:42:37.240
+Dan
+
+0:42:38.180,0:42:42.279
+kita bisa melaporkan apa yang dilakukannya dengan melihat stack trace dan kita bisa berkata oh,
+
+0:42:42.279,0:42:44.279
+Ia menghabiskan banyak waktu di
+
+0:42:44.660,0:42:46.640
+__random_r
+
+0:42:46.640,0:42:53.229
+fungsi standard library ini. Dan itu terutama karena cara menghabiskan CPU adalah dengan terus membuat lebih banyak bilangan pseudo-random.
+
+0:42:53.779,0:42:55.779
+Ada beberapa
+
+0:42:55.819,0:42:58.149
+fungsi lain yang belum dipetakan, karena fungsi-fungsi itu
+
+0:42:58.369,0:43:01.448
+milik programnya, tetapi jika Anda mengetahui program Anda
+
+0:43:01.448,0:43:05.140
+Anda bisa menampilkan informasi ini menggunakan lebih banyak flag, tentang perf.
+
+0:43:05.140,0:43:10.220
+Ada tutorial yang sangat bagus online tentang cara menggunakan alat ini.
+
+0:43:12.010,0:43:14.010
+Oh
+
+0:43:14.119,0:43:17.349
+Satu hal lagi tentang profiler adalah, sejauh ini,
+
+0:43:17.350,0:43:20.109
+kita telah melihat bahwa profiler ini sangat baik dalam
+
+0:43:20.510,0:43:25.419
+mengagregasi semua informasi ini dan memberi Anda banyak angka ini sehingga Anda bisa
+
+0:43:25.790,0:43:29.739
+mengoptimalkan kode Anda atau Anda bisa menalar tentang apa yang terjadi, tetapi
+
+0:43:30.560,0:43:31.550
+masalahnya adalah
+
+0:43:31.550,0:43:35.949
+manusia tidak benar-benar baik dalam memahami banyak angka dan karena
+
+0:43:36.080,0:43:39.249
+manusia adalah makhluk yang lebih visual, jauh
+
+0:43:39.920,0:43:42.980
+lebih mudah untuk semacam memiliki semacam visualisasi.
+
+0:43:42.980,0:43:48.700
+Sekali lagi, programmer sudah memikirkan ini dan telah menemukan solusinya.
+
+0:43:49.480,0:43:56.160
+Beberapa yang populer adalah FlameGraph. FlameGraph adalah
+
+0:43:56.780,0:44:00.160
+sampling profiler. Jadi ini hanya menjalankan kode Anda dan mengambil sampel
+
+0:44:00.160,0:44:03.280
+Dan kemudian pada sumbu y di sini
+
+0:44:03.280,0:44:10.980
+kita punya kedalaman stack sehingga kita tahu bahwa fungsi bash memanggil fungsi lain ini, dan ini memanggil fungsi lain ini,
+
+0:44:11.260,0:44:14.480
+dan seterusnya. Dan pada sumbu x itu
+
+0:44:14.630,0:44:17.500
+bukan waktu, bukan timestamp.
+
+0:44:17.500,0:44:23.290
+Misalnya bukan fungsi ini berjalan sebelumnya, tetapi hanya waktu yang dihabiskan. Karena, sekali lagi, ini sampling profiler:
+
+0:44:23.290,0:44:28.540
+kita hanya mendapat sekilas kecil tentang apa yang terjadi di program. Tetapi kita tahu bahwa, misalnya,
+
+0:44:29.119,0:44:32.949
+program utama ini memakan waktu paling banyak karena
+
+0:44:33.530,0:44:35.530
+sumbu x proporsional dengan itu.
+
+0:44:36.020,0:44:43.090
+Ini interaktif dan bisa sangat berguna untuk mengidentifikasi hot spot di program Anda.
+
+0:44:44.720,0:44:50.540
+Cara lain untuk menampilkan informasi, dan ada juga latihan tentang cara melakukannya, adalah menggunakan call graph.
+
+0:44:50.720,0:44:58.320
+Jadi call graph akan menampilkan informasi, dan ia akan membuat grafik fungsi mana yang memanggil fungsi mana.
+
+0:44:58.620,0:45:00.940
+Dan kemudian Anda mendapat informasi tentang, misalnya,
+
+0:45:00.940,0:45:05.770
+oh, kita tahu bahwa "__main__" memanggil fungsi "Person" ini sepuluh kali dan
+
+0:45:06.050,0:45:08.919
+itu memakan sekian waktu. Dan saat Anda memiliki
+
+0:45:09.080,0:45:13.029
+program yang semakin besar, melihat salah satu call graph ini bisa berguna untuk mengidentifikasi
+
+0:45:14.270,0:45:19.689
+bagian kode Anda mana yang memanggil operasi IO yang sangat mahal ini, misalnya.
+
+0:45:24.560,0:45:30.360
+Dengan itu saya akan membahas bagian terakhir lecture ini, yaitu bahwa
+
+0:45:30.360,0:45:36.600
+kadang, Anda bahkan mungkin tidak tahu resource persis apa yang terbatas di program Anda.
+
+0:45:36.619,0:45:39.019
+Misalnya bagaimana saya tahu berapa banyak CPU
+
+0:45:39.380,0:45:44.060
+yang digunakan program saya, dan saya bisa dengan cepat melihatnya, atau berapa banyak memori.
+
+0:45:44.060,0:45:46.680
+Jadi ada banyak alat yang sangat
+
+0:45:46.700,0:45:49.760
+praktis untuk melakukan itu, salah satunya adalah
+
+0:45:50.400,0:45:53.270
+HTOP. jadi HTOP adalah
+
+0:45:54.000,0:45:59.810
+alat command-line interaktif dan di sini ia menampilkan semua CPU yang dimiliki mesin ini,
+
+0:46:00.160,0:46:07.740
+yaitu 12. Ia menampilkan jumlah memori, ia mengatakan saya mengonsumsi hampir satu gigabyte dari 32 gigabyte yang dimiliki mesin saya.
+
+0:46:07.740,0:46:11.660
+Dan kemudian saya mendapat semua proses yang berbeda.
+
+0:46:11.730,0:46:13.290
+Jadi misalnya kita punya
+
+0:46:13.290,0:46:20.300
+zsh, mysql dan proses lain yang berjalan di mesin ini, dan saya bisa mengurutkan berdasarkan jumlah CPU
+
+0:46:20.300,0:46:24.379
+yang mereka konsumsi atau berdasarkan prioritas mereka berjalan.
+
+0:46:25.980,0:46:28.129
+Kita bisa memeriksa ini, misalnya. Di sini
+
+0:46:28.130,0:46:30.230
+kita punya perintah stress lagi
+
+0:46:30.230,0:46:31.470
+dan kita akan
+
+0:46:31.470,0:46:37.040
+menjalankannya untuk mengambil alih empat CPU dan memeriksa bahwa kita bisa melihatnya di HTOP.
+
+0:46:37.040,0:46:42.880
+Jadi kita melihat empat job CPU itu, dan sekarang saya melihat bahwa
+
+0:46:43.710,0:46:46.429
+selain yang sudah ada sebelumnya, sekarang saya punya ini...
+
+0:46:50.310,0:46:56.119
+Seperti perintah "stress -c" ini berjalan dan mengambil banyak CPU kita.
+
+0:46:56.849,0:47:03.169
+Meskipun Anda bisa menggunakan profiler untuk mendapat informasi serupa, cara HTOP menampilkannya secara live dan interaktif
+
+0:47:03.329,0:47:07.099
+bisa jauh lebih cepat dan jauh lebih mudah dibaca.
+
+0:47:07.890,0:47:09.890
+Di catatan, ada
+
+0:47:10.160,0:47:15.180
+daftar yang sangat panjang berisi alat berbeda untuk mengevaluasi bagian berbeda dari sistem Anda.
+
+0:47:15.180,0:47:17.180
+Jadi itu mungkin alat untuk menganalisis
+
+0:47:17.180,0:47:19.720
+performa jaringan, tentang melihat
+
+0:47:20.430,0:47:24.530
+jumlah operasi IO, sehingga Anda tahu apakah Anda menjenuhkan
+
+0:47:26.040,0:47:28.040
+pembacaan dari disk Anda,
+
+0:47:28.829,0:47:31.429
+Anda juga bisa melihat berapa penggunaan ruangnya.
+
+0:47:32.069,0:47:34.369
+Yang, saya pikir, di sini...
+
+0:47:38.690,0:47:44.829
+Jadi NCDU... Ada alat bernama "du" yang merupakan singkatan dari "disk usage" dan
+
+0:47:45.440,0:47:49.480
+kita punya flag "-h" untuk "human readable output".
+
+0:47:51.740,0:47:58.959
+Kita bisa menjalankannya pada videos dan mendapat output tentang ukuran semua file di folder ini.
+
+0:48:08.059,0:48:10.059
+Ya, ini dia.
+
+0:48:10.400,0:48:15.040
+Ada juga versi interaktif, seperti HTOP tadi versi interaktif.
+
+0:48:15.280,0:48:21.200
+Jadi NCDU adalah versi interaktif yang memungkinkan saya bernavigasi melalui folder dan saya bisa dengan cepat melihat bahwa
+
+0:48:21.200,0:48:25.740
+oh, kita punya... Ini salah satu folder untuk video lecture,
+
+0:48:26.329,0:48:29.049
+dan kita bisa melihat ada empat file ini
+
+0:48:29.690,0:48:36.579
+yang masing-masing hampir 9 GB dan saya bisa dengan cepat menghapusnya melalui antarmuka ini.
+
+0:48:37.760,0:48:43.839
+Alat keren lainnya adalah "LSOF" yang merupakan singkatan dari "LIST OF OPEN FILES".
+
+0:48:44.240,0:48:47.500
+Pola lain yang mungkin Anda temui adalah Anda tahu
+
+0:48:47.780,0:48:54.609
+ada proses yang menggunakan sebuah file, tetapi Anda tidak tahu persis proses mana yang menggunakan file itu. Atau, serupa, ada proses yang mendengarkan di
+
+0:48:55.400,0:48:59.020
+sebuah port, tetapi lagi-lagi, bagaimana Anda mengetahui yang mana?
+
+0:48:59.020,0:49:00.820
+Jadi untuk memberi contoh.
+
+0:49:00.820,0:49:04.280
+Kita baru saja menjalankan Python HTTP server di port
+
+0:49:05.210,0:49:06.559
+444
+
+0:49:06.559,0:49:10.899
+yang berjalan di sana. Mungkin kita tidak tahu bahwa itu berjalan, tetapi kemudian kita bisa
+
+0:49:13.130,0:49:15.130
+menggunakan...
+
+0:49:17.089,0:49:19.089
+kita bisa menggunakan LSOF.
+
+0:49:22.660,0:49:29.200
+Ya, kita bisa menggunakan LSOF, dan masalahnya LSOF akan mencetak banyak informasi.
+
+0:49:30.440,0:49:32.740
+Anda perlu izin SUDO karena
+
+0:49:34.069,0:49:39.219
+ini akan menanyakan siapa yang memiliki semua item ini.
+
+0:49:39.829,0:49:43.929
+Karena kita hanya peduli pada yang mendengarkan di port 444 ini
+
+0:49:44.630,0:49:46.369
+kita bisa meminta
+
+0:49:46.369,0:49:47.960
+grep untuk itu.
+
+0:49:47.960,0:49:55.750
+Dan kita bisa melihat, oh, ada proses Python ini, dengan identifier ini, yang menggunakan port itu dan kemudian kita bisa
+
+0:49:56.660,0:49:58.009
+membunuhnya,
+
+0:49:58.009,0:50:00.969
+dan itu menghentikan proses tersebut.
+
+0:50:02.299,0:50:06.669
+Sekali lagi, ada banyak alat berbeda. Bahkan ada alat untuk
+
+0:50:08.450,0:50:10.569
+melakukan apa yang disebut benchmarking.
+
+0:50:11.660,0:50:18.789
+Jadi di lecture shell tools and scripting, saya mengatakan bahwa untuk beberapa tugas "fd" jauh lebih cepat daripada "find"
+
+0:50:18.950,0:50:21.519
+Tetapi bagaimana Anda memeriksanya?
+
+0:50:22.059,0:50:30.038
+Saya bisa mengujinya dengan "hyperfine" dan di sini saya punya dua perintah: satu dengan "fd" yang hanya
+
+0:50:30.500,0:50:34.029
+mencari file JPEG dan yang sama dengan "find".
+
+0:50:34.579,0:50:41.079
+Jika saya mengeksekusinya, ia akan melakukan benchmark skrip ini dan memberi saya output tentang
+
+0:50:41.869,0:50:44.108
+seberapa jauh lebih cepat "fd"
+
+0:50:45.380,0:50:47.380
+dibandingkan "find".
+
+0:50:47.660,0:50:52.269
+Jadi saya pikir itu semacam menyimpulkan... ya, sekitar 23 kali untuk tugas ini.
+
+0:50:52.940,0:50:55.990
+Jadi itu semacam menyimpulkan seluruh gambaran.
+
+0:50:56.539,0:51:00.309
+Saya tahu ada banyak topik berbeda dan ada banyak
+
+0:51:00.650,0:51:04.539
+perspektif dalam melakukan hal-hal ini, tetapi sekali lagi saya ingin menegaskan gagasan
+
+0:51:04.539,0:51:08.499
+bahwa Anda tidak perlu menjadi master semua topik ini tetapi lebih...
+
+0:51:08.750,0:51:11.229
+Untuk menyadari bahwa semua hal ini ada.
+
+0:51:11.230,0:51:17.559
+Jadi jika Anda menemui masalah ini Anda tidak perlu menemukan ulang roda, dan Anda menggunakan kembali semua yang telah dilakukan programmer lain.
+
+0:51:18.280,0:51:23.700
+Dengan itu, saya senang menerima pertanyaan apa pun terkait bagian terakhir ini atau apa pun di lecture.
+
+0:51:25.900,0:51:30.060
+Apakah ada cara untuk semacam memikirkan berapa lama sebuah program seharusnya berjalan?
+
+0:51:30.060,0:51:33.160
+Anda tahu, jika program memakan waktu cukup lama untuk berjalan
+
+0:51:33.160,0:51:42.840
+Anda tahu, haruskah Anda khawatir? Atau tergantung proses Anda, biarkan saya menunggu sepuluh menit lagi sebelum saya mulai melihat mengapa ini memakan waktu begitu lama.
+
+0:51:43.220,0:51:45.220
+Oke, jadi...
+
+0:51:46.070,0:51:49.089
+Tugas mengetahui berapa lama sebuah program
+
+0:51:49.090,0:51:53.920
+seharusnya berjalan cukup tidak mungkin untuk diketahui. Itu akan tergantung pada jenis programnya.
+
+0:51:54.290,0:52:01.899
+Itu tergantung apakah Anda membuat HTTP request atau Anda membaca data... satu hal yang bisa Anda lakukan adalah jika Anda punya
+
+0:52:02.390,0:52:02.980
+misalnya,
+
+0:52:02.980,0:52:10.689
+jika Anda tahu Anda harus membaca dua gigabyte dari memori, misalnya dari disk, dan memuatnya ke memori, Anda bisa membuat
+
+0:52:11.510,0:52:16.719
+perhitungan kasar. Jadi itu seharusnya tidak memakan waktu lebih lama dari sekitar X detik karena begitulah
+
+0:52:16.940,0:52:20.050
+cara pengaturannya. Atau jika Anda
+
+0:52:20.840,0:52:27.460
+membaca beberapa file dari jaringan dan Anda tahu semacam apa jaringan link-nya dan itu memakan, katakanlah, lima kali lebih lama dari
+
+0:52:27.460,0:52:29.460
+yang Anda perkirakan maka Anda bisa
+
+0:52:29.990,0:52:31.190
+mencoba melakukan itu.
+
+0:52:31.190,0:52:37.839
+Jika tidak, jika Anda tidak benar-benar tahu. Katakanlah Anda mencoba melakukan beberapa operasi matematika di kode Anda dan Anda tidak benar-benar yakin
+
+0:52:37.840,0:52:44.050
+berapa lama itu akan memakan waktu Anda bisa menggunakan sesuatu seperti logging dan mencoba semacam mencetak tahap
+
+0:52:44.570,0:52:50.469
+antara untuk mendapat gambaran seperti, oh saya perlu melakukan seribu operasi ini dan
+
+0:52:51.800,0:52:53.600
+tiga iterasi
+
+0:52:53.600,0:53:00.700
+memakan sepuluh detik. Maka ini akan memakan waktu jauh lebih lama daripada yang bisa saya tangani dalam kasus saya.
+
+0:53:00.920,0:53:04.599
+Jadi saya pikir ada caranya, itu lagi-lagi akan tergantung pada tugasnya,
+
+0:53:04.600,0:53:08.800
+tetapi jelas, dengan semua alat yang telah kita lihat, kita mungkin punya semacam
+
+0:53:09.620,0:53:13.150
+beberapa cara yang sangat baik untuk mulai menangani itu.
+
+0:53:14.750,0:53:16.750
+Ada pertanyaan lain?
+
+0:53:16.750,0:53:18.750
+Anda juga bisa melakukan hal seperti
+
+0:53:18.750,0:53:21.060
+menjalankan HTOP dan melihat apakah ada yang berjalan.
+
+0:53:22.380,0:53:25.500
+Misalnya jika CPU Anda 0%, ada sesuatu yang mungkin salah.
+
+0:53:31.140,0:53:32.579
+Oke.
+
+0:53:32.579,0:53:38.268
+Ada banyak latihan untuk semua topik yang telah kita bahas di kelas hari ini,
+
+0:53:38.269,0:53:41.419
+jadi silakan kerjakan yang lebih menarik.
+
+0:53:42.180,0:53:44.539
+Kami akan mengadakan office hours lagi hari ini.
+
+0:53:45.059,0:53:48.979
+Sekadar pengingat, office hours. Anda bisa datang dan bertanya tentang lecture apa pun.
+
+0:53:48.980,0:53:53.510
+Misalnya kami tidak akan mengharapkan Anda semacam mengerjakan latihan dalam beberapa menit.
+
+0:53:53.510,0:53:57.979
+Latihan itu memakan waktu cukup lama untuk diselesaikan, tetapi kami akan ada di sana
+
+0:53:58.529,0:54:04.339
+untuk menjawab pertanyaan apa pun dari kelas sebelumnya, atau bahkan yang tidak terkait latihan. Misalnya jika Anda ingin tahu lebih banyak tentang bagaimana Anda
+
+0:54:04.619,0:54:09.889
+akan menggunakan TMUX dengan cara untuk semacam berpindah cepat antar pane, apa pun yang terlintas di pikiran Anda.
+
